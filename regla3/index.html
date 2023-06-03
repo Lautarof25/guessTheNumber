@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js maths</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./source/css/style.css">
+</head>
+
+<body class="bg-warning">
+
+    <main class="container limit-p bg-white p-2 p-sm-5">
+        <h1 class="text-center text-decoration-underline mb-4">Reglas de 3 simple</h1>
+        <section>
+            <h2>Simple directa:</h2>
+            <p>La regla de tres simple directa se utiliza cuando el problema trata de dos magnitudes directamente
+                proporcionales. Podemos decir que dos magnitudes son directamente proporcionales cuando al multiplicar o
+                dividir una de ellas por un número, la otra queda multiplicada o dividida respectivamente por el mismo
+                número.</p>
+            <h2>¿Qué porcentaje tiene Juana?</h2>
+            <p class="text-justify">Juana tiene que comprarse unas zapatillas que cuestan $20699. En este momento,
+                cuenta solamente con $8722. ¿Qué porcentaje del total ha alcanzado?</p>
+            <p>Para saber esto, hay que hacer la regla de 3 simple con los datos que tenemos:</p>
+
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>A (20699)------ B(100%)</p>
+                <p>C (8722)------- X</p>
+            </code>
+
+            <p>La fórmula sería la siguiente:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>x = C . B / A</p>
+                <p>x = 8722 . 100 / 20699</p>
+                <p>x = 872200 / 20699</p>
+                <p>x = 42,14%</p>
+            </code>
+            <div class="row g-2">
+                <h3>¿Querés calcular otro valor?</h3>
+                <div class="col-md-6">
+                    <label for="total" class="form-label">Ingrese el total</label>
+                    <input type="number" class="form-control" id="total" placeholder="20699">
+                </div>
+                <div class="col-md-6">
+                    <label for="subtotal" class="form-label">Ingrese el subtotal</label>
+                    <input type="number" class="form-control" id="subtotal" placeholder="8722">
+                </div>
+                <div class="col-12">
+                    <p>Fórmula</p>
+                    <p>
+                        X = <span class="bg-light" id="formulaSub"></span> . 100 : <span id="formulaTotal"
+                            class="bg-light"></span>
+                    </p>
+                    <p>X = <span id="formulaResultado" class="bg-light"></span></p>
+                </div>
+                <div class="col-12">
+                    <label for="resultado" class="form-label">Resultado</label>
+                    <input type="text" class="form-control" id="resultado" placeholder="" disabled>
+                </div>
+                <div class="col-12">
+                    <button id="button" type="button" class="btn btn-info w-100">Calcular</button>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="">
+            <h2>¿Cuánto aumenta el alquiler?</h2>
+            <p class="text-justify">Ahora Juana debe calcular a cuánto se le irá el alquiler a partir de un porcentaje.
+            </p>
+            <p class="text-justify">La locadora le avisó que subirá un 60%. Actualmente está pagando $52000.</p>
+            <p>Para saber esto, hay que hacer la regla de 3 simple con los datos que tenemos:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>A (52000)------ B(100%)</p>
+                <p>X ------- D(60%)</p>
+            </code>
+            <p>La fórmula sería la siguiente:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>x = A . D / B</p>
+                <p>x = 52000 . 60 / 100</p>
+                <p>x = 3120000 / 100</p>
+                <p>x = 31200</p>
+            </code>
+            <p>$31200 es el aumento que hay que sumar a lo que venía pagando</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>52000 + 31200</p>
+                <p>83200</p>
+            </code>
+            <div class="row g-2">
+                <h3>¿Querés calcular otro valor?</h3>
+                <div class="col-md-6">
+                    <label for="totalPor" class="form-label">Ingrese el total</label>
+                    <input type="number" class="form-control" id="totalPor" placeholder="52000">
+                </div>
+                <div class="col-md-6">
+                    <label for="subtotalPor" class="form-label">Ingrese el porcentaje</label>
+                    <input type="number" class="form-control" id="subtotalPor" placeholder="60">
+                </div>
+                <div class="col-12">
+                    <p>Fórmula</p>
+                    <p>
+                        X = <span class="bg-light" id="formulaTotalPor"></span> . <span class="bg-light"
+                            id="formulaSubPor"></span> : 100
+                    </p>
+                    <p>X = <span id="formulaResultadoPor" class="bg-light"></span></p>
+                </div>
+                <div class="col-12">
+                    <label for="resultado" class="form-label">Resultado con aumento</label>
+                    <input type="text" class="form-control" id="resultadoPor" placeholder="" disabled>
+                </div>
+                <div class="col-12">
+                    <button id="buttonPor" type="button" class="btn btn-info w-100">Calcular</button>
+                </div>
+            </div>
+        </section>
+        <section class="">
+            <h2>Regla inversa</h2>
+            <p>La regla de tres simple inversa se utiliza cuando el problema trata de dos magnitudes inversamente proporcionales. Podemos decir que dos magnitudes son inversamente proporcionales cuando al multiplicar una de ellas por un número, la otra se divide por el mismo, y viceversa.</p>
+            <p>La fórmula es la siguiente:</p>
+            <p>La fórmula sería la siguiente:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>x = A . B / C</p>
+            </code>
+            <h2>¿Cuánto tardan en terminar la casa?</h2>
+            <p class="text-justify">Un grupo de 3 albañiles tarda alrededor de 12 horas en arreglar una habitación.
+            </p>
+            <p class="text-justify">Si se contratan 3 albañiles más, ¿cuánto tardarían?</p>
+            <p>Para saber esto, contamos con los datos:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>A (3 obreros)------ B(12 horas)</p>
+                <p>C (6 obreros)------ X</p>
+            </code>
+            <p>La fórmula sería la siguiente:</p>
+            <code class="d-block bg-info ps-2 rounded text-white">
+                <p>x = A . B / C</p>
+                <p>x = 3 . 12 / 6</p>
+                <p>x = 36 / 6</p>
+                <p>x = 6</p>
+            </code>
+            <div class="row g-2">
+                <h3>¿Querés calcular otro valor?</h3>
+                <div class="col-md-6">
+                    <label for="cantidadAnt" class="form-label">Ingrese la cantidad actual</label>
+                    <input type="number" class="form-control" id="cantidadAnt" placeholder="3">
+                </div>
+                <div class="col-md-6">
+                    <label for="totalAnt" class="form-label">Ingrese el total</label>
+                    <input type="number" class="form-control" id="totalAnt" placeholder="12">
+                </div>
+                <div class="col-md-6">
+                    <label for="cantidadNueva" class="form-label">Ingrese la nueva cantidad</label>
+                    <input type="number" class="form-control" id="cantidadNueva" placeholder="6">
+                </div>
+                <div class="col-12">
+                    <p>Fórmula</p>
+                    <p>
+                        X = <span class="bg-light" id="formulaCantidadAnt"></span> . <span class="bg-light"
+                            id="formulaTotalAnt"></span> : <span id="formulaCantidadNueva"></span>
+                    </p>
+                    <p>X = <span id="formulaResultadoInv" class="bg-light"></span></p>
+                </div>
+                <div class="col-12">
+                    <label for="resultadoInv" class="form-label">Resultado</label>
+                    <input type="text" class="form-control" id="resultadoInv" placeholder="" disabled>
+                </div>
+                <div class="col-12">
+                    <button id="buttonInv" type="button" class="btn btn-info w-100">Calcular</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./source/js/script"></script>
+</body>
+
+</html>
