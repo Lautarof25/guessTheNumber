@@ -13,7 +13,3 @@ input[type=number] {
 #number {
   max-width: 150px;
 }
-
-.d-none-up {
-  display: block;
-}
