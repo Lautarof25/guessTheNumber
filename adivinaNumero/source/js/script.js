@@ -1,6 +1,6 @@
 // Obtenemos un numero random de 4 dígitos
 // 5 Intentos
-// En cada intento verifica correctos y posición
+// En cada intentos verifica correctos y posición
 // Agrega una nueva fila si no acierta
 // Plantilla
 
@@ -67,7 +67,11 @@ function comprobarPosicion(num) {
 }
 
 
-let intentos = 0
+
+let attempsLeft = 10
+let attemps = attempsLeft
+let spanAttemps = document.querySelector("#spanAttemps")
+spanAttemps.innerText = attemps
 
 const modal = document.querySelector("#modal")
 
@@ -89,45 +93,44 @@ const modalOk = `
   </div>
   `
 
-const res = document.querySelector("#resultado")
+const res = document.querySelector("#result")
 number.addEventListener("keypress", function (e) {
-
-  if (e.key === 'Enter' && e.target.value.length == 4 && intentos < 5) {
+  
+  if (e.key === 'Enter' && e.target.value.length == 4 && attemps > 0) {
     let num = e.target.value;
     console.log(num == randomDigit)
     console.log(randomDigit)
     const row =
       `
-  <div id="row${intentos}" class="row text-center">
-    <div id="colNum${intentos}" class="col-6 border"></div>
-    <div id="colOk${intentos}" class="col-3 border"></div>
-    <div id="colPos${intentos}" class="col-3 border"></div>
+  <div id="row${attemps}" class="row rowAnimation text-center">
+    <div id="colNum${attemps}" class="col-6 border"></div>
+    <div id="colOk${attemps}" class="col-3 border"></div>
+    <div id="colPos${attemps}" class="col-3 border"></div>
   </div>
   
-  `
+  ` 
     rows.innerHTML += row
-    document.querySelector(`#colNum${intentos}`).innerText = num
-    document.querySelector(`#colOk${intentos}`).innerText = comprobarCorrectos(num)
-    document.querySelector(`#colPos${intentos}`).innerText = comprobarPosicion(num)
-    intentos++
+    document.querySelector(`#colNum${attemps}`).innerText = num
+    document.querySelector(`#colOk${attemps}`).innerText = comprobarCorrectos(num)
+    document.querySelector(`#colPos${attemps}`).innerText = comprobarPosicion(num)
+    attemps--
     
-    if (intentos == 5 && randomDigit != num) {
+    if (attemps == 0 && randomDigit != num) {
       res.innerText = "❌ 🎲 Perdiste, el numero es " + randomDigit + "🎲❌ "
       res.classList.add("bg-warning")
       modal.innerHTML = modalOk
       number.disabled = true
-
     } else if (randomDigit == num) {
-      document.querySelector("#resultado").innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
+      res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
       res.classList.add("bg-success","text-white")
       modal.innerHTML = modalOk
       number.disabled = true
     }
     number.value = ""
   }
-
+  spanAttemps.innerText = attemps
 })
   // Refactorizar
   // Agregar efectos al ganar o perder
-  // Agregar contador de intentos
+  // Agregar contador de attemps
   // Agregar reseteo de juego
