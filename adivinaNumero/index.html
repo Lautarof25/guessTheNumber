@@ -16,16 +16,20 @@
   <main class="container-sm">
     <div id="backgroundNumbers" class=""></div>
     <h1 class="text-center">Adivina el número</h1>
-    <p class="text-center">Tienes <span id="spanAttemps"></span> intentos para adivinar el número</p>
+    <p class="text-center">Tienes <strong><span id="spanAttemps"></span></strong> intentos para adivinar el número</p>
     <div class="d-flex flex-column align-items-center p-3">
       <label for="number" class="form-label text-center">Ingrese 4 dígitos</label>
       <input type="text" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
         class="form-control text-center fs-4" id="number" aria-describedby="number">
     </div>
-    <div>
-      <p id="result" class="p-2 rounded m-1 text-center" data-aos="fade-down-right">
+    <div id="resultDiv" class="d-none">
+      <p id="result" class="p-2 rounded m-1 text-center">
       </p>
     </div>
+    <div class="d-flex justify-content-center pb-2">
+      <button type="button" class="btn btn-primary" id="resetButton">Reset</button>
+    </div>
+    <div>
     <div class="row text-center">
       <div class="col-6 border">Numero</div>
       <div class="col-3 border d-none d-sm-block">Correctos</div>
@@ -33,27 +37,13 @@
       <div class="col-3 border d-none d-sm-block">En Posicion</div>
       <div class="col-3 border d-block d-sm-none">En Pos</div>
     </div>
-
     <div id="rows">
 
     </div>
+  </div>
 
     <div id="modal" class="modal" tabindex="-1">
-      <!-- <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">¡Ganaste!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar
-            </button>
-          </div>
-        </div>
-      </div> -->
+
     </div>
 
   </main>

@@ -4,6 +4,8 @@
 // Agrega una nueva fila si no acierta
 // Plantilla
 
+
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -34,6 +36,8 @@ function addDigits(random) {
 
 const rows = document.querySelector("#rows")
 const number = document.querySelector("#number")
+
+number.focus()
 
 function comprobarCorrectos(num) {
   let count = 0
@@ -92,7 +96,13 @@ const modalOk = `
     </div>
   </div>
   `
+  
+const resetButton = document.querySelector("#resetButton");
+resetButton.addEventListener("click",reset)
 
+function reset(){
+  location.reload()
+}
 const res = document.querySelector("#result")
 number.addEventListener("keypress", function (e) {
   
@@ -102,13 +112,13 @@ number.addEventListener("keypress", function (e) {
     console.log(randomDigit)
     const row =
       `
-  <div id="row${attemps}" class="row rowAnimation text-center">
-    <div id="colNum${attemps}" class="col-6 border"></div>
-    <div id="colOk${attemps}" class="col-3 border"></div>
-    <div id="colPos${attemps}" class="col-3 border"></div>
-  </div>
-  
-  ` 
+    <div id="row${attemps}" class="row rowAnimation text-center">
+      <div id="colNum${attemps}" class="col-6 border"></div>
+      <div id="colOk${attemps}" class="col-3 border"></div>
+      <div id="colPos${attemps}" class="col-3 border"></div>
+    </div>
+    
+    ` 
     rows.innerHTML += row
     document.querySelector(`#colNum${attemps}`).innerText = num
     document.querySelector(`#colOk${attemps}`).innerText = comprobarCorrectos(num)
@@ -116,11 +126,15 @@ number.addEventListener("keypress", function (e) {
     attemps--
     
     if (attemps == 0 && randomDigit != num) {
+      document.querySelector("#resultDiv").classList.remove("d-none")
       res.innerText = "❌ 🎲 Perdiste, el numero es " + randomDigit + "🎲❌ "
       res.classList.add("bg-warning")
       modal.innerHTML = modalOk
       number.disabled = true
-    } else if (randomDigit == num) {
+
+    } 
+    else if (randomDigit == num) {
+      document.querySelector("#resultDiv").classList.remove("d-none")
       res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
       res.classList.add("bg-success","text-white")
       modal.innerHTML = modalOk
@@ -134,3 +148,8 @@ number.addEventListener("keypress", function (e) {
   // Agregar efectos al ganar o perder
   // Agregar contador de attemps
   // Agregar reseteo de juego
+  // Agregar pistas con acertijos
+  // Agregar pista cuando hay un numero repetido
+  // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
+  // Agregar filtros para jugar de manera infinita (después de ganar un juego)
+  // 
