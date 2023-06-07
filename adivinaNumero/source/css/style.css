@@ -1,3 +1,7 @@
+:root {
+  --orange: #fb441c;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -12,4 +16,26 @@ input[type=number] {
 
 #number {
   max-width: 150px;
+}
+
+.text-warning {
+  color: var(--orange) !important;
+}
+
+img {
+  object-fit: cover;
+}
+
+.bg-warning,
+.btn-warning,
+.btn:hover {
+  background-color: var(--orange) !important;
+  color: white;
+}
+
+.btn:focus,
+input:focus {
+  outline: none;
+  border: 1px var(--orange) solid !important;
+  box-shadow: 0 0 10px var(--orange) !important;
 }

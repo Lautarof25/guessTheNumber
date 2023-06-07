@@ -152,4 +152,10 @@ number.addEventListener("keypress", function (e) {
   // Agregar pista cuando hay un numero repetido
   // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
   // Agregar filtros para jugar de manera infinita (después de ganar un juego)
-  // 
+  // Agregar modal
+
+  const five = "Los tienes en las manos y los tienes en  los pies  y en seguida sabrás  qué número es."
+
+  const eight = "Hay un número que muy valiente se creía, pero al quitarle su cinturón todo su valor perdía."
+
+  const one = "Cuando te pones a contar por mí tienes que empezar. "
