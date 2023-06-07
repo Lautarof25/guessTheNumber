@@ -8,6 +8,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+  overflow: hidden;
+  overflow-x: hidden;
+}
 
 /* Firefox */
 input[type=number] {

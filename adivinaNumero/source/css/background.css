@@ -1,0 +1,21 @@
+.backgroundNumbers {
+    position: absolute;
+    z-index: -1;
+    user-select: none;
+    /*supportedbyChromeandOpera*/-webkit-user-select: none;
+    /*Safari*/-khtml-user-select: none;
+    /*KonquerorHTML*/-moz-user-select: none;
+    /*Firefox*/-ms-user-select: none;
+    /*InternetExplorer/Edge*/font-size: 2.5rem;
+    color: lightgray;
+    word-break: break-all;
+    white-space: normal;
+    overflow: hidden;
+    overflow-x: hidden;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
