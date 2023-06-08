@@ -8,17 +8,17 @@
   <title>Adivina el número</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./source/css/style.css">
-    <link rel="stylesheet" href="./source/css/background.css">
+  <link rel="stylesheet" href="./source/css/style.css">
+  <link rel="stylesheet" href="./source/css/background.css">
 </head>
 
 <body>
   <div id="backgroundNumbers" class="backgroundNumbers"></div>
   <main class="container-sm">
-    <section class="vh-100">
+    <section class="">
       <h1 class="text-center text-warning">4d1vin4 3l núm3r0</h1>
       <div class="row">
-        <img class="col-sm-6" src="./source/img/number_character.png" alt="number character">
+        <img class="col-sm-6" src="./source/img/number_character.png" alt="numberGuess character">
         <div class="col-sm-6 d-flex flex-column justify-content-around">
           <h2 class="text-center">¡Bienvenido a Adivina el número!</h2>
           <p>Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo 0123.</p>
@@ -28,19 +28,68 @@
           </p>
           <p>Pueden haber números repetidos, por ejemplo 0<strong>11</strong>2.</p>
           <p>Tienes <strong>10</strong> intentos para adivinar, así que piensa bien.</p>
-          <button class="btn btn-warning col-12">Jugar</button>
+          <button id="play" class="btn btn-warning col-12">Jugar</button>
         </div>
       </div>
     </section>
-   
-    
+
+    <section id="game" class="">
+      <p class="text-center">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el número
+      </p>
+      <div class="d-flex flex-column align-items-center p-3">
+        <label for="numberGuess" class="form-label text-center">Ingrese 4 dígitos</label>
+        <input type="text" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+          class="form-control text-center fs-4" id="numberGuess" aria-describedby="numberGuess">
+      </div>
+      <div id="resultDiv" class="d-none">
+        <p id="result" class="p-2 rounded m-1 text-center">
+        </p>
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="button" class="btn btn-warning" id="resetButton">Reset</button>
+      </div>
+      <div>
+        <div class="row bg-white text-center">
+          <div class="col-6 border">Numero</div>
+          <div class="col-3 border d-none d-sm-block">Correctos</div>
+          <div class="col-3 border d-block d-sm-none">Ok</div>
+          <div class="col-3 border d-none d-sm-block">En Posicion</div>
+          <div class="col-3 border d-block d-sm-none">En Pos</div>
+        </div>
+        <div id="rows">
+
+        </div>
+      </div>
+
+      <div id="modal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">¡Ganaste!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
   <script src="./source/js/background.js"></script>
+  <script src="./source/js/randomNumber.js"></script>
   <script src="./source/js/script.js"></script>
+  <script src="./source/js/resetButton.js"></script>
+  <script src="./source/js/displayMessage.js"></script>
 </body>
 
 </html>

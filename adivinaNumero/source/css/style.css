@@ -20,7 +20,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-#number {
+#numberGuess {
   max-width: 150px;
 }
 

@@ -1,43 +1,7 @@
-// Obtenemos un numero random de 4 dígitos
-// 5 Intentos
-// En cada intentos verifica correctos y posición
-// Agrega una nueva fila si no acierta
-// Plantilla
-
-
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-}
-
-const random = getRandomInt(0, 9999)
-const randomDigit = addDigits(random)
-
-
-function addDigits(random) {
-  const randomToString = random.toString()
-  if (randomToString.length < 4) {
-    let numCaracteres = randomToString.length
-
-    let stringAArray = randomToString.split("");
-
-    for (i = 0; i < 4 - numCaracteres; i++) {
-      stringAArray.unshift("0")
-    }
-
-    let digit = stringAArray.join("")
-    return digit
-  }
-  return randomToString
-}
-
-
 const rows = document.querySelector("#rows")
-const number = document.querySelector("#number")
+const numberGuess = document.querySelector("#numberGuess")
 
-number.focus()
+numberGuess.focus()
 
 function comprobarCorrectos(num) {
   let count = 0
@@ -56,7 +20,6 @@ function comprobarCorrectos(num) {
   return count
 }
 
-
 function comprobarPosicion(num) {
   // retorna la cantidad de numeros en posición correcta
   let count = 0
@@ -70,46 +33,16 @@ function comprobarPosicion(num) {
   return count
 }
 
-
-
 let attempsLeft = 10
 let attemps = attempsLeft
 let spanAttemps = document.querySelector("#spanAttemps")
 spanAttemps.innerText = attemps
 
-const modal = document.querySelector("#modal")
+numberGuess.addEventListener("keypress",guess)
 
-const modalOk = `
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">¡Ganaste!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar
-        </button>
-      </div>
-    </div>
-  </div>
-  `
-  
-const resetButton = document.querySelector("#resetButton");
-resetButton.addEventListener("click",reset)
-
-function reset(){
-  location.reload()
-}
-const res = document.querySelector("#result")
-number.addEventListener("keypress", function (e) {
-  
+function guess(e){
   if (e.key === 'Enter' && e.target.value.length == 4 && attemps > 0) {
     let num = e.target.value;
-    console.log(num == randomDigit)
-    console.log(randomDigit)
     const row =
       `
     <div id="row${attemps}" class="row bg-white rowAnimation text-center">
@@ -125,37 +58,23 @@ number.addEventListener("keypress", function (e) {
     document.querySelector(`#colPos${attemps}`).innerText = comprobarPosicion(num)
     attemps--
     
-    if (attemps == 0 && randomDigit != num) {
-      document.querySelector("#resultDiv").classList.remove("d-none")
-      res.innerText = "❌ 🎲 Perdiste, el numero es " + randomDigit + "🎲❌ "
-      res.classList.add("bg-warning")
-      modal.innerHTML = modalOk
-      number.disabled = true
-
-    } 
-    else if (randomDigit == num) {
-      document.querySelector("#resultDiv").classList.remove("d-none")
-      res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
-      res.classList.add("bg-success","text-white")
-      modal.innerHTML = modalOk
-      number.disabled = true
-    }
-    number.value = ""
+    displayMessage(num)
+    numberGuess.value = ""
   }
   spanAttemps.innerText = attemps
-})
+}
+
   // Refactorizar
   // Agregar efectos al ganar o perder
-  // Agregar contador de attemps
-  // Agregar reseteo de juego
   // Agregar pistas con acertijos
   // Agregar pista cuando hay un numero repetido
   // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
   // Agregar filtros para jugar de manera infinita (después de ganar un juego)
   // Agregar modal
 
-  const five = "Los tienes en las manos y los tienes en  los pies  y en seguida sabrás  qué número es."
+
+  const five = "Los tienes en las manos y los tienes en los pies, y en seguida sabrás qué número es."
 
   const eight = "Hay un número que muy valiente se creía, pero al quitarle su cinturón todo su valor perdía."
 
-  const one = "Cuando te pones a contar por mí tienes que empezar. "
+  const one = "Cuando te pones a contar por mí tienes que empezar."
