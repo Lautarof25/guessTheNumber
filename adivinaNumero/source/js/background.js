@@ -11,10 +11,19 @@ function fillBackground(){
   addEventListener("load", fillNumbers)
   addEventListener("resize", fillNumbers)
 }
+
+let fontSize = 64;
+let totalWidth = 0;
+let totalHeight = 0;
   
 function fillNumbers(){
+  let widthWindows = window.innerWidth
+  let heightWindows = window.innerHeight
+  totalWidth = Math.trunc(widthWindows / 64 * 2);
+  totalHeight = Math.trunc(heightWindows / fontSize - 1); 
+  let total = totalWidth * totalHeight
   background.innerText = ""
-  for(i=0; i < 1000;i++){
+  for(i=0; i < (total);i++){
     background.innerText += getRandomInt(0, 9)
   }
 }

@@ -112,7 +112,7 @@ number.addEventListener("keypress", function (e) {
     console.log(randomDigit)
     const row =
       `
-    <div id="row${attemps}" class="row rowAnimation text-center">
+    <div id="row${attemps}" class="row bg-white rowAnimation text-center">
       <div id="colNum${attemps}" class="col-6 border"></div>
       <div id="colOk${attemps}" class="col-3 border"></div>
       <div id="colPos${attemps}" class="col-3 border"></div>
