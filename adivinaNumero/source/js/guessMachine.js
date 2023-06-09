@@ -39,7 +39,7 @@ numberGuess.addEventListener("keypress",guess)
 
 function templateRow(attemps){
   let row = `
-  <div id="row${attemps}" class="row bg-white rowAnimation text-center">
+  <div id="row${attemps}" class="row bg-white opacity rowAnimation text-center">
     <div id="colNum${attemps}" class="col-6 border"></div>
     <div id="colOk${attemps}" class="col-3 border"></div>
     <div id="colPos${attemps}" class="col-3 border"></div>
@@ -58,14 +58,58 @@ function guess(e){
     document.querySelector(`#colNum${attemps}`).innerText = num
     document.querySelector(`#colOk${attemps}`).innerText = checkOk(num)
     document.querySelector(`#colPos${attemps}`).innerText = checkIndex(num)
-    attemps--
+    setTimeout(() => {
+      var tempRow = document.querySelector(`#row${attemps}`)
+      tempRow.classList.remove("opacity")
+      tempRow.classList.add("appear")
+      setTimeout(() => {
+        tempRow.classList.remove("appear")
+        attemps--  
+        spanAttemps.innerText = attemps
+      }, 500);
+    }, 500);
     displayMessage(num)
     numberGuess.value = ""
+    // estás muy cerca de conseguirlo
     if(checkOk(num) == 3){
-      
+      setTimeout(() => {
+        addCharacter(1)
+      }, 1000);
+        
     }
   }
-  spanAttemps.innerText = attemps
+}
+
+function addCharacter(number){
+  const rooting = document.querySelector("#rooting")
+
+  switch (number) {
+    case 1:
+      rooting.innerHTML = `
+      <p class="bubble speech text-end bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
+      <img src="./source/img/character_1.png" alt="rooting character">
+      
+      `
+      break;
+    case 2:
+      rooting.innerHTML =
+      `
+      <img src="./source/img/character_2.png" alt="rooting character">
+      <p class="bubble speech bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
+      `
+      break;
+    case 3:
+      rooting.innerHTML =
+      `
+      <img src="./source/img/character_2.png" alt="rooting character">
+      <p class="bubble speech bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
+      `
+      break;
+  
+    default:
+
+      break;
+  }
 }
 
   // Refactorizar
