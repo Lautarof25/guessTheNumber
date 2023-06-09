@@ -35,7 +35,7 @@ function removeCharacter() {
   
 // estás muy cerca de conseguirlo
 function character(num){
-if (checkOk(num) == digitLimit-1 && checkIndex(num) < digitLimit-1) {
+if (checkOk(num) == digitLimit-1 && checkIndex(num) < digitLimit) {
     setTimeout(() => {
       addCharacter(1)
       setTimeout(() => {

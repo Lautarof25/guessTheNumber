@@ -23,8 +23,10 @@
         <div class="col-sm-6 d-flex flex-column justify-content-around">
           <h2 class="text-center">¡Bienvenido a "Adivina el número"!</h2>
           <p class="text-shadow">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo 0123.</p>
-          <p class="text-shadow">Si alguno de los números está bien, en la columna "correctos/ok" verás cuántos has acertado.</p>
-          <p class="text-shadow">Si alguno de los números está en su ubicación, en la columna "En posición/en pos" verás cuántos has
+          <p class="text-shadow">Si alguno de los números está bien, en la columna "correctos/ok" verás cuántos has
+            acertado.</p>
+          <p class="text-shadow">Si alguno de los números está en su ubicación, en la columna "En posición/en pos" verás
+            cuántos has
             acertado.
           </p>
           <p class="text-shadow">Pueden haber números repetidos, por ejemplo 0<strong>11</strong>2.</p>
@@ -37,7 +39,9 @@
     <section id="game" class="">
       <p class="text-center">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el número
       </p>
-      <progress id="progressBar" min="0" value="10" max="10"></progress>
+      <div class="d-flex justify-content-center">
+        <progress class="text-center" id="progressBar" min="0" value="10" max="10"></progress>
+      </div>
       <div class="d-flex flex-column align-items-center p-3">
         <label for="numberGuess" class="form-label text-center">Ingrese 4 dígitos</label>
         <input type="text" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
@@ -83,9 +87,9 @@
     </section>
 
     <div id="rooting" class="d-flex justify-content-center align-items-center">
-      
+
     </div>
-    
+
 
   </main>
 

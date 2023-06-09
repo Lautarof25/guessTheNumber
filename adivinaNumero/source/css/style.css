@@ -19,6 +19,11 @@ input::-webkit-inner-spin-button {
   overflow-x: hidden;
 }
 
+progress{
+  accent-color: var(--orange);
+  height: 50px;
+}
+
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;

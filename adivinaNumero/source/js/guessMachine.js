@@ -2,6 +2,7 @@ const rows = document.querySelector("#rows")
 const numberGuess = document.querySelector("#numberGuess")
 
 numberGuess.focus()
+let numbersAttemps = []
 
 function checkOk(num) {
   let count = 0
@@ -67,6 +68,7 @@ function guess(e) {
 
       }, 200);
     }, 200);
+    numbersAttemps.push(num)
     attemps--
     spanAttemps.innerText = attemps
     progressBar.value = attemps
@@ -83,4 +85,4 @@ function guess(e) {
   // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
   // Agregar filtros para jugar de manera infinita (después de ganar un juego)
   // Agregar modal
-
+  // Comprobar que no se ingrese un numero repetido
