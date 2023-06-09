@@ -35,9 +35,9 @@ function checkIndex(num) {
   return count
 }
 
-numberGuess.addEventListener("keypress",guess)
+numberGuess.addEventListener("keypress", guess)
 
-function templateRow(attemps){
+function templateRow(attemps) {
   let row = `
   <div id="row${attemps}" class="row bg-white opacity rowAnimation text-center">
     <div id="colNum${attemps}" class="col-6 border"></div>
@@ -48,10 +48,10 @@ function templateRow(attemps){
   return row
 }
 
-function guess(e){
+function guess(e) {
   let inputLength = e.target.value.length;
   const enterKey = e.key === 'Enter';
-  const zeroAttemps =  attemps > 0;
+  const zeroAttemps = attemps > 0;
   if (enterKey && inputLength == digitNumber && zeroAttemps) {
     let num = e.target.value;
     rows.innerHTML += templateRow(attemps)
@@ -64,48 +64,60 @@ function guess(e){
       tempRow.classList.add("appear")
       setTimeout(() => {
         tempRow.classList.remove("appear")
-        attemps--  
+        attemps--
         spanAttemps.innerText = attemps
       }, 500);
     }, 500);
     displayMessage(num)
     numberGuess.value = ""
     // estás muy cerca de conseguirlo
-    if(checkOk(num) == 3){
+    if (checkOk(num) == 3 && checkIndex(num) < 2) {
       setTimeout(() => {
         addCharacter(1)
+        setTimeout(() => {
+          removeCharacter()
+        }, 5000);
       }, 1000);
-        
+    }else if(checkOk(num) == 4 && checkIndex(num) <= 2){
+      setTimeout(() => {
+        addCharacter(2)
+        setTimeout(() => {
+          removeCharacter()
+        }, 5000);
+      }, 1000);
     }
   }
 }
 
-function addCharacter(number){
+function removeCharacter() {
+  document.querySelector("#rooting").innerHTML = ""
+}
+
+function addCharacter(number) {
   const rooting = document.querySelector("#rooting")
 
   switch (number) {
     case 1:
       rooting.innerHTML = `
-      <p class="bubble speech text-end bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
+      <p class="bubble speech text-end bg-white rounded p-1">Muy bien, están muy cerca de conseguirlo!</p>
       <img src="./source/img/character_1.png" alt="rooting character">
-      
       `
       break;
     case 2:
       rooting.innerHTML =
-      `
+        `
       <img src="./source/img/character_2.png" alt="rooting character">
-      <p class="bubble speech bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
+      <p class="bubble speech bg-white rounded p-1">¡Solo falta acomodar los números!</p>
       `
       break;
     case 3:
       rooting.innerHTML =
-      `
+        `
       <img src="./source/img/character_2.png" alt="rooting character">
       <p class="bubble speech bg-white rounded p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quos</p>
       `
       break;
-  
+
     default:
 
       break;
