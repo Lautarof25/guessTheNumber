@@ -2,6 +2,10 @@
   --orange: #fb441c;
 }
 
+.text-shadow{
+  text-shadow: 1px 1px 2px gray;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -30,6 +34,8 @@ input[type=number] {
 
 img {
   object-fit: cover;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 .bg-warning,

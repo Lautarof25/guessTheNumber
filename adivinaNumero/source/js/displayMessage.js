@@ -15,3 +15,4 @@ function displayMessage(num){
         numberGuess.disabled = true
       }
 }
+

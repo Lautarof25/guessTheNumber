@@ -19,7 +19,7 @@ let totalHeight = 0;
 function fillNumbers(){
   let widthWindows = window.innerWidth
   let heightWindows = window.innerHeight
-  totalWidth = Math.trunc(widthWindows / 64 * 2);
+  totalWidth = Math.trunc(widthWindows / fontSize * 2);
   totalHeight = Math.trunc(heightWindows / fontSize - 1); 
   let total = totalWidth * totalHeight
   background.innerText = ""

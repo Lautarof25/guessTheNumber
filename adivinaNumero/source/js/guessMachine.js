@@ -3,12 +3,14 @@ const numberGuess = document.querySelector("#numberGuess")
 
 numberGuess.focus()
 
-function comprobarCorrectos(num) {
+const digitNumber = 4;
+
+function checkOk(num) {
   let count = 0
   // retorna la cantidad de correctos que hay
   let numToArray = num.toString().split("")
   let randomToArray = randomDigit.split("")
-  for (i = 0; i < 4; i++) {
+  for (i = 0; i < digitNumber; i++) {
     const index = randomToArray.indexOf(numToArray[i]);
     if (randomToArray.includes(numToArray[i])) {
       randomToArray.splice(index, 1);
@@ -20,12 +22,12 @@ function comprobarCorrectos(num) {
   return count
 }
 
-function comprobarPosicion(num) {
+function checkIndex(num) {
   // retorna la cantidad de numeros en posición correcta
   let count = 0
   let numToString = num.toString()
   let randomToString = randomDigit
-  for (i = 0; i < 4; i++) {
+  for (i = 0; i < digitNumber; i++) {
     if (numToString[i] == randomToString[i]) {
       count++
     }
@@ -33,33 +35,35 @@ function comprobarPosicion(num) {
   return count
 }
 
-let attempsLeft = 10
-let attemps = attempsLeft
-let spanAttemps = document.querySelector("#spanAttemps")
-spanAttemps.innerText = attemps
-
 numberGuess.addEventListener("keypress",guess)
 
+function templateRow(attemps){
+  let row = `
+  <div id="row${attemps}" class="row bg-white rowAnimation text-center">
+    <div id="colNum${attemps}" class="col-6 border"></div>
+    <div id="colOk${attemps}" class="col-3 border"></div>
+    <div id="colPos${attemps}" class="col-3 border"></div>
+  </div>
+  `
+  return row
+}
+
 function guess(e){
-  if (e.key === 'Enter' && e.target.value.length == 4 && attemps > 0) {
+  let inputLength = e.target.value.length;
+  const enterKey = e.key === 'Enter';
+  const zeroAttemps =  attemps > 0;
+  if (enterKey && inputLength == digitNumber && zeroAttemps) {
     let num = e.target.value;
-    const row =
-      `
-    <div id="row${attemps}" class="row bg-white rowAnimation text-center">
-      <div id="colNum${attemps}" class="col-6 border"></div>
-      <div id="colOk${attemps}" class="col-3 border"></div>
-      <div id="colPos${attemps}" class="col-3 border"></div>
-    </div>
-    
-    ` 
-    rows.innerHTML += row
+    rows.innerHTML += templateRow(attemps)
     document.querySelector(`#colNum${attemps}`).innerText = num
-    document.querySelector(`#colOk${attemps}`).innerText = comprobarCorrectos(num)
-    document.querySelector(`#colPos${attemps}`).innerText = comprobarPosicion(num)
+    document.querySelector(`#colOk${attemps}`).innerText = checkOk(num)
+    document.querySelector(`#colPos${attemps}`).innerText = checkIndex(num)
     attemps--
-    
     displayMessage(num)
     numberGuess.value = ""
+    if(checkOk(num) == 3){
+      
+    }
   }
   spanAttemps.innerText = attemps
 }
@@ -72,9 +76,3 @@ function guess(e){
   // Agregar filtros para jugar de manera infinita (después de ganar un juego)
   // Agregar modal
 
-
-  const five = "Los tienes en las manos y los tienes en los pies, y en seguida sabrás qué número es."
-
-  const eight = "Hay un número que muy valiente se creía, pero al quitarle su cinturón todo su valor perdía."
-
-  const one = "Cuando te pones a contar por mí tienes que empezar."
