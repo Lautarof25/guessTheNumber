@@ -37,6 +37,7 @@
     <section id="game" class="">
       <p class="text-center">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el número
       </p>
+      <progress id="progressBar" min="0" value="10" max="10"></progress>
       <div class="d-flex flex-column align-items-center p-3">
         <label for="numberGuess" class="form-label text-center">Ingrese 4 dígitos</label>
         <input type="text" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
@@ -95,6 +96,7 @@
   <script src="./source/js/playTheGame.js"></script>
   <script src="./source/js/randomNumber.js"></script>
   <script src="./source/js/attemps.js"></script>
+  <script src="./source/js/characters.js"></script>
   <script src="./source/js/guessMachine.js"></script>
   <script src="./source/js/riddle.js"></script>
   <script src="./source/js/resetButton.js"></script>

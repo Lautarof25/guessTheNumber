@@ -8,7 +8,7 @@ function displayMessage(num){
         res.classList.add("bg-warning","text-white")
         numberGuess.disabled = true
       } 
-      else if (attemps == 0 && randomDigit != num) {
+      else if (attemps == 0 && num != randomDigit) {
         resultDiv.classList.remove("d-none")
         res.innerText = "❌ 🎲 Perdiste, el numero es " + randomDigit + "🎲❌ "
         res.classList.add("bg-dark","text-white")

@@ -1,3 +1,5 @@
+const digitLimit = 4;
+
 // Numero random
 const random = getRandomInt(0, 9999)
 
