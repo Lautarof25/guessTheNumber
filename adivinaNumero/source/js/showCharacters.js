@@ -1,10 +1,10 @@
+const rooting = document.querySelector("#rooting")
+
 function removeCharacter() {
-  document.querySelector("#rooting").innerHTML = ""
+  rooting.innerHTML = ""
 }
 
 function addCharacter(number) {
-  const rooting = document.querySelector("#rooting")
-
   switch (number) {
     case 1:
       rooting.innerHTML = `
@@ -33,21 +33,24 @@ function addCharacter(number) {
   }
 }
 
-// estás muy cerca de conseguirlo
 function character(num) {
   if (checkOk(num) == digitLimit - 1 && checkIndex(num) < digitLimit) {
+    rooting.classList.remove("opacity")
+    rooting.classList.add("appear")
+    addCharacter(1)
     setTimeout(() => {
-      addCharacter(1)
-      setTimeout(() => {
-        removeCharacter()
-      }, 1000);
-    }, 1000);
+      rooting.classList.add("opacity")
+      rooting.classList.remove("appear")
+      removeCharacter()
+    }, 3000);
   } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit - 2) {
+    rooting.classList.remove("opacity")
+    rooting.classList.add("appear")
+    addCharacter(2)
     setTimeout(() => {
-      addCharacter(2)
-      setTimeout(() => {
-        removeCharacter()
-      }, 1000);
-    }, 1000);
+      rooting.classList.add("opacity")
+      rooting.classList.remove("appear")
+      removeCharacter()
+    }, 3000);
   }
 }

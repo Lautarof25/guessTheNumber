@@ -3,8 +3,8 @@
 }
 
 .appear {
-    animation-duration: .3s;
-    animation-name: slidein;
+    animation: .3s alternate slidein;
+    -webkit-animation: .3s alternate slidein;
 }
 
 @keyframes slidein {
@@ -27,4 +27,3 @@
         -o-transform: scale(1);
 }
 }
-
