@@ -1,3 +1,4 @@
+// Convertir esto en un modal
 const res = document.querySelector("#result")
 const resultDiv = document.querySelector("#resultDiv")
 

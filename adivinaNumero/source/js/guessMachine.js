@@ -56,8 +56,10 @@ function guess(e) {
   let num = e.target.value;
   if(numbersAttemps.includes(num)){
     message.innerHTML = "Ya ingresó esa combinación"
+    message.classList.add("p-2")
     setTimeout(() => {
       message.innerHTML = ""
+      message.classList.remove("p-2")
       numberGuess.value = ""
     }, 3000);
   }

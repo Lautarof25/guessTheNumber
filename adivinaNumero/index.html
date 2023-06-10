@@ -13,59 +13,64 @@
   <link rel="stylesheet" href="./source/css/animation.css">
 </head>
 
-<body>
+<body id="body" class="">
   <div id="backgroundNumbers" class="backgroundNumbers"></div>
-  <main class="container-sm">
-    <section class="">
-      <h1 id="title" class="text-center text-warning title-shadow">ㅤ</h1>
+  <main id="main" class="container-sm">
+    <section id="sectionExplanation" class="">
+      <h1 id="dynamic-title" class="text-center text-warning title-shadow display-2 mb-5"> </h1>
       <div class="row text-end">
-        <img class="col-sm-6" src="./source/img/number_character.png" alt="numberGuess character">
-        <div class="col-sm-6 d-flex flex-column justify-content-around">
-          <h2 class="text-center">¡Bienvenido a "Adivina el número"!</h2>
-          <p class="text-shadow">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo 0123.</p>
-          <p class="text-shadow">Si alguno de los números está bien, en la columna "correctos/ok" verás cuántos has
+        <img class="col-md-6" src="./source/img/number_character.png" alt="numberGuess character">
+        <div class="col-md-6 d-flex flex-column justify-content-around">
+          <h2 class="text-center display-6">¡Bienvenido a "Adivina el número"!</h2>
+          <p class="text-shadow lead">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo 0123.</p>
+          <p class="text-shadow lead">Si alguno de los números está bien, en la columna "correctos/ok" verás cuántos has
             acertado.</p>
-          <p class="text-shadow">Si alguno de los números está en su ubicación, en la columna "En posición/en pos" verás
+          <p class="text-shadow lead">Si alguno de los números está en su ubicación, en la columna "En posición/en pos"
+            verás
             cuántos has
             acertado.
           </p>
-          <p class="text-shadow">Pueden haber números repetidos, por ejemplo 0<strong>11</strong>2.</p>
-          <p class="text-shadow">Tienes <strong>10</strong> intentos para adivinar, así que piensa bien.</p>
+          <p class="text-shadow lead">Pueden haber números repetidos, por ejemplo 0<strong>11</strong>2.</p>
+          <p class="text-shadow lead">Tienes <strong>10</strong> intentos para adivinar <br>¡Buena suerte!</p>
           <button id="play" class="btn btn-warning col-12">Jugar</button>
         </div>
       </div>
     </section>
 
-    <section id="game" class="">
-      <p class="text-center">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el número
+    <section id="game" class="d-none d-flex flex-column justify-content-center vh-100">
+      <p class="text-center lead">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el
+        número
       </p>
       <div class="d-flex justify-content-center">
-        <progress class="text-center" id="progressBar" min="0" value="10" max="10"></progress>
+        <progress class="text-center lead" id="progressBar" min="0" value="10" max="10"></progress>
       </div>
       <div class="d-flex flex-column align-items-center p-3">
-        <label for="numberGuess" class="form-label text-center">Ingrese 4 dígitos</label>
+        <label for="numberGuess" class="form-label text-center lead">Ingrese 4 dígitos</label>
         <input type="text" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-          class="form-control text-center fs-4" id="numberGuess" aria-describedby="numberGuess">
-        <p id="message" class="bg-warning"></p>
+          class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess">
+        <p id="message" class="bg-warning rounded mt-2"></p>
       </div>
       <div id="resultDiv" class="d-none">
-        <p id="result" class="p-2 rounded m-1 text-center">
+        <p id="result" class="p-2 rounded m-1 text-center lead">
         </p>
       </div>
       <div class="d-flex justify-content-center pb-2">
         <button type="button" class="btn btn-warning" id="resetButton">Reset</button>
       </div>
       <div>
-        <div class="row bg-white text-center">
+        <div class="row bg-white text-center lead">
           <div class="col-6 border">Numero</div>
           <div class="col-3 border d-none d-sm-block">Correctos</div>
           <div class="col-3 border d-block d-sm-none">Ok</div>
           <div class="col-3 border d-none d-sm-block">En Posicion</div>
           <div class="col-3 border d-block d-sm-none">En Pos</div>
         </div>
-        <div id="rows">
+        <div id="rows" class="lead">
 
         </div>
+      </div>
+      <div id="rooting" class="d-flex justify-content-center align-items-center">
+
       </div>
 
       <div id="modal" class="modal" tabindex="-1">
@@ -87,9 +92,7 @@
       </div>
     </section>
 
-    <div id="rooting" class="d-flex justify-content-center align-items-center">
-
-    </div>
+    
 
 
   </main>

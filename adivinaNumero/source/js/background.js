@@ -8,22 +8,32 @@ function getRandomInt(min, max) {
 
 // Agregar evento resize
 function fillBackground(){
-  addEventListener("load", fillNumbers)
+  addEventListener("load", fillOnLoad)
   addEventListener("resize", fillNumbers)
 }
 
 let fontSize = 64;
-let totalWidth = 0;
-let totalHeight = 0;
-  
-function fillNumbers(){
-  let widthWindows = window.innerWidth
-  let heightWindows = window.innerHeight
-  totalWidth = Math.trunc(widthWindows / fontSize - 1)*2;
-  totalHeight = Math.trunc(heightWindows / fontSize - 1); 
-  let total = totalWidth * totalHeight
+let totalWidth = window.innerWidth;
+let totalHeight = window.innerHeight;
+
+function fillOnLoad(){
+  let widthCalculate = Math.floor(totalWidth / fontSize);
+  let heightCalculate = Math.floor(totalHeight / fontSize); 
+  let total = widthCalculate * heightCalculate
   background.innerText = ""
-  for(i=0; i < (total);i++){
+  for(i=0; i < total;i++){
+    background.innerText += getRandomInt(0, 9)
+  }
+}
+
+function fillNumbers(){
+  totalWidth = window.innerWidth;
+  totalHeight = document.getElementById('main').offsetHeight;
+  let widthCalculate = Math.floor(totalWidth / fontSize);
+  let heightCalculate = Math.floor(totalHeight / fontSize); 
+  let total = widthCalculate * heightCalculate
+  background.innerText = ""
+  for(i=0; i < total;i++){
     background.innerText += getRandomInt(0, 9)
   }
 }
