@@ -6,7 +6,15 @@ play.addEventListener("click", skipSection)
 
 function skipSection(){
     sectionExplanation.classList.add("d-none")
-    game.classList.remove("d-none")
+    setTimeout(() => {
+        game.classList.remove("d-none")
+        game.classList.remove("opacity")
+        game.classList.add("appear")
+        setTimeout(() => {
+            game.classList.remove("appear")
+  
+        }, 200);
+      }, 200);
 }
 
 

@@ -73,9 +73,11 @@ function guess(e) {
       var tempRow = document.querySelector(`#row${currentAttemps}`)
       tempRow.classList.remove("opacity")
       tempRow.classList.add("appear")
+      spanAttemps.classList.add("opacity")
       setTimeout(() => {
         tempRow.classList.remove("appear")
-
+        spanAttemps.classList.remove("opacity")
+        spanAttemps.classList.add("appear")
       }, 200);
     }, 200);
     numbersAttemps.push(num)

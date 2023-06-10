@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adivina el número</title>
+  <link rel="icon" type="image/x-icon" href="./source/img/character_2.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="./source/css/style.css">
@@ -37,8 +38,8 @@
       </div>
     </section>
 
-    <section id="game" class="d-none d-flex flex-column justify-content-center vh-100">
-      <p class="text-center lead">Te quedan <strong><span id="spanAttemps"></span></strong> intentos para adivinar el
+    <section id="game" class="d-none d-flex flex-column justify-content-start vh-100 opacity pt-5">
+      <p class="text-center lead">Te quedan <strong><span id="spanAttemps" class=""></span></strong> intentos para adivinar el
         número
       </p>
       <div class="d-flex justify-content-center">
@@ -69,7 +70,7 @@
 
         </div>
       </div>
-      <div id="rooting" class="d-flex justify-content-center align-items-center">
+      <div id="rooting" class="d-flex justify-content-center align-items-center opacity">
 
       </div>
 
@@ -105,7 +106,8 @@
   <script src="./source/js/playTheGame.js"></script>
   <script src="./source/js/randomNumber.js"></script>
   <script src="./source/js/attemps.js"></script>
-  <script src="./source/js/characters.js"></script>
+  <script src="./source/js/showCharacters.js"></script>
+  <script src="./source/js/appearEffect.js"></script>
   <script src="./source/js/guessMachine.js"></script>
   <script src="./source/js/riddle.js"></script>
   <script src="./source/js/resetButton.js"></script>

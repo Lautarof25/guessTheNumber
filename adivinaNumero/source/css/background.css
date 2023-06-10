@@ -12,9 +12,9 @@
     letter-spacing: 28px;
     text-align: center;
     -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-  line-height: 1;
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    line-height: 1;
 }
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
