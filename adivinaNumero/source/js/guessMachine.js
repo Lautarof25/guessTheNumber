@@ -1,5 +1,6 @@
 const rows = document.querySelector("#rows")
 const numberGuess = document.querySelector("#numberGuess")
+const message = document.querySelector("#message")
 
 numberGuess.focus()
 let numbersAttemps = []
@@ -52,8 +53,15 @@ function guess(e) {
   let inputLength = e.target.value.length;
   const enterKey = e.key === 'Enter';
   const zeroAttemps = attemps > 0;
-  if (enterKey && inputLength == digitLimit && zeroAttemps) {
-    let num = e.target.value;
+  let num = e.target.value;
+  if(numbersAttemps.includes(num)){
+    message.innerHTML = "Ya ingresó esa combinación"
+    setTimeout(() => {
+      message.innerHTML = ""
+      numberGuess.value = ""
+    }, 3000);
+  }
+  if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
     rows.innerHTML += templateRow(attemps)
     document.querySelector(`#colNum${attemps}`).innerText = num
     document.querySelector(`#colOk${attemps}`).innerText = checkOk(num)
@@ -76,6 +84,7 @@ function guess(e) {
     numberGuess.value = ""
     character(num)
   }
+
 }
 
 
@@ -85,4 +94,3 @@ function guess(e) {
   // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
   // Agregar filtros para jugar de manera infinita (después de ganar un juego)
   // Agregar modal
-  // Comprobar que no se ingrese un numero repetido

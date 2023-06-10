@@ -6,6 +6,10 @@
   text-shadow: 1px 1px 2px gray;
 }
 
+.title-shadow {
+  text-shadow: 3px 3px 2px black;  
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
