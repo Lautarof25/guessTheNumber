@@ -48,7 +48,9 @@
       <div class="d-flex flex-column align-items-center p-3">
         <label for="numberGuess" class="form-label text-center lead">Ingrese 4 dígitos</label>
         <input type="number" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-          class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess">
+          class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess"
+          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
         <p id="message" class="bg-warning rounded mt-2"></p>
       </div>
       <div id="resultDiv" class="d-none">
