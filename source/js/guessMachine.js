@@ -83,7 +83,7 @@ function guess(e) {
     }, 200);
     numbersAttemps.push(num)
     attemps--
-    spanAttemps.innerText = attemps
+    spanAttemps.innerText = attemps > 1 ? attemps + " intentos" : attemps + " intento"
     progressBar.value = attemps
     displayMessage(num)
     numberGuess.value = ""

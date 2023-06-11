@@ -6,7 +6,7 @@ function reset(){
   addDigitsToRandom(random)
   attempsLeft = 10
   attemps = attempsLeft
-  spanAttemps.innerText = attemps
+  spanAttemps.innerText = attemps > 1 ? attemps + " intentos" : attemps + " intento"
   rows.innerHTML = ""
   numbersAttemps = []
   progressBar.value = attemps
