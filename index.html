@@ -17,39 +17,37 @@
 <body id="body" class="">
   <div id="backgroundNumbers" class="backgroundNumbers"></div>
   <main id="main" class="container-sm">
-    <section id="sectionExplanation" class="">
+    <section id="sectionExplanation" class=" flex-column justify-content-center align-items-center">
       <h1 id="dynamic-title" class="text-center text-warning title-shadow display-3 mb-5 text-uppercase"> </h1>
-      <div class="row text-end">
-        <img class="col-md-6" src="./source/img/number_character.png" alt="numberGuess character">
+      <div class="row text-end d-flex align-items-center justify-content-center">
+        <img class="col-md-6 h-500 " src="./source/img/number_character.webp" alt="numberGuess character">
         <div class="col-md-6 d-flex flex-column justify-content-around">
-          <h2 class="text-center display-6">¡Bienvenido a "Adivina el número"!</h2>
-          <p class="text-shadow lead">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo 0123.</p>
-          <p class="text-shadow lead">Si alguno de los números está bien, en la columna "correctos/ok" verás cuántos has
-            acertado.</p>
-          <p class="text-shadow lead">Si alguno de los números está en su ubicación, en la columna "En posición/en pos"
-            verás
-            cuántos has
-            acertado.
+          <h2 class="text-center display-6">¡Bienvenid@ a "Adivina el número"!</h2>
+          <p class="text-shadow lead">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo
+            <strong>0123</strong>.</p>
+          <p class="text-shadow lead">En "correctos/ok" verás cuántos has acertado.</p>
+          <p class="text-shadow lead">En "En posición/en pos" verás cuántos has ubicado.
           </p>
-          <p class="text-shadow lead">Pueden haber números repetidos, por ejemplo 0<strong>11</strong>2.</p>
+          <p class="text-shadow lead">Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
           <p class="text-shadow lead">Tienes <strong>10</strong> intentos para adivinar <br>¡Buena suerte!</p>
-          <button id="play" class="btn btn-warning col-12 mb-5">Jugar</button>
+          <button id="play" class="btn btn-warning col-12 mb-5 text-uppercase">Jugar</button>
         </div>
       </div>
     </section>
 
     <section id="game" class="d-none d-flex flex-column justify-content-start vh-100 opacity pt-5">
-      <p class="text-center lead">Te quedan <strong><span id="spanAttemps" class=""></span></strong> intentos para adivinar el
+      <p class="text-center lead">Te quedan <strong><span id="spanAttemps" class=""></span></strong> intentos para
+        adivinar el
         número
       </p>
       <div class="d-flex justify-content-center">
         <progress class="text-center lead" id="progressBar" min="0" value="10" max="10"></progress>
       </div>
       <div class="d-flex flex-column align-items-center p-3">
-        <label for="numberGuess" class="form-label text-center lead">Ingrese 4 dígitos</label>
+        <label for="numberGuess" class="form-label text-center lead">Ingrese <strong>4</strong> dígitos</label>
         <input type="number" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-          class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess"
-          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess" autocomplete="off"
+          autocorrect="off" autocapitalize="off" spellcheck="false"
           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
         <p id="message" class="bg-warning rounded mt-2"></p>
       </div>
@@ -95,14 +93,14 @@
       </div>
     </section>
 
-    
+
 
 
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
+    defer></script>
   <script src="./source/js/changeTitle.js"></script>
   <script src="./source/js/background.js"></script>
   <script src="./source/js/playTheGame.js"></script>

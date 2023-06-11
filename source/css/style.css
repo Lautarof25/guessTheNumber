@@ -64,3 +64,7 @@ input:focus {
   border: 1px var(--orange) solid !important;
   box-shadow: 0 0 10px var(--orange) !important;
 }
+
+.h-500{
+  max-height: 450px!important;
+}
