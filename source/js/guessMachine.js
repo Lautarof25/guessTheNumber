@@ -5,6 +5,7 @@ const message = document.querySelector("#message")
 numberGuess.focus()
 let numbersAttemps = []
 
+
 function checkOk(num) {
   let count = 0
   // retorna la cantidad de correctos que hay
@@ -90,7 +91,6 @@ function guess(e) {
   }
 
 }
-
 
   // Refactorizar
   // Agregar pistas con acertijos

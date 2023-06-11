@@ -1,6 +1,19 @@
-const resetButton = document.querySelector("#resetButton");
-resetButton.addEventListener("click",reset)
+document.querySelector("#resetButton").addEventListener("click",reset)
 
 function reset(){
-  location.reload()
+  random = getRandomInt(0, 9999)
+  randomDigit = addDigitsToRandom(random)
+  addDigitsToRandom(random)
+  attempsLeft = 10
+  attemps = attempsLeft
+  spanAttemps.innerText = attemps
+  rows.innerHTML = ""
+  numbersAttemps = []
+  progressBar.value = attemps
+  numberGuess.value = ""
+  numberGuess.disabled = false
+  numberGuess.focus()
+  resultDiv.classList.add("d-none")
+  res.classList.remove("bg-warning","text-white")
+  res.classList.remove("bg-dark","text-white")
 }

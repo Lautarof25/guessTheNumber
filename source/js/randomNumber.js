@@ -1,7 +1,7 @@
 const digitLimit = 4;
 
 // Numero random
-const random = getRandomInt(0, 9999)
+let random = getRandomInt(0, 9999)
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -10,7 +10,7 @@ function getRandomInt(min, max) {
 }
 
 // Agregar dígitos cuando el número random es menor a 1000
-const randomDigit = addDigitsToRandom(random)
+let randomDigit = addDigitsToRandom(random)
 
 function addDigitsToRandom(random) {
   let randomToString = random.toString()

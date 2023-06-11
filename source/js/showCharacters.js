@@ -8,7 +8,7 @@ function addCharacter(number) {
   switch (number) {
     case 1:
       rooting.innerHTML = `
-        <p class="bubble speech text-end bg-white rounded p-1">Muy bien, están muy cerca de conseguirlo!</p>
+        <p class="bubble speech text-end bg-white rounded p-1">Muy bien, estás muy cerca de conseguirlo!</p>
         <img src="./source/img/character_1.png" alt="rooting character">
         `
       break;
@@ -39,8 +39,8 @@ function character(num) {
     rooting.classList.add("appear")
     addCharacter(1)
     setTimeout(() => {
-      rooting.classList.add("opacity")
       rooting.classList.remove("appear")
+      rooting.classList.add("opacity")
       removeCharacter()
     }, 3000);
   } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit - 2) {
@@ -48,9 +48,11 @@ function character(num) {
     rooting.classList.add("appear")
     addCharacter(2)
     setTimeout(() => {
-      rooting.classList.add("opacity")
       rooting.classList.remove("appear")
-      removeCharacter()
+      rooting.classList.add("opacity")
+      setTimeout(() => {
+        removeCharacter()  
+      }, 500);
     }, 3000);
   }
 }

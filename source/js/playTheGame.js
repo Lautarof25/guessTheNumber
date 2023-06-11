@@ -1,3 +1,4 @@
+
 const sectionExplanation = document.querySelector("#sectionExplanation")
 const game = document.querySelector("#game")
 const play = document.querySelector("#play")
@@ -12,10 +13,7 @@ function skipSection(){
         game.classList.add("appear")
         setTimeout(() => {
             game.classList.remove("appear")
-  
         }, 200);
       }, 200);
     window.scrollTo(0, 0);
 }
-
-
