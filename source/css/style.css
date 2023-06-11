@@ -52,10 +52,13 @@ img {
 }
 
 .bg-warning,
-.btn-warning,
-.btn:hover {
+.btn-warning {
   background-color: var(--orange) !important;
-  color: white;
+  color: white!important;
+}
+.btn:hover{
+  filter: brightness(.8);
+  -webkit-filter: brightness(.8);
 }
 
 .btn:focus,

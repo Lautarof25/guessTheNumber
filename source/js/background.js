@@ -13,12 +13,14 @@ function fillBackground(){
 }
 
 let fontSize = 64;
-let totalWidth = window.innerWidth;
-let totalHeight = window.innerHeight;
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
+let mainHeight = document.getElementById('main').offsetHeight;
+let heightTotal = 0;
 
 function fillOnLoad(){
-  let widthCalculate = Math.floor(totalWidth / fontSize);
-  let heightCalculate = Math.floor(totalHeight / fontSize); 
+  let widthCalculate = Math.floor(windowWidth / fontSize);
+  let heightCalculate = Math.floor(windowHeight / fontSize); 
   let total = widthCalculate * heightCalculate
   background.innerText = ""
   for(i=0; i < total;i++){
@@ -27,10 +29,16 @@ function fillOnLoad(){
 }
 
 function fillNumbers(){
-  totalWidth = window.innerWidth;
-  totalHeight = document.getElementById('main').offsetHeight;
-  let widthCalculate = Math.floor(totalWidth / fontSize);
-  let heightCalculate = Math.floor(totalHeight / fontSize); 
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+  mainHeight = document.getElementById('main').offsetHeight;
+  let heightCalculate = 0
+  if(windowHeight > mainHeight){
+    heightCalculate = Math.floor(windowHeight / fontSize);
+  }else {
+    heightCalculate = Math.floor(mainHeight / fontSize);
+  }
+  let widthCalculate = Math.floor(windowWidth / fontSize);
   let total = widthCalculate * heightCalculate
   background.innerText = ""
   for(i=0; i < total;i++){
