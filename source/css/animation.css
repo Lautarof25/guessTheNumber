@@ -7,6 +7,11 @@
     -webkit-animation: .3s alternate slidein;
 }
 
+.appearDisappear {
+    animation: 5s alternate disappear;
+    -webkit-animation: 5s alternate disappear;
+}
+
 @keyframes slidein {
     from {
         opacity: 0;
@@ -26,4 +31,15 @@
         -ms-transform: scale(1);
         -o-transform: scale(1);
 }
+}
+@keyframes disappear {
+    0% {
+        opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

@@ -36,23 +36,19 @@ function addCharacter(number) {
 function character(num) {
   if (checkOk(num) == digitLimit - 1 && checkIndex(num) < digitLimit) {
     rooting.classList.remove("opacity")
-    rooting.classList.add("appear")
+    rooting.classList.add("appearDisappear")
     addCharacter(1)
     setTimeout(() => {
-      rooting.classList.remove("appear")
-      rooting.classList.add("opacity")
+      rooting.classList.remove("appearDisappear")
       removeCharacter()
-    }, 3000);
+    }, 5000);
   } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit - 2) {
     rooting.classList.remove("opacity")
-    rooting.classList.add("appear")
+    rooting.classList.add("appearDisappear")
     addCharacter(2)
     setTimeout(() => {
-      rooting.classList.remove("appear")
-      rooting.classList.add("opacity")
-      setTimeout(() => {
-        removeCharacter()  
-      }, 500);
-    }, 3000);
+      rooting.classList.remove("appearDisappear")
+      removeCharacter()
+    }, 5000);
   }
 }
