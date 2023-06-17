@@ -56,13 +56,7 @@ function guess(e) {
   const zeroAttemps = attemps > 0;
   let num = e.target.value;
   if(numbersAttemps.includes(num)){
-    message.innerHTML = "Ya ingresó esa combinación"
-    message.classList.add("p-2")
-    setTimeout(() => {
-      message.innerHTML = ""
-      message.classList.remove("p-2")
-      numberGuess.value = ""
-    }, 3000);
+    numberRepeat()
   }
   if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
     rows.innerHTML += templateRow(attemps)
@@ -90,6 +84,16 @@ function guess(e) {
     character(num)
   }
 
+}
+
+function numberRepeat(){
+  message.innerHTML = `<p class="bg-warning rounded mt-2 p-2 display-6 text-center">Ya ingresó esa combinación</p>`
+  message.classList.add("p-2")
+  setTimeout(() => {
+    message.innerHTML = ""
+    message.classList.remove("p-2")
+    numberGuess.value = ""
+  }, 3000);
 }
 
   // Refactorizar

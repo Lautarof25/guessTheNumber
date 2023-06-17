@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="./source/css/animation.css">
 </head>
 
-<body id="body" class="">
+<body id="body" class="position-relative">
+  <div id="message" class="position-absolute top-0 start-50 translate-middle-x">
+
+  </div>
   <div id="backgroundNumbers" class="backgroundNumbers"></div>
   <main id="main" class="container-sm">
     <section id="sectionExplanation" class=" flex-column justify-content-center align-items-center">
@@ -51,7 +54,7 @@
           class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess" autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-        <p id="message" class="bg-warning rounded mt-2"></p>
+        
       </div>
       <div id="resultDiv" class="d-none">
         <p id="result" class="p-2 rounded m-1 text-center lead">
