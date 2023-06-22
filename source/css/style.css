@@ -71,3 +71,7 @@ input:focus {
 .h-500{
   max-height: 450px!important;
 }
+
+.bold {
+  font-weight: 500;
+}
