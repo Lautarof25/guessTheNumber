@@ -32,11 +32,6 @@ progress{
   height: 50px;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 #numberGuess {
   max-width: 150px;
 }
