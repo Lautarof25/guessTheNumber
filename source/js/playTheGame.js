@@ -1,4 +1,3 @@
-
 const sectionExplanation = document.querySelector("#sectionExplanation")
 const game = document.querySelector("#game")
 const play = document.querySelector("#play")

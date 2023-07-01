@@ -38,15 +38,38 @@ function checkIndex(num) {
 numberGuess.addEventListener("keypress", guess)
 
 
-function templateRow(attemps) {
-  let row = `
-  <div id="row${attemps}" class="row bg-white opacity rowAnimation text-center">
-    <div id="colNum${attemps}" class="col-6 border"></div>
-    <div id="colOk${attemps}" class="col-3 border"></div>
-    <div id="colPos${attemps}" class="col-3 border"></div>
-  </div>
-  `
-  return row
+function templateRow(attemps, num, ok, check) {
+  const rowDiv = document.createElement(`div`)
+  const colNum = document.createElement(`div`)
+  const colOk = document.createElement(`div`)
+  const colPos = document.createElement(`div`)
+  const number = document.createTextNode(num);
+  const numbersOK = document.createTextNode(ok);
+  const numbersPos = document.createTextNode(check);
+  rowDiv.setAttribute('id',`div${attemps}`)
+  rowDiv.setAttribute('class','row bg-white opacity rowAnimation text-center')
+  colNum.setAttribute('id',`colNum${attemps}`)
+  colOk.setAttribute('id',`colOk${attemps}`)
+  colPos.setAttribute('id',`colPos${attemps}`)
+
+  colNum.setAttribute('class',`col-6 border`)
+  colOk.setAttribute('class',`col-3 border`)
+  colPos.setAttribute('class',`col-3 border`)
+
+  colNum.appendChild(number)
+  colOk.appendChild(numbersOK)
+  colPos.appendChild(numbersPos)
+  setTimeout(() => {
+    rowDiv.classList.remove("opacity")
+    rowDiv.classList.add("appear")
+    setTimeout(() => {
+      rowDiv.classList.remove("appear")
+    }, 200);
+  }, 200);
+  rowDiv.appendChild(colNum)
+  rowDiv.appendChild(colOk)
+  rowDiv.appendChild(colPos)
+  rows.appendChild(rowDiv)
 }
 
 function guess(e) {
@@ -58,24 +81,12 @@ function guess(e) {
     messageNumberRepeat()
   }
   if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
-    rows.innerHTML += templateRow(attemps)
-    document.querySelector(`#colNum${attemps}`).innerText = num
-    document.querySelector(`#colOk${attemps}`).innerText = checkOk(num)
-    document.querySelector(`#colPos${attemps}`).innerText = checkIndex(num)
-    let currentAttemps = attemps
-    setTimeout(() => {
-      var tempRow = document.querySelector(`#row${currentAttemps}`)
-      tempRow.classList.remove("opacity")
-      tempRow.classList.add("appear")
-      setTimeout(() => {
-        tempRow.classList.remove("appear")
-      }, 200);
-    }, 200);
+    templateRow(attemps,num,checkOk(num),checkIndex(num))
     numbersAttemps.push(num)
     attemps--
     spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
     progressBar.value = attemps
-    displayMessage(num)
+    displayFinalMessage(num)
     numberGuess.value = ""
     character(num)
   }

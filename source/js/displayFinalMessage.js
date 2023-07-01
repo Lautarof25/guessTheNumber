@@ -1,8 +1,8 @@
 // ** Convertir esto en un modal**
-const res = document.querySelector("#result")
 const resultDiv = document.querySelector("#resultDiv")
+const res = document.querySelector("#result")
 
-function displayMessage(num){
+function displayFinalMessage(num){
     if (randomDigit == num) {
         resultDiv.classList.remove("d-none")
         res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
@@ -16,4 +16,3 @@ function displayMessage(num){
         numberGuess.disabled = true
       }
 }
-
