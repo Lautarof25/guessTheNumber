@@ -15,4 +15,5 @@ function skipSection(){
         }, 200);
       }, 200);
     window.scrollTo(0, 0);
+    opening.play()
 }

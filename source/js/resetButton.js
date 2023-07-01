@@ -16,4 +16,5 @@ function reset(){
   resultDiv.classList.add("d-none")
   res.classList.remove("bg-warning","text-white")
   res.classList.remove("bg-dark","text-white")
+  opening.play()
 }

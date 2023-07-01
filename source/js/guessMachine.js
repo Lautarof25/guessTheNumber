@@ -5,72 +5,7 @@ const progressBar = document.querySelector("#progressBar")
 let numbersAttemps = []
 numberGuess.focus()
 
-function checkOk(num) {
-  let count = 0
-  // retorna la cantidad de correctos que hay
-  let numToArray = num.toString().split("")
-  let randomToArray = randomDigit.split("")
-  for (i = 0; i < digitLimit; i++) {
-    const index = randomToArray.indexOf(numToArray[i]);
-    if (randomToArray.includes(numToArray[i])) {
-      randomToArray.splice(index, 1);
-      numToArray.shift(numToArray[i])
-      i--
-      count++
-    }
-  }
-  return count
-}
-
-function checkIndex(num) {
-  // retorna la cantidad de numeros en posición correcta
-  let count = 0
-  let numToString = num.toString()
-  let randomToString = randomDigit
-  for (i = 0; i < digitLimit; i++) {
-    if (numToString[i] == randomToString[i]) {
-      count++
-    }
-  }
-  return count
-}
-
 numberGuess.addEventListener("keypress", guess)
-
-
-function templateRow(attemps, num, ok, check) {
-  const rowDiv = document.createElement(`div`)
-  const colNum = document.createElement(`div`)
-  const colOk = document.createElement(`div`)
-  const colPos = document.createElement(`div`)
-  const number = document.createTextNode(num);
-  const numbersOK = document.createTextNode(ok);
-  const numbersPos = document.createTextNode(check);
-  rowDiv.setAttribute('id',`div${attemps}`)
-  rowDiv.setAttribute('class','row bg-white opacity rowAnimation text-center')
-  colNum.setAttribute('id',`colNum${attemps}`)
-  colOk.setAttribute('id',`colOk${attemps}`)
-  colPos.setAttribute('id',`colPos${attemps}`)
-
-  colNum.setAttribute('class',`col-6 border`)
-  colOk.setAttribute('class',`col-3 border`)
-  colPos.setAttribute('class',`col-3 border`)
-
-  colNum.appendChild(number)
-  colOk.appendChild(numbersOK)
-  colPos.appendChild(numbersPos)
-  setTimeout(() => {
-    rowDiv.classList.remove("opacity")
-    rowDiv.classList.add("appear")
-    setTimeout(() => {
-      rowDiv.classList.remove("appear")
-    }, 200);
-  }, 200);
-  rowDiv.appendChild(colNum)
-  rowDiv.appendChild(colOk)
-  rowDiv.appendChild(colPos)
-  rows.appendChild(rowDiv)
-}
 
 function guess(e) {
   let inputLength = e.target.value.length;
@@ -82,6 +17,7 @@ function guess(e) {
   }
   if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
     templateRow(attemps,num,checkOk(num),checkIndex(num))
+    inserNumber.play()
     numbersAttemps.push(num)
     attemps--
     spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
@@ -90,16 +26,23 @@ function guess(e) {
     numberGuess.value = ""
     character(num)
   }
-
 }
 
 function messageNumberRepeat(){
   // Muestra mensaje de numero repetido
-  message.innerHTML = `<p class="bg-warning rounded mt-2 p-2 display-6 text-center">Ya ingresó esa combinación</p>`
-  message.classList.add("p-2")
+  const messageRepeat = document.createElement("div")
+  messageRepeat.setAttribute("class","position-absolute opacity top-0 start-50 translate-middle-x p-2")
+  const p = document.createElement("p")
+  const messageP = document.createTextNode("Ya ingresó esa combinación");
+  p.setAttribute("class","bg-warning rounded mt-2 p-2 display-6 text-center")
+  p.appendChild(messageP)
+  messageRepeat.appendChild(p)
+  document.getElementById("body").appendChild(messageRepeat)
+  repeat.play()
+  messageRepeat.classList.remove("opacity")
+  messageRepeat.classList.add("appear")
   setTimeout(() => {
-    message.innerHTML = ""
-    message.classList.remove("p-2")
+    messageRepeat.remove()
     numberGuess.value = ""
   }, 3000);
 }
