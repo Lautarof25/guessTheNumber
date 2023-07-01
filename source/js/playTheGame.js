@@ -4,7 +4,7 @@ const play = document.querySelector("#play")
 
 play.addEventListener("click", skipSection)
 
-function skipSection(){
+function skipSection() {
     sectionExplanation.classList.add("d-none")
     setTimeout(() => {
         game.classList.remove("d-none")
@@ -13,7 +13,7 @@ function skipSection(){
         setTimeout(() => {
             game.classList.remove("appear")
         }, 200);
-      }, 200);
+    }, 200);
     window.scrollTo(0, 0);
     opening.play()
 }
