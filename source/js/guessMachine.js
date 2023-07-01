@@ -16,7 +16,7 @@ function guess(e) {
   }
   if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
     templateRow(attemps, num, checkOk(num), checkIndex(num))
-    inserNumber.play()
+    insertNumber.play()
     numbersAttemps.push(num)
     attemps--
     spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`

@@ -1,5 +1,5 @@
-const opening = new Audio("../source/audio/opening.wav")
-const inserNumber = new Audio('../source/audio/addNumber.wav');
-const winner = new Audio('../source/audio/winGame.wav');
-const gameOver = new Audio('../source/audio/gameOver.wav');
-const repeat = new Audio('../source/audio/repeatNumber.wav');
+const opening = new Audio('../source/audio/opening.ogg')
+const insertNumber = new Audio('../source/audio/addNumber.ogg');
+const winner = new Audio('../source/audio/winGame.ogg');
+const gameOver = new Audio('../source/audio/gameOver.ogg');
+const repeat = new Audio('../source/audio/repeatNumber.ogg');
