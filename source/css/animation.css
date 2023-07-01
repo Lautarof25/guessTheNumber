@@ -3,8 +3,8 @@
 }
 
 .appear {
-    animation: .3s alternate slidein;
-    -webkit-animation: .3s alternate slidein;
+    animation: .3s alternate appear;
+    -webkit-animation: .3s alternate appear;
 }
 
 .appearDisappear {
@@ -12,7 +12,7 @@
     -webkit-animation: 5s alternate disappear;
 }
 
-@keyframes slidein {
+@keyframes appear {
     from {
         opacity: 0;
         transform: scale(0.9);

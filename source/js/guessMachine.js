@@ -1,10 +1,9 @@
 const rows = document.querySelector("#rows")
 const numberGuess = document.querySelector("#numberGuess")
 const message = document.querySelector("#message")
-
-numberGuess.focus()
+const progressBar = document.querySelector("#progressBar")
 let numbersAttemps = []
-
+numberGuess.focus()
 
 function checkOk(num) {
   let count = 0
@@ -37,7 +36,7 @@ function checkIndex(num) {
 }
 
 numberGuess.addEventListener("keypress", guess)
-const progressBar = document.querySelector("#progressBar")
+
 
 function templateRow(attemps) {
   let row = `
@@ -56,7 +55,7 @@ function guess(e) {
   const zeroAttemps = attemps > 0;
   let num = e.target.value;
   if(numbersAttemps.includes(num)){
-    numberRepeat()
+    messageNumberRepeat()
   }
   if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
     rows.innerHTML += templateRow(attemps)
@@ -68,16 +67,13 @@ function guess(e) {
       var tempRow = document.querySelector(`#row${currentAttemps}`)
       tempRow.classList.remove("opacity")
       tempRow.classList.add("appear")
-      spanAttemps.classList.add("opacity")
       setTimeout(() => {
         tempRow.classList.remove("appear")
-        spanAttemps.classList.remove("opacity")
-        spanAttemps.classList.add("appear")
       }, 200);
     }, 200);
     numbersAttemps.push(num)
     attemps--
-    spanAttemps.innerText = attemps > 1 ? attemps + " intentos" : attemps + " intento"
+    spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
     progressBar.value = attemps
     displayMessage(num)
     numberGuess.value = ""
@@ -86,7 +82,8 @@ function guess(e) {
 
 }
 
-function numberRepeat(){
+function messageNumberRepeat(){
+  // Muestra mensaje de numero repetido
   message.innerHTML = `<p class="bg-warning rounded mt-2 p-2 display-6 text-center">Ya ingresó esa combinación</p>`
   message.classList.add("p-2")
   setTimeout(() => {

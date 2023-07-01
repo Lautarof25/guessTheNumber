@@ -19,17 +19,6 @@ function addCharacter(number) {
         <p class="bubble speech bg-white rounded p-1">¡Solo falta acomodar los números!</p>
         `
       break;
-    case 3:
-      rooting.innerHTML =
-        `
-        <img src="./source/img/character_2.webp" alt="rooting character">
-        <p class="bubble speech bg-white rounded p-1"></p>
-        `
-      break;
-
-    default:
-
-      break;
   }
 }
 
