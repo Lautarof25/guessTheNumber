@@ -8,7 +8,7 @@ function displayFinalMessage(num) {
     res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
     res.classList.add("bg-warning", "text-white")
     numberGuess.disabled = true
-    winner.play()
+    winGame.play()
   }
   else if (attemps == 0 && num != randomDigit) {
     resultDiv.classList.remove("d-none")

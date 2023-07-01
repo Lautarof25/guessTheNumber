@@ -8,7 +8,7 @@ function messageNumberRepeat() {
   p.appendChild(messageP)
   messageRepeat.appendChild(p)
   document.getElementById("body").appendChild(messageRepeat)
-  repeat.play()
+  repeatNumber.play()
   messageRepeat.classList.remove("opacity")
   messageRepeat.classList.add("appear")
   setTimeout(() => {

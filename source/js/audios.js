@@ -1,5 +1,5 @@
-const opening = new Audio('../source/audio/opening.mp3')
-const insertNumber = new Audio('../source/audio/addNumber.mp3');
-const winner = new Audio('../source/audio/winGame.mp3');
-const gameOver = new Audio('../source/audio/gameOver.mp3');
-const repeat = new Audio('../source/audio/repeatNumber.mp3');
+let repeatNumber = document.querySelector('#repeatNumber')
+let addNumber = document.querySelector('#addNumber')
+let gameOver = document.querySelector('#gameOver')
+let opening = document.querySelector('#opening')
+let winGame = document.querySelector('#winGame')
