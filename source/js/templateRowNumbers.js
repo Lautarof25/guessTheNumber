@@ -7,7 +7,7 @@ function templateRow(attemps, num, ok, check) {
   const numbersOK = document.createTextNode(ok);
   const numbersPos = document.createTextNode(check);
   rowDiv.setAttribute('id', `div${attemps}`)
-  rowDiv.setAttribute('class', 'row bg-white opacity rowAnimation text-center')
+  rowDiv.setAttribute('class', 'row position-relative bg-white opacity rowAnimation text-center')
   colNum.setAttribute('id', `colNum${attemps}`)
   colOk.setAttribute('id', `colOk${attemps}`)
   colPos.setAttribute('id', `colPos${attemps}`)
