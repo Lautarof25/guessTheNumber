@@ -23,7 +23,7 @@ function addCharacter(number) {
 }
 
 function character(num) {
-  if (checkOk(num) == digitLimit - 1 && checkIndex(num) < digitLimit) {
+  if (checkOk(num) == digitLimit - 1) {
     rooting.classList.remove("opacity")
     rooting.classList.add("appearDisappear")
     addCharacter(1)

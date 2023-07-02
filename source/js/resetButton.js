@@ -24,3 +24,10 @@ function goToInput(){
     numberGuess.focus()  
   }, 1000);
 }
+
+const infoButton = document.querySelector("#infoButton")
+infoButton.addEventListener("click", soundPopUp)
+
+function soundPopUp(){
+  popUp.play()
+}

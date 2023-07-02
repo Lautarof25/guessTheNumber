@@ -4,7 +4,7 @@ function messageNumberRepeat() {
   messageRepeat.setAttribute("class", "position-absolute opacity top-0 start-50 translate-middle-x p-2")
   const p = document.createElement("p")
   const messageP = document.createTextNode("Ya ingresó esa combinación");
-  p.setAttribute("class", "bg-warning rounded mt-2 p-2 display-6 text-center")
+  p.setAttribute("class", "bg-warning shadow rounded mt-2 p-2 display-6 text-center")
   p.appendChild(messageP)
   messageRepeat.appendChild(p)
   document.getElementById("body").appendChild(messageRepeat)
