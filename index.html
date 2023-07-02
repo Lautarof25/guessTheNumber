@@ -57,14 +57,17 @@
           class="form-control text-center lead fs-4" id="numberGuess" aria-describedby="numberGuess" autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-        
       </div>
+
       <div id="resultDiv" class="d-none">
         <p id="result" class="p-2 rounded m-1 text-center lead">
         </p>
       </div>
       <div class="d-flex justify-content-center pb-2">
-        <button type="button" class="btn btn-warning" id="resetButton">Reset</button>
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
+          <i class="bi bi-card-text"></i>
+        </button>
+        <button type="button" class="btn btn-warning" id="resetButton"><i class="bi bi-arrow-clockwise"></i></button>
       </div>
       <div class="pb-2">
         <div class="row bg-white text-center lead bold">
@@ -82,23 +85,29 @@
 
       </div>
 
-      <div id="modal" class="modal" tabindex="-1">
+      
+      <!-- Modal -->
+      <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rulesLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">¡Ganaste!</h5>
+              <h1 class="modal-title fs-5" id="rulesLabel">Reglas</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <p></p>
+              <p><i class="bi bi-pin-fill"></i> Debes adivinar un número de 4 dígitos</p>
+              <p><i class="bi bi-pin-fill"></i> En "correctos/ok" verás cuántos has acertado.</p>
+          <p><i class="bi bi-pin-fill"></i> En "En posición/en pos" verás cuántos has ubicado.
+          </p>
+          <p><i class="bi bi-pin-fill"></i> Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar
-              </button>
+              <button type="button" onclick="goToInput()"  class="btn btn-warning" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   </main>
   

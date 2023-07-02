@@ -18,3 +18,9 @@ function reset() {
   res.classList.remove("bg-dark", "text-white")
   opening.play()
 }
+
+function goToInput(){
+  setTimeout(() => {
+    numberGuess.focus()  
+  }, 1000);
+}
