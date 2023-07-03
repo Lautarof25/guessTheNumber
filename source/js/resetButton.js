@@ -22,7 +22,7 @@ function reset() {
 function goToInput(){
   setTimeout(() => {
     numberGuess.focus()  
-  }, 1000);
+  }, 500);
 }
 
 const infoButton = document.querySelector("#infoButton")

@@ -1,4 +1,5 @@
 // ** Convertir esto en un modal**
+
 const resultDiv = document.querySelector("#resultDiv")
 const res = document.querySelector("#result")
 
@@ -18,4 +19,3 @@ function displayFinalMessage(num) {
     gameOver.play()
   }
 }
-
