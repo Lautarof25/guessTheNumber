@@ -24,7 +24,7 @@ function templateCharacter(number){
 }
 
 function character(num) {
-  if (checkOk(num) == digitLimit - 1) {
+  if (checkOk(num) == digitLimit - 1 && attemps > 1) {
     templateCharacter(1)
     document.querySelector("#rooting").classList.remove("opacity")
     document.querySelector("#rooting").classList.add("appearDisappear")
@@ -33,7 +33,7 @@ function character(num) {
       document.querySelector("#rooting").classList.remove("appearDisappear")
       document.querySelector("#rooting").remove()
     }, 5000);
-  } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit-1) {
+  } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit-1 && attemps > 1) {
     templateCharacter(2)
     document.querySelector("#rooting").classList.remove("opacity")
     document.querySelector("#rooting").classList.add("appearDisappear")

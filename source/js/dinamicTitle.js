@@ -1,3 +1,5 @@
+// CHATGPT
+
 // HTML element where the dynamic title will be displayed
 var titleElement = document.getElementById('dynamic-title');
 

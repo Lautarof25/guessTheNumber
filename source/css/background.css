@@ -1,7 +1,6 @@
 .backgroundNumbers {
-    position: absolute;
     z-index: -1;
-    /*InternetExplorer/Edge*/font-size: 64px;
+    font-size: 64px;
     color: lightgray;
     word-break: break-all;
     white-space: normal;

@@ -11,19 +11,21 @@ function guess(e) {
   const enterKey = e.key === 'Enter';
   const zeroAttemps = attemps > 0;
   let num = e.target.value;
-  if (numbersAttemps.includes(num)) {
-    messageNumberRepeat()
-  }
-  if (enterKey && inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
-    templateRow(attemps, num, checkOk(num), checkIndex(num))
-    addNumber.play()
-    numbersAttemps.push(num)
-    attemps--
-    spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
-    progressBar.value = attemps
-    displayFinalMessage(num)
-    numberGuess.value = ""
-    character(num)
+  if (enterKey) {
+    if (numbersAttemps.includes(num)) {
+      messageNumberRepeat()
+    }
+    if (inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
+      templateRow(attemps, num, checkOk(num), checkIndex(num))
+      addNumber.play()
+      numbersAttemps.push(num)
+      attemps--
+      spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
+      progressBar.value = attemps
+      displayFinalMessage(num)
+      numberGuess.value = ""
+      character(num)
+    }
   }
 }
 
