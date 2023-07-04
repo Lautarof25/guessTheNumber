@@ -17,6 +17,7 @@ function reset() {
   res.classList.remove("bg-warning", "text-white")
   res.classList.remove("bg-dark", "text-white")
   opening.play()
+  fillNumbers()
 }
 
 function goToInput(){

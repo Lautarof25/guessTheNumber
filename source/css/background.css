@@ -1,7 +1,7 @@
 .backgroundNumbers {
     z-index: -1;
     font-size: 64px;
-    color: rgb(224, 224, 224);
+    color: rgb(235, 235, 235);
     word-break: break-all;
     white-space: normal;
     filter: blur(4px);

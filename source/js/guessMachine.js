@@ -26,6 +26,7 @@ function guess(e) {
       checkWinner(num)
       numberGuess.value = ""
       addCharacter(num)
+      fillNumbers()
     }
   }
 }

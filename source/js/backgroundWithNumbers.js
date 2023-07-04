@@ -46,6 +46,3 @@ function fillNumbers(){
   }
 }
 fillBackground()
-setInterval(() => {
-  fillNumbers()
-}, 7000);
