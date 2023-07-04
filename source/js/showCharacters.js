@@ -23,7 +23,7 @@ function templateCharacter(number){
   document.querySelector("#rows").appendChild(rooting)
 }
 
-function character(num) {
+function addCharacter(num) {
   if (checkOk(num) == digitLimit - 1 && attemps > 1) {
     templateCharacter(1)
     document.querySelector("#rooting").classList.remove("opacity")

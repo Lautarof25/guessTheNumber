@@ -1,11 +1,9 @@
 .backgroundNumbers {
     z-index: -1;
     font-size: 64px;
-    color: lightgray;
+    color: rgb(224, 224, 224);
     word-break: break-all;
     white-space: normal;
-    overflow: hidden;
-    overflow-x: hidden;
     filter: blur(4px);
     -webkit-filter: blur(5px);
     letter-spacing: 28px;

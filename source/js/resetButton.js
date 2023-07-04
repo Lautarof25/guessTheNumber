@@ -25,8 +25,7 @@ function goToInput(){
   }, 500);
 }
 
-const infoButton = document.querySelector("#infoButton")
-infoButton.addEventListener("click", soundPopUp)
+document.querySelector("#infoButton").addEventListener("click", soundPopUp)
 
 function soundPopUp(){
   popUp.play()

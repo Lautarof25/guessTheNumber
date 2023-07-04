@@ -20,19 +20,12 @@ function guess(e) {
       addNumber.play()
       numbersAttemps.push(num)
       attemps--
-      spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
+      spanAttemps.innerText = attemps != 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
       progressBar.value = attemps
       displayFinalMessage(num)
       checkWinner(num)
       numberGuess.value = ""
-      character(num)
+      addCharacter(num)
     }
   }
 }
-
-  // Refactorizar
-  // Agregar pistas con acertijos
-  // Agregar pista cuando hay un numero repetido
-  // Agregar un comentario cuando se está próximo a resolverlo (3 ok y +2 en pos)
-  // Agregar filtros para jugar de manera infinita (después de ganar un juego)
-  // Agregar modal

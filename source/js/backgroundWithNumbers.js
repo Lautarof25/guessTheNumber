@@ -45,5 +45,7 @@ function fillNumbers(){
     background.innerText += getRandomInt(0, 9)
   }
 }
-
 fillBackground()
+setInterval(() => {
+  fillNumbers()
+}, 7000);

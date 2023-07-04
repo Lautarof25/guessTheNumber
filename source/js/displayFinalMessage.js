@@ -1,12 +1,10 @@
-// ** Convertir esto en un modal**
-
 const resultDiv = document.querySelector("#resultDiv")
 const res = document.querySelector("#result")
 
 function displayFinalMessage(num) {
   if (randomDigit == num) {
     resultDiv.classList.remove("d-none")
-    res.innerText = "🎉 🎈 Acertaste, el numero es " + randomDigit + "🎈 🎉"
+    res.innerText = "🎉Acertaste, el numero es " + randomDigit + "🎉"
     res.classList.add("bg-warning", "text-white")
     numberGuess.disabled = true
   }
