@@ -9,9 +9,8 @@
   <meta name="description" content="¡Adivina el número!">
   <meta name="keywords" content="Adivinar, numeros, digitos, posicion">
   <link rel="icon" type="image/x-icon" href="./source/img/character_2.ico">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./source/css/style.css">
   <link rel="stylesheet" href="./source/css/background.css">
   <link rel="stylesheet" href="./source/css/animation.css">
@@ -109,9 +108,29 @@
           </div>
         </div>
       </div>
+      
+      
 
     </section>
   </main>
+  <!-- Modal  -->
+  <div class="modal" id="modalResult">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal content goes here -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="titleModal"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>El numero es: <span id="spanModal"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="pt-5">
     <div class="list-group text-center">
@@ -126,9 +145,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
-    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="./source/js/dinamicTitle.js"></script>
   <script src="./source/js/audios.js"></script>
@@ -143,6 +160,7 @@
   <script src="./source/js/guessMachine.js"></script>
   <script src="./source/js/resetButton.js"></script>
   <script src="./source/js/displayFinalMessage.js"></script>
+  <script src="./source/js/modals.js"></script>
 
 </body>
 

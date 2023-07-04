@@ -23,6 +23,7 @@ function guess(e) {
       spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
       progressBar.value = attemps
       displayFinalMessage(num)
+      checkWinner(num)
       numberGuess.value = ""
       character(num)
     }
