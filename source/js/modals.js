@@ -1,8 +1,8 @@
 // Get the modal element by its ID
-var modalResult = document.getElementById('modalResult');
+const modalResult = document.getElementById('modalResult');
 
 // Create a Bootstrap modal instance
-var modal = new bootstrap.Modal(modalResult);
+const modal = new bootstrap.Modal(modalResult);
 
 // Show the modal
 function checkWinner(num){

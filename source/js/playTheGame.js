@@ -1,11 +1,11 @@
-const sectionExplanation = document.querySelector("#sectionExplanation")
-const game = document.querySelector("#game")
+const infoSection = document.querySelector("#infoSection")
+const game = document.querySelector("#gameSection")
 const play = document.querySelector("#play")
 
 play.addEventListener("click", skipSection)
 
 function skipSection() {
-    sectionExplanation.classList.add("d-none")
+    infoSection.classList.add("d-none")
     setTimeout(() => {
         game.classList.remove("d-none")
         game.classList.remove("opacity")

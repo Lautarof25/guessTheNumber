@@ -14,17 +14,17 @@ function guess(e) {
   if (enterKey) {
     if (numbersAttemps.includes(num)) {
       messageNumberRepeat()
-    }
-    if (inputLength == digitLimit && zeroAttemps && !numbersAttemps.includes(num)) {
-      templateRow(attemps, num, checkOk(num), checkIndex(num))
+    }else if(inputLength == digitLimit && zeroAttemps){
+      addTemplateRow(attemps, num, checkOk(num), checkIndex(num))
       addNumber.play()
       numbersAttemps.push(num)
       attemps--
-      spanAttemps.innerText = attemps != 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
+      spanAttemps.textContent = attemps != 1 ? ` quedan ${attemps} intentos` 
+                                             : ` queda ${attemps} intento`
       progressBar.value = attemps
+      numberGuess.value = ""
       displayFinalMessage(num)
       checkWinner(num)
-      numberGuess.value = ""
       addCharacter(num)
       fillNumbers()
     }

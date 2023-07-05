@@ -1,4 +1,4 @@
-function templateRow(attemps, num, ok, check) {
+function addTemplateRow(attemps, num, ok, check) {
   const rowDiv = document.createElement(`div`)
   const colNum = document.createElement(`div`)
   const colOk = document.createElement(`div`)

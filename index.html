@@ -27,7 +27,7 @@
   <audio id="characterSound" src="./source/audio/characterSound.wav"></audio>
 
   <main id="main" class="container-sm">
-    <section id="sectionExplanation" class=" flex-column justify-content-center align-items-center">
+    <section id="infoSection" class=" flex-column justify-content-center align-items-center">
       <h1 id="dynamic-title" class="text-center text-warning title-shadow display-3 mb-5 text-uppercase"> </h1>
       <div class="row text-end d-flex align-items-center justify-content-center">
         <h2 class="text-center display-6">¡Bienvenid@ a "Adivina el número"!</h2>
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section id="game" class="d-none d-flex flex-column justify-content-start opacity pt-5">
+    <section id="gameSection" class="d-none d-flex flex-column justify-content-start opacity pt-5">
       <p class="text-center lead">Te <span id="spanAttemps"></span> para
         adivinar el número
       </p>
@@ -86,47 +86,6 @@
 
     </section>
   </main>
-  <!-- Modal  -->
-  <div class="modal" id="modalResult">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal content goes here -->
-        <div class="modal-header">
-          <h5 class="modal-title" id="titleModal"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>El numero es: <span id="spanModal"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rulesLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="rulesLabel">Reglas</h1>
-          <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
-            aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p><i class="bi bi-pin-fill"></i> Debes adivinar un número de 4 dígitos</p>
-          <p><i class="bi bi-pin-fill"></i> En "correctos/ok" verás cuántos has acertado.</p>
-          <p><i class="bi bi-pin-fill"></i> En "En posición/en pos" verás cuántos has ubicado.
-          </p>
-          <p><i class="bi bi-pin-fill"></i> Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="pt-5">
     <div class="list-group text-center">
       <a href="https://github.com/Lautarof25/guessTheNumber" class="list-group-item list-group-item-action"
@@ -140,8 +99,47 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Modal victory/lose -->
+  <div class="modal" id="modalResult">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="titleModal"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fs-5">El numero es: <span id="spanModal"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal info -->
+  <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rulesLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="rulesLabel">Información</h1>
+          <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><i class="bi bi-pin-fill"></i> Debes adivinar un número de 4 dígitos</p>
+          <p><i class="bi bi-pin-fill"></i> En "correctos/ok" verás cuántos has acertado.</p>
+          <p><i class="bi bi-pin-fill"></i> En "En posición/en pos" verás cuántos has ubicado.
+          </p>
+          <p><i class="bi bi-pin-fill"></i> Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./source/js/dinamicTitle.js"></script>
   <script src="./source/js/audios.js"></script>
   <script src="./source/js/backgroundWithNumbers.js"></script>
@@ -156,7 +154,6 @@
   <script src="./source/js/resetButton.js"></script>
   <script src="./source/js/displayFinalMessage.js"></script>
   <script src="./source/js/modals.js"></script>
-
 </body>
 
 </html>
