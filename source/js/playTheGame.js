@@ -14,6 +14,10 @@ function skipSection() {
             game.classList.remove("appear")
         }, 200);
     }, 200);
+    
     window.scrollTo(0, 0);
     opening.play()
+    setTimeout(() => {
+        numberGuess.focus()    
+    }, 500);
 }

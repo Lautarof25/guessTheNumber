@@ -6,7 +6,7 @@ function reset() {
   addDigitsToRandom(random)
   attempsLeft = 10
   attemps = attempsLeft
-  spanAttemps.innerText = attemps > 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
+  spanAttemps.textContent = attemps != 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
   rows.innerHTML = ""
   numbersAttemps = []
   progressBar.value = attemps
@@ -23,6 +23,11 @@ function reset() {
 function goToInput(){
   setTimeout(() => {
     numberGuess.focus()  
+  }, 500);
+}
+function goToTop(){
+  setTimeout(() => {
+    window.scrollTo(0,0)
   }, 500);
 }
 

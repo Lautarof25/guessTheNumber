@@ -1,7 +1,5 @@
-const heightRow = 40
-let currentHeightRow = 0
+let heightRow = 40
 
 function downToNewRow(){
-    currentHeightRow += heightRow
-    scrollTo(0,currentHeightRow)
+    window.scrollTo(0,heightRow+=heightRow)
 }

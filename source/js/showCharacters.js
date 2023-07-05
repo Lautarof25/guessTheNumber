@@ -1,7 +1,7 @@
 function templateCharacter(number){
   const rooting = document.createElement("div")
   rooting.setAttribute("id","rooting")
-  rooting.setAttribute("class","d-flex index-1 position-absolute bottom-0 start-50 translate-middle-x justify-content-center align-items-center opacity")
+  rooting.setAttribute("class","d-flex index-1 position-absolute bottom-25 start-50 translate-middle-x justify-content-center align-items-center opacity")
   const p = document.createElement("p")
   const img = document.createElement("img")
   const textThree = "Muy bien, estás muy cerca de conseguirlo!"
