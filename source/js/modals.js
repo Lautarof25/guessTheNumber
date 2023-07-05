@@ -16,4 +16,5 @@ function checkWinner(num){
         modal.show()
         gameOver.play()
     }
+    window.scrollTo(0, 0);
 }

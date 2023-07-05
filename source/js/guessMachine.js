@@ -1,5 +1,5 @@
 const rows = document.querySelector("#rows")
-const numberGuess = document.querySelector("#numberGuess")
+
 const progressBar = document.querySelector("#progressBar")
 let numbersAttemps = []
 numberGuess.focus()
@@ -27,6 +27,8 @@ function guess(e) {
       checkWinner(num)
       addCharacter(num)
       fillNumbers()
+      if(window.innerWidth <= 560)
+        downToNewRow()
     }
   }
 }

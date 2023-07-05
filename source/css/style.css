@@ -18,6 +18,10 @@
   z-index: 100!important;
 }
 
+.index-0 {
+  z-index: -100!important;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
