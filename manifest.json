@@ -1,0 +1,30 @@
+{
+  "background_color": "#ffffff",
+  "description": "¡Adivina el número!",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "lautarof25.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "lautarof25.github",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "games",
+    "kids"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "./source/img/character_2.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "guessNumber",
+      "url": "",
+      "description": ""
+    }
+  ]
+}
