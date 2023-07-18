@@ -4,7 +4,7 @@ const progressBar = document.querySelector("#progressBar")
 let numbersAttemps = []
 numberGuess.focus()
 
-numberGuess.addEventListener("keypress", guess)
+numberGuess.addEventListener("keyup", guess)
 
 function guess(e) {
   let inputLength = e.target.value.length;
