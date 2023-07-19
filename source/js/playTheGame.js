@@ -1,22 +1,22 @@
 const infoSection = document.querySelector("#infoSection")
-const game = document.querySelector("#gameSection")
-const play = document.querySelector("#play")
+const gameSection = document.querySelector("#gameSection")
+const playButton = document.querySelector("#playButton")
 
-play.addEventListener("click", skipSection)
+playButton.addEventListener("click", skipSection)
 
 function skipSection() {
     infoSection.classList.add("d-none")
     setTimeout(() => {
-        game.classList.remove("d-none")
-        game.classList.remove("opacity")
-        game.classList.add("appear")
+        gameSection.classList.remove("d-none")
+        gameSection.classList.remove("opacity")
+        gameSection.classList.add("appear")
         setTimeout(() => {
-            game.classList.remove("appear")
+            gameSection.classList.remove("appear")
         }, 200);
     }, 200);
     
     window.scrollTo(0, 0);
-    opening.play()
+    openingSound.play()
     setTimeout(() => {
         numberGuess.focus()    
     }, 500);

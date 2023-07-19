@@ -16,7 +16,7 @@ function reset() {
   resultDiv.classList.add("d-none")
   res.classList.remove("bg-warning", "text-white")
   res.classList.remove("bg-dark", "text-white")
-  opening.play()
+  openingSound.play()
   heightRow = 0
   fillNumbers()
 }
@@ -32,8 +32,8 @@ function goToTop(){
   }, 500);
 }
 
-document.querySelector("#infoButton").addEventListener("click", soundPopUp)
+document.querySelector("#infoButton").addEventListener("click", playPopUpSound)
 
-function soundPopUp(){
-  popUp.play()
+function playPopUpSound(){
+  popUpSound.play()
 }
