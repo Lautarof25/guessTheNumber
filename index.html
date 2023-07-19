@@ -33,7 +33,7 @@
       <h1 id="dynamic-title" class="text-center text-warning title-shadow display-3 mb-5 text-uppercase"> </h1>
       <div class="row text-end d-flex align-items-center justify-content-center">
         <h2 class="text-center display-6">¡Bienvenid@ a "Adivina el número"!</h2>
-        <img class="col-md-6 h-500 " src="./source/img/number_character.webp" alt="numberGuess character">
+        <img class="col-md-6 h-500 character_main" src="./source/img/number_character.webp" alt="numberGuess character">
         <div class="col-md-6 d-flex flex-column justify-content-around">
           <p class="text-shadow lead">Debes adivinar un número de <strong>4</strong> dígitos, por ejemplo
             <strong>0123</strong>.
@@ -59,7 +59,7 @@
       </div>
       <div class="d-flex flex-column align-items-center p-3 position-sticky sticky-top">
         <label for="numberGuess" class="form-label text-center lead">Ingrese <strong>4</strong> dígitos</label>
-        <input type="text" class="form-control text-center lead fs-4" id="numberGuess" min="0" maxlength="4" max="9999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+        <input type="number" class="form-control text-center lead fs-4" id="numberGuess" min="0" maxlength="4" max="9999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
           aria-describedby="numberGuess" autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
