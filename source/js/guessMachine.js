@@ -12,15 +12,16 @@ function guessMachine(e) {
   const enterKey = e.key === 'Enter';
   let num = e.target.value;
   if (enterKey && Number.isInteger(Number(num))) {
-    if (numbersAttemps.includes(num)) {
+    if (numbersAttemps.includes(num))
       messageNumberRepeat()
-    }else if(inputLength == digitLimit && zeroAttemps){
+    else if(inputLength == digitLimit && zeroAttemps){
       addTemplateRow(attemps, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
       numbersAttemps.push(num)
       attemps--
-      spanAttemps.textContent = attemps != 1 ? ` quedan ${attemps} intentos` 
-                                             : ` queda ${attemps} intento`
+      spanAttemps.textContent = attemps != 1 
+                                        ? ` quedan ${attemps} intentos` 
+                                        : ` queda ${attemps} intento`
       progressBar.value = attemps
       numberGuess.value = ""
       displayFinalMessage(num)
