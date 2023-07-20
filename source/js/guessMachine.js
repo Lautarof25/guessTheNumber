@@ -11,7 +11,7 @@ function guessMachine(e) {
   let inputLength = e.target.value.length;
   const enterKey = e.key === 'Enter';
   let num = e.target.value;
-  if (enterKey && !invalidChars.includes(num.toString())) {
+  if (enterKey && Number.isInteger(Number(num))) {
     if (numbersAttemps.includes(num)) {
       messageNumberRepeat()
     }else if(inputLength == digitLimit && zeroAttemps){
@@ -28,7 +28,7 @@ function guessMachine(e) {
       addCharacter(num)
       fillNumbers()
       if(window.innerWidth <= 560)
-        downToNewRow()
+        goToNewRow()
     }
   }
 }
