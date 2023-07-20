@@ -49,7 +49,7 @@ function addCharacter(num) {
       document.querySelector("#rooting").classList.remove("appearDisappear")
       document.querySelector("#rooting").remove()
     }, 5000);
-  }else if(checkOk(num) == 0){
+  }else if(checkOk(num) == 0 && attemps > 1){
     templateCharacter(0)
     document.querySelector("#rooting").classList.remove("opacity")
     document.querySelector("#rooting").classList.add("appearDisappear")

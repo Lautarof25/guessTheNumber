@@ -8,11 +8,11 @@ const modal = new bootstrap.Modal(modalResult);
 function checkWinner(num){
     document.getElementById("spanModal").textContent = randomDigit
     if(num == randomDigit){
-        document.getElementById("titleModal").textContent = "🎉 🎈 ¡Ganaste!🎈 🎉"
+        document.getElementById("titleModal").textContent = "🎉 🎈 ¡Ganaste!🎈 🎉"
         modal.show()
         winGame.play()
     }else if(num != randomDigit && attemps == 0) {
-        document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
+        document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
         gameOver.play()
     }
