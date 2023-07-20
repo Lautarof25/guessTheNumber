@@ -1,9 +1,7 @@
 document.querySelector("#resetButton").addEventListener("click", reset)
 
 function reset() {
-  random = getRandomInt(0, 9999)
-  randomDigit = addDigitsToRandom(random)
-  addDigitsToRandom(random)
+  randomDigit = getRandomInt(0, 9999).toString()
   attempsLeft = 10
   attemps = attempsLeft
   spanAttemps.textContent = attemps != 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
@@ -14,8 +12,8 @@ function reset() {
   numberGuess.disabled = false
   numberGuess.focus()
   resultDiv.classList.add("d-none")
-  res.classList.remove("bg-warning", "text-white")
-  res.classList.remove("bg-dark", "text-white")
+  res.classList.remove("bg-warning")
+  res.classList.remove("bg-dark")
   openingSound.play()
   heightRow = 0
   fillNumbers()

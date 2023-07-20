@@ -62,11 +62,12 @@
         <input type="number" class="form-control text-center lead fs-4" id="numberGuess" min="0" maxlength="4"
           max="9999" aria-describedby="numberGuess" autocomplete="off" autocorrect="off" autocapitalize="off"
           spellcheck="false"
-          step="1">
+          step="1"
+          pattern="[0-9]*" inputmode="numeric">
       </div>
 
       <div id="resultDiv" class="d-none">
-        <p id="result" class="p-2 rounded m-1 text-center lead">
+        <p id="result" class="p-2 rounded m-1 text-center lead text-white title-shadow">
         </p>
       </div>
       <div class="d-flex justify-content-center pb-2">

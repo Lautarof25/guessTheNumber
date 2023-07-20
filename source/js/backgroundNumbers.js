@@ -12,7 +12,7 @@ function fillBackground(){
   addEventListener("resize", fillNumbers)
 }
 
-let fontSize = 64;
+const fontSize = 64;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 let mainHeight = document.getElementById('main').offsetHeight;
