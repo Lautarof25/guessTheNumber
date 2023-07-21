@@ -6,7 +6,7 @@ function reset() {
   attempts = attemptsLeft
   spanAttempts.textContent = ` quedan ${attemptsLeft} intentos`
   rows.innerHTML = ""
-  numbersAttempts = []
+  arrayNumbers = []
   progressBar.value = attempts
   numberGuess.value = ""
   numberGuess.disabled = false
