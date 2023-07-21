@@ -42,11 +42,16 @@ function addCharacter(num) {
 }
 
 function characterEffect(){
+  numberGuess.classList.add("d-none")
+  numberGuess.disabled = true
   document.querySelector("#rooting").classList.remove("opacity")
   document.querySelector("#rooting").classList.add("appearDisappear")
   characterSound.play()
   setTimeout(() => {
     document.querySelector("#rooting").classList.remove("appearDisappear")
     document.querySelector("#rooting").remove()
+    numberGuess.disabled = false
+    numberGuess.classList.remove("d-none")
+    numberGuess.focus()
   }, 5000);
 }
