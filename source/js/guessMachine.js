@@ -17,7 +17,7 @@ function guessMachine(e) {
   let inputLength = e.target.value.length;
   const enterKey = e.key === 'Enter';
   let num = e.target.value;
-  if (enterKey && Number.isInteger(Number(num)) && Number(num) >= 0) {
+  if (enterKey && Number.isInteger(Number(num)) && Number(num) >= 0 && onlyDigits(num)) {
     if (arrayNumbers.includes(num))
       messageNumberRepeat()
     else if(inputLength == digitLimit && zeroAttempts){
