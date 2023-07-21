@@ -1,8 +1,8 @@
 const rows = document.querySelector("#rows")
-const zeroAttemps = attemps > 0;
+const zeroAttempts = attempts > 0;
 
 const progressBar = document.querySelector("#progressBar")
-let numbersAttemps = []
+let numbersAttempts = []
 numberGuess.focus()
 
 numberGuess.addEventListener("keyup", guessMachine)
@@ -12,17 +12,17 @@ function guessMachine(e) {
   const enterKey = e.key === 'Enter';
   let num = e.target.value;
   if (enterKey && Number.isInteger(Number(num)) && Number(num) >= 0) {
-    if (numbersAttemps.includes(num))
+    if (numbersAttempts.includes(num))
       messageNumberRepeat()
-    else if(inputLength == digitLimit && zeroAttemps){
-      addTemplateRow(attemps, num, checkOk(num), checkIndex(num))
+    else if(inputLength == digitLimit && zeroAttempts){
+      addTemplateRow(attempts, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
-      numbersAttemps.push(num)
-      attemps--
-      spanAttemps.textContent = attemps != 1 
-                                        ? ` quedan ${attemps} intentos` 
-                                        : ` queda ${attemps} intento`
-      progressBar.value = attemps
+      numbersAttempts.push(num)
+      attempts--
+      spanAttempts.textContent = attempts != 1 
+                                        ? ` quedan ${attempts} intentos` 
+                                        : ` queda ${attempts} intento`
+      progressBar.value = attempts
       numberGuess.value = ""
       displayFinalMessage(num)
       checkWinner(num)

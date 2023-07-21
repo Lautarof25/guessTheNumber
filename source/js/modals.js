@@ -11,7 +11,7 @@ function checkWinner(num){
         document.getElementById("titleModal").textContent = "🎉 🎈 ¡Ganaste!🎈 🎉"
         modal.show()
         winGame.play()
-    }else if(num != randomDigit && attemps == 0) {
+    }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
         gameOver.play()

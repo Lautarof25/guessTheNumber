@@ -1,13 +1,13 @@
 document.querySelector("#resetButton").addEventListener("click", reset)
 
 function reset() {
-  randomDigit = getRandomInt(0, 9999).toString()
-  attempsLeft = 10
-  attemps = attempsLeft
-  spanAttemps.textContent = attemps != 1 ? ` quedan ${attemps} intentos` : ` queda ${attemps} intento`
+  random = getRandomInt(0, 9999)
+  randomDigit = addDigitsToRandom(random)
+  attempts = attemptsLeft
+  spanAttempts.textContent = ` quedan ${attemptsLeft} intentos`
   rows.innerHTML = ""
-  numbersAttemps = []
-  progressBar.value = attemps
+  numbersAttempts = []
+  progressBar.value = attempts
   numberGuess.value = ""
   numberGuess.disabled = false
   numberGuess.focus()
