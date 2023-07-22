@@ -12,13 +12,13 @@ function templateCharacter(number){
     rooting.appendChild(p)
     rooting.appendChild(img)
   }else if (number == 4){
-    const textFour = "¡Solo falta acomodar los números!"
+    const textFour = "¡Solo falta ordenar los números!"
     var textP = document.createTextNode(textFour);
     img.setAttribute("src","./source/img/character_2.webp")
     rooting.appendChild(img)
     rooting.appendChild(p)
   }else {
-    const textZero = "¡No importa, sigue adelante!"
+    const textZero = "¡Sigue adelante!"
     var textP = document.createTextNode(textZero);
     img.setAttribute("src","./source/img/character_2.webp")
     rooting.appendChild(img)
