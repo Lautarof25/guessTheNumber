@@ -54,5 +54,6 @@ function characterEffect(){
     numberGuess.disabled = false
     numberGuess.classList.remove("d-none")
     numberGuess.focus()
+    goToNewRow()
   }, 5000);
 }
