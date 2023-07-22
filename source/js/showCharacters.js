@@ -5,38 +5,39 @@ function templateCharacter(number){
   const p = document.createElement("p")
   const img = document.createElement("img")
   p.setAttribute('class', `bubble speech text-end bg-white rounded p-2 shadow `)
-  if(number == 3){
-    const textThree = "Muy bien, estás muy cerca de conseguirlo!"
-    var textP = document.createTextNode(textThree);
-    img.setAttribute("src","./source/img/character_1.webp")
-    rooting.appendChild(p)
-    rooting.appendChild(img)
-  }else if (number == 4){
+  if(number == 4){
     const textFour = "¡Solo falta ordenar los números!"
     var textP = document.createTextNode(textFour);
     img.setAttribute("src","./source/img/character_2.webp")
     rooting.appendChild(img)
     rooting.appendChild(p)
-  }else {
-    const textZero = "¡Sigue adelante!"
-    var textP = document.createTextNode(textZero);
-    img.setAttribute("src","./source/img/character_2.webp")
-    rooting.appendChild(img)
+  }else{
+    if(number == 3) {
+      var textThree = "Muy bien, estás muy cerca de conseguirlo!"
+      var textP = document.createTextNode(textThree);
+    }
+    else{
+      var textZero = "¡Sigue adelante!"
+      var textP = document.createTextNode(textZero);
+    } 
+    img.setAttribute("src","./source/img/character_1.webp")
     rooting.appendChild(p)
+    rooting.appendChild(img)
   }
   p.appendChild(textP)
   document.querySelector("#rows").appendChild(rooting)
 }
 
 function addCharacter(num) {
+  const numbersOks = checkOk(num)
   if (checkOk(num) == digitLimit - 1 && attempts > 1) {
-    templateCharacter(3)
+    templateCharacter(numbersOks)
     characterEffect()
   } else if (checkOk(num) == digitLimit && checkIndex(num) <= digitLimit-1 && attempts > 1) {
-    templateCharacter(4)
+    templateCharacter(numbersOks)
     characterEffect()
   }else if(checkOk(num) == 0 && attempts > 1){
-    templateCharacter(0)
+    templateCharacter(numbersOks)
     characterEffect()
   }
 }
