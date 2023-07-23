@@ -5,7 +5,8 @@ function reset() {
   randomDigit = addDigitsToRandom(random)
   attempts = attemptsLeft
   spanAttempts.textContent = ` quedan ${attemptsLeft} intentos`
-  rows.innerHTML = ""
+  while(rows.firstChild)
+    rows.firstChild.remove()
   arrayNumbers = []
   progressBar.value = attempts
   numberGuess.value = ""
@@ -15,7 +16,6 @@ function reset() {
   res.classList.remove("bg-warning")
   res.classList.remove("bg-dark")
   openingSound.play()
-  heightRow = 0
   fillNumbers()
 }
 
