@@ -1,11 +1,6 @@
-const rows = document.querySelector("#rows")
 const zeroAttempts = attempts > 0;
-
-const progressBar = document.querySelector("#progressBar")
 let arrayNumbers = []
 numberGuess.focus()
-
-numberGuess.addEventListener("keyup", guessMachine)
 
 function spanTextAttemps(attempts){
   return attempts == 1 

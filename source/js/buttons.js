@@ -1,5 +1,3 @@
-document.querySelector("#resetButton").addEventListener("click", reset)
-
 function reset() {
   random = getRandomInt(0, 9999)
   randomDigit = addDigitsToRandom(random)
@@ -34,17 +32,9 @@ function goToTop(){
   }, 500);
 }
 
-document.querySelector("#infoButton").addEventListener("click", playPopUpSound)
-
 function playPopUpSound(){
   popUpSound.play()
 }
-
-const infoSection = document.querySelector("#infoSection")
-const gameSection = document.querySelector("#gameSection")
-const playButton = document.querySelector("#playButton")
-
-playButton.addEventListener("click", skipSection)
 
 function skipSection() {
     infoSection.classList.add("d-none")

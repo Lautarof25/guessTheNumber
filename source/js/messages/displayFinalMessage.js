@@ -1,6 +1,3 @@
-const resultDiv = document.querySelector("#resultDiv")
-const res = document.querySelector("#result")
-
 function displayFinalMessage(num) {
   if (randomDigit == num) {
     resultDiv.classList.remove("d-none")

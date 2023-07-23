@@ -1,6 +1,3 @@
-// Get the modal element by its ID
-const modalResult = document.getElementById('modalResult');
-
 // Create a Bootstrap modal instance
 const modal = new bootstrap.Modal(modalResult);
 

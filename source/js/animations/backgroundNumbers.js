@@ -1,5 +1,3 @@
-const background = document.querySelector("#backgroundNumbers")
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
