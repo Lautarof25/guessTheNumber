@@ -14,3 +14,7 @@ const btnradio1 = document.querySelector("#btnradio1")
 const btnradio2 = document.querySelector("#btnradio2")
 const btnradio3 = document.querySelector("#btnradio3")
 const winnerText = document.querySelector("#winnerText")
+
+const spanWin = document.querySelector("#spanWin")
+const spanLose = document.querySelector("#spanLose")
+const spanTotal = document.querySelector("#spanTotal")

@@ -9,11 +9,22 @@ function checkWinner(num){
         modal.show()
         winGame.play()
         radioDiv.classList.remove("d-none");
-        winnerText.classList.remove("d-none");
+        winCounts++
+        totalCounts++
+        spanWin.textContent = winCounts
+        spanTotal.textContent = totalCounts
+        if(winCounts == 1) winnerText.classList.remove("d-none")
+        else winnerText.classList.add("d-none")
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
         gameOver.play()
+        winnerText.classList.add("d-none");
+        loseCounts++
+        totalCounts++
+        spanTotal.textContent = totalCounts
+        spanLose.textContent = loseCounts
     }
     window.scrollTo(0, 0);
+    drawChart()
 }
