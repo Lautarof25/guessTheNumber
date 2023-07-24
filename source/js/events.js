@@ -1,5 +1,6 @@
 numberGuess.addEventListener("keyup", guessMachine)
 resetButton.addEventListener("click", reset)
 infoButton.addEventListener("click", playPopUpSound)
+statsButton.addEventListener("click", playPopUpSound)
 playButton.addEventListener("click", skipSection)
 radioDiv.addEventListener("change",radioDivClick)

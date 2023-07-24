@@ -57,7 +57,7 @@
         </p>
       </div>
 
-      <div class="d-flex justify-content-center pb-1">
+      <div class="d-flex justify-content-center pb-1 gap-5">
         <button id="infoButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
           <i class="bi bi-card-text"></i>
         </button>
@@ -144,16 +144,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="rulesLabel">Información</h1>
+          <h1 class="modal-title fs-5" id="rulesLabel">ℹ️ Información</h1>
           <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
             aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p><i class="bi bi-pin-fill"></i> Debes adivinar un número de 4 dígitos</p>
-          <p><i class="bi bi-pin-fill"></i> En "correctos/ok" verás cuántos has acertado.</p>
-          <p><i class="bi bi-pin-fill"></i> En "En posición/en pos" verás cuántos has ubicado.
-          </p>
-          <p><i class="bi bi-pin-fill"></i> Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
+          <p>📌 Debes adivinar un número de 4 dígitos</p>
+          <p>📌 En "correctos/ok" verás cuántos has acertado.</p>
+          <p>📌 En "En posición/en pos" verás cuántos has ubicado.</p>
+          <p>📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
         </div>
         <div class="modal-footer">
           <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
@@ -166,14 +165,14 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="statsLabel">Estadísticas</h1>
+          <h1 class="modal-title fs-5" id="statsLabel">📊 Estadísticas</h1>
           <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
             aria-label="Close"></button>
         </div>
         <div class="modal-body">  
-          <p><i class="bi bi-pin-fill"></i> Ganados: <span id="spanWin">0</span></p>
-          <p><i class="bi bi-pin-fill"></i> Perdidos: <span id="spanLose">0</span></p>
-          <p><i class="bi bi-pin-fill"></i> Total: <span id="spanTotal">0</span></p>
+          <p>🥇 Ganados: <span id="spanWin">0</span></p>
+          <p>❌ Perdidos: <span id="spanLose">0</span></p>
+          <p>🏁 Total: <span id="spanTotal">0</span></p>
         </div>
         <div id='myStats' style="max-width:700px"><!-- Plotly chart will be drawn inside this DIV --></div>
         <div class="modal-footer">
