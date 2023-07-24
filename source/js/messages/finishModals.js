@@ -9,6 +9,7 @@ function checkWinner(num){
         modal.show()
         winGame.play()
         radioDiv.classList.remove("d-none");
+        winnerText.classList.remove("d-none");
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()

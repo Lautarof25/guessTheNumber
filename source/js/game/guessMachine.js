@@ -29,7 +29,7 @@ function guessMachine(e) {
       if(window.innerWidth <= 560)
         goToNewRow()
     }
-    if(attempts == 1){
+    if(attempts == 1 && !arrayNumbers.includes(num)){
       messageLastAttempt()
     }
   }

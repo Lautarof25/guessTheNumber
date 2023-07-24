@@ -59,7 +59,8 @@
         <button id="infoButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
           <i class="bi bi-card-text"></i>
         </button>
-        <button type="button" class="btn btn-warning" id="resetButton"><i class="bi bi-arrow-clockwise"></i></button>
+        <button id="resetButton" type="button" class="btn btn-warning" ><i class="bi bi-arrow-clockwise"></i></button>
+        <button id="statsButton" type="button" class="btn btn-warning" ><i class="bi bi-graph-up"></i></button>
       </div>
 
       <div class="d-flex justify-content-center">
@@ -128,6 +129,7 @@
         </div>
         <div class="modal-body">
           <p class="fs-5">El numero es: <span id="spanModal"></span></p>
+          <p id="winnerText" class="fs-5 d-none"><strong>Ahora tienes más opciones para adivinar un número</strong></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" onclick="goToTop()" data-bs-dismiss="modal">Cerrar</button>
@@ -150,6 +152,24 @@
           <p><i class="bi bi-pin-fill"></i> En "En posición/en pos" verás cuántos has ubicado.
           </p>
           <p><i class="bi bi-pin-fill"></i> Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal stats -->
+  <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rulesLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="rulesLabel">Estadísticas</h1>
+          <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+          
         </div>
         <div class="modal-footer">
           <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
