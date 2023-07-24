@@ -6,4 +6,5 @@ const gameSection = document.querySelector("#gameSection")
 const playButton = document.querySelector("#playButton")
 const resultDiv = document.querySelector("#resultDiv")
 const res = document.querySelector("#result")
-const modalResult = document.getElementById('modalResult');
+const modalResult = document.querySelector('#modalResult')
+const btnradio1 = document.querySelector("#btnradio1")

@@ -8,10 +8,12 @@ function checkWinner(num){
         document.getElementById("titleModal").textContent = "🎉 🎈 ¡Ganaste!🎈 🎉"
         modal.show()
         winGame.play()
+        gamesWinnings++
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
         gameOver.play()
+        gamesLost++
     }
     window.scrollTo(0, 0);
 }

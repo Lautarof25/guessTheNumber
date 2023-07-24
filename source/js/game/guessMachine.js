@@ -1,4 +1,3 @@
-const zeroAttempts = attempts > 0;
 let arrayNumbers = []
 numberGuess.focus()
 
@@ -15,7 +14,7 @@ function guessMachine(e) {
   if (enterKey && onlyDigits(num)) {
     if (arrayNumbers.includes(num))
       messageNumberRepeat()
-    else if(inputLength == digitLimit && zeroAttempts){
+    else if(inputLength == digitLimit &&  attempts > 0){
       addTemplateRow(attempts, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
       arrayNumbers.push(num)

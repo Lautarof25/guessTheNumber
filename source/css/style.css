@@ -64,6 +64,19 @@ img {
   -webkit-filter: brightness(.8);
 }
 
+.btn-outline-warning{
+  border: 2px solid var(--orange) !important;
+  color: black;
+}
+.btn-outline-warning:hover{
+  color: white !important;
+}
+
+.btn-check:checked+.btn{
+  background: var(--orange)!important;
+  color: white;
+}
+
 .btn:focus,
 input:focus {
   outline: none;
