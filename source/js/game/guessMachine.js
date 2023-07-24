@@ -29,5 +29,8 @@ function guessMachine(e) {
       if(window.innerWidth <= 560)
         goToNewRow()
     }
+    if(attempts == 1){
+      messageLastAttempt()
+    }
   }
 }
