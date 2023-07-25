@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@900&display=swap');
+
 :root {
   --orange: #fb441c;
+}
+
+.font-Title {
+  font-family: 'Tektur', cursive;
 }
 
 .text-shadow{
