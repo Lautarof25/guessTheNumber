@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "lautarof25.github",
-  "start_url": "/",
+  "start_url": "/guessTheNumber/",
   "theme_color": "#ffffff",
   "categories": [
     "games",
