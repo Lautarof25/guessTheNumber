@@ -20,3 +20,10 @@ const spanWin = document.querySelector("#spanWin")
 const spanLose = document.querySelector("#spanLose")
 const spanTotal = document.querySelector("#spanTotal")
 const statsTable = document.querySelector("#statsTable")
+
+winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
+loseCounts = localStorage.getItem("lost") === "" ? 0 : Number(localStorage.getItem("lost"))
+if(winCounts == 1) radioDiv.classList.remove("d-none")
+setTimeout(() => {
+    statsFunction()  
+}, 2000);

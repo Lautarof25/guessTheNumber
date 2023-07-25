@@ -1,6 +1,6 @@
-let sessionWin = spanWin
-let sessionLose = spanLose
-let sessionTotal = spanTotal
+let winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
+let loseCounts = localStorage.getItem("lost") === "" ? 0 : Number(localStorage.getItem("lost"))
+let totalCounts = localStorage.getItem("total") === "" ? 0 : Number(localStorage.getItem("total"))
 
 // let sessionWinContent = statsTable.childNodes[1].childNodes[1].textContent
 // let sessionLoseContent = statsTable.childNodes[3].childNodes[1].textContent
@@ -41,18 +41,15 @@ if(localStorage.getItem("total")){
 
 
 function changeText(){
-    localStorage.setItem("win", spanWin.textContent)
-    console.log("Evento win escuchado");
+    localStorage.setItem("win", winCounts)
 }
 
 function changeTextLose(){
-    localStorage.setItem("lose", spanLose.textContent)
-    console.log("Evento lose escuchado");
+    localStorage.setItem("lose", loseCounts)
 }
 
 function changeTextTotal(){
-    localStorage.setItem("total", spanTotal.textContent)
-    console.log("Evento total escuchado");
+    localStorage.setItem("total", totalCounts)
 }
 
 spanWin.addEventListener("DOMCharacterDataModified",changeText)
