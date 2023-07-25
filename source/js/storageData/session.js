@@ -1,5 +1,5 @@
 let winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
-let loseCounts = localStorage.getItem("lost") === "" ? 0 : Number(localStorage.getItem("lost"))
+let loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))
 let totalCounts = localStorage.getItem("total") === "" ? 0 : Number(localStorage.getItem("total"))
 
 // let sessionWinContent = statsTable.childNodes[1].childNodes[1].textContent
