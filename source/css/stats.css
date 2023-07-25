@@ -1,0 +1,9 @@
+#myStats div, svg{
+    width: 100%!important; 
+    margin: 0 auto; 
+}
+
+rect {
+    width: 100%!important;
+    margin: 0 auto;
+}

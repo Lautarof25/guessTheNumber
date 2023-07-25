@@ -1,5 +1,6 @@
 let arrayNumbers = []
 numberGuess.focus()
+let lastAttempt = true
 
 function spanTextAttemps(attempts){
   return attempts == 1 
@@ -29,8 +30,9 @@ function guessMachine(e) {
       if(window.innerWidth <= 560)
         goToNewRow()
     }
-    if(attempts == 1 && !arrayNumbers.includes(num)){
+    if(attempts == 1 && lastAttempt){
       messageLastAttempt()
+      lastAttempt = false
     }
   }
 }

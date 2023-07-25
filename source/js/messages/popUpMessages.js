@@ -26,7 +26,7 @@ function messageLastAttempt() {
   // Muestra mensaje de numero repetido
   numberGuess.disabled = true
   const messageRepeat = document.createElement("div")
-  messageRepeat.setAttribute("class", "opacity index-1 position-fixed start-50 top-50 translate-middle p-2")
+  messageRepeat.setAttribute("class", "opacity index-1 position-fixed top-0 start-50 translate-middle-x p-2")
   const p = document.createElement("p")
   p.setAttribute("class", "bg-warning shadow hithere rounded mt-2 p-2 display-6 text-center")
   const messageP = document.createTextNode("¡Último intento!");
