@@ -30,7 +30,7 @@ function guessMachine(e) {
       if(window.innerWidth <= 560)
         goToNewRow()
     }
-    if(attempts == 1 && lastAttempt){
+    if(attempts == 1 && lastAttempt && num != randomDigit){
       messageLastAttempt()
       lastAttempt = false
     }

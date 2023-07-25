@@ -26,4 +26,4 @@ function loadPieChart() {
 }
 loadPieChart()
 
-window.onbeforeunload = loadPieChart;
+// window.onbeforeunload = loadPieChart;

@@ -39,6 +39,7 @@ function reset() {
   res.classList.remove("bg-dark")
   openingSound.play()
   fillNumbers()
+  lastAttempt = true
 }
 
 function cleanRows() {
