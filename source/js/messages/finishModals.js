@@ -15,6 +15,11 @@ function checkWinner(num){
         spanTotal.textContent = totalCounts
         if(winCounts == 1) winnerText.classList.remove("d-none")
         else winnerText.classList.add("d-none")
+
+        changeText()
+        changeTextLose()
+        changeTextTotal()
+        drawChart()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
@@ -24,7 +29,12 @@ function checkWinner(num){
         totalCounts++
         spanTotal.textContent = totalCounts
         spanLose.textContent = loseCounts
+
+        changeText()
+        changeTextLose()
+        changeTextTotal()
+        drawChart()
     }
     window.scrollTo(0, 0);
-    drawChart()
+    
 }
