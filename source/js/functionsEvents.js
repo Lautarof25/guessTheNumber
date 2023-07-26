@@ -2,24 +2,21 @@ function radioDivClick() {
   if (btnradio1.checked) {
     reset()
     attemptsLeft = 5;
-    attempts = attemptsLeft
-    progressBar.value = attempts
-    progressBar.max = attempts
-    document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`
+    attempsTemplate();
   } else if (btnradio2.checked) {
     reset()
     attemptsLeft = 10;
-    attempts = attemptsLeft
-    progressBar.value = attempts
-    progressBar.max = attempts
-    document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`
+    attempsTemplate();
   } else if (btnradio3.checked) {
     reset()
     attemptsLeft = 99;
-    attempts = attemptsLeft
-    progressBar.value = attempts
-    progressBar.max = attempts
-    document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`
+    attempsTemplate();
+  }
+  function attempsTemplate() {
+    attempts = attemptsLeft;
+    progressBar.value = attempts;
+    progressBar.max = attempts;
+    document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`;
   }
 }
 

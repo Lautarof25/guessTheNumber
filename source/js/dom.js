@@ -23,4 +23,4 @@ const statsTable = document.querySelector("#statsTable")
 
 winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
 loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))
-if(winCounts == 1) radioDiv.classList.remove("d-none")
+if(winCounts >= 1) radioDiv.classList.remove("d-none")
