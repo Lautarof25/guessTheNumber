@@ -2,6 +2,7 @@
 
 :root {
   --orange: #fb441c;
+  --gray: 
 }
 
 .font-Title {
@@ -58,6 +59,10 @@ img {
   object-fit: cover;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
+}
+
+#rows .row:nth-child(even){
+  background-color: rgba(var(--bs-secondary-bg-rgb),var(--bs-bg-opacity))!important;
 }
 
 .bg-warning,

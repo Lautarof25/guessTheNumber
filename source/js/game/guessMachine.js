@@ -8,13 +8,17 @@ function spanTextAttemps(attempts){
   : ` quedan ${attempts} intentos`
 }
 
+function getInputValue(e) {
+  return e.target.value;
+}
+
 function guessMachine(e) {
-  let inputLength = e.target.value.length;
+  let inputLength = getInputValue(e).length;
   const enterKey = e.key === 'Enter';
-  let num = e.target.value;
+  let num = getInputValue(e);
   if (enterKey && onlyDigits(num)) {
     if (arrayNumbers.includes(num))
-      messageNumberRepeat()
+      popUpMessage(1)
     else if(inputLength == digitLimit &&  attempts > 0){
       addTemplateRow(attempts, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
@@ -31,7 +35,7 @@ function guessMachine(e) {
         goToNewRow()
     }
     if(attempts == 1 && lastAttempt && num != randomDigit){
-      messageLastAttempt()
+      popUpMessage(0)
       lastAttempt = false
     }
   }
