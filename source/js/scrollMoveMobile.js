@@ -1,8 +1,6 @@
 function goToNewRow() {
-    const numberGuessElement = document.getElementById("numberGuess");
-
-    if (numberGuessElement) {
+    if (numberGuess) {
       // Scroll to the element
-      numberGuessElement.scrollIntoView({ behavior: "smooth" });
+      numberGuess.scrollIntoView({ behavior: "smooth" });
     }
 }

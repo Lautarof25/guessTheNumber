@@ -30,7 +30,7 @@
   <audio id="popUp" src="./source/audio/popUp.wav"></audio>
   <audio id="characterSound" src="./source/audio/characterSound.wav"></audio>
 
-  <main id="main" class="container-sm">
+  <main id="main" class="container-xl">
     <section id="infoSection" class=" flex-column justify-content-center align-items-center">
       <h1 id="dynamic-title" class="text-center text-warning title-shadow display-3 mb-5 text-uppercase font-Title"> </h1>
       <div class="row text-end d-flex align-items-center justify-content-center">
@@ -50,7 +50,7 @@
       </div>
     </section>
 
-    <section id="gameSection" class="d-none d-flex flex-column justify-content-start opacity pt-5">
+    <section id="gameSection" class="d-none d-flex flex-column justify-content-start opacity pt-5 container">
       <div>
         <p class="text-center lead">Te <span id="spanAttempts"></span> para
           adivinar el número
@@ -126,7 +126,7 @@
       <div class="modal-content shadow">
         <div class="modal-header">
           <h5 class="modal-title" id="titleModal"></h5>
-          <button type="button" class="btn-close" onclick="goToTop()" data-bs-dismiss="modal"
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
             aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -134,7 +134,7 @@
           <p id="winnerText" class="fs-5 d-none"><strong>Ahora tienes más opciones para adivinar un número</strong></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="goToTop()" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@
       <div class="modal-content shadow">
         <div class="modal-header bg-warning">
           <h1 class="modal-title fs-5" id="rulesLabel">ℹ️ Información</h1>
-          <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
             aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -155,7 +155,7 @@
           <p>📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@
       <div class="modal-content shadow">
         <div class="modal-header bg-warning">
           <h1 class="modal-title fs-5" id="statsLabel">📊 Estadísticas</h1>
-          <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
             aria-label="Close"></button>
         </div>
         <div id="statsTable" class="modal-body">  
@@ -176,7 +176,7 @@
         </div>
         <div id='myStats' style="max-width:700px"><!-- Plotly chart will be drawn inside this DIV --></div>
         <div class="modal-footer">
-          <button type="button" onclick="goToInput()" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
