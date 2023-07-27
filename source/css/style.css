@@ -61,7 +61,9 @@ img {
   filter: drop-shadow(5px 5px 5px #222);
 }
 
-
+.container-sm {
+  max-width: 672px!important;
+}
 
 #rows .row:nth-child(even){
   background-color: rgba(var(--bs-secondary-bg-rgb),var(--bs-bg-opacity))!important;
