@@ -1,5 +1,8 @@
 function goToNewRow() {
-    const rect = numberGuess.getBoundingClientRect()
-    const y = rect.y + window.scrollY;
-    setTimeout(window.scrollTo(0, y),100)
+    const numberGuessElement = document.getElementById("numberGuess");
+
+    if (numberGuessElement) {
+      // Scroll to the element
+      numberGuessElement.scrollIntoView({ behavior: "smooth" });
+    }
 }

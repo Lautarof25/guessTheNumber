@@ -1,42 +1,50 @@
 function templateCharacter(number) {
-  const rooting = document.createElement("div")
-  rooting.setAttribute("id", "rooting")
-  rooting.setAttribute("class", "d-flex index-1 position-absolute bottom-25 start-50 translate-middle-x justify-content-center align-items-center opacity")
-  const p = document.createElement("p")
-  const img = document.createElement("img")
-  p.setAttribute('class', `bubble speech text-end bg-white rounded p-2 shadow `)
+  const rooting = document.createElement("div");
+  rooting.setAttribute("id", "rooting");
+  rooting.setAttribute("class", "d-flex index-1 position-absolute bottom-25 start-50 translate-middle-x justify-content-center align-items-center opacity");
+
+  const p = document.createElement("p");
+  p.setAttribute('class', `bubble speech text-end bg-white rounded p-2 shadow`);
+
+  let text;
+  let imgSrc;
+
   if (number == 4) {
-    const textFour = "¡Solo falta ordenar los números!"
-    var textP = document.createTextNode(textFour);
-    img.setAttribute("src", "./source/img/character_2.webp")
-    rooting.appendChild(img)
-    rooting.appendChild(p)
+    imgSrc = "./source/img/character_2.webp";
+    text = "¡Solo falta ordenar los números!";
+  } else if (number == 3) {
+    text = "Muy bien, estás muy cerca de conseguirlo!";
+    imgSrc = "./source/img/character_1.webp";
   } else {
-    if (number == 3) {
-      var textThree = "Muy bien, estás muy cerca de conseguirlo!"
-      var textP = document.createTextNode(textThree);
-    }
-    else {
-      var textZero = "¡Sigue adelante!"
-      var textP = document.createTextNode(textZero);
-    }
-    img.setAttribute("src", "./source/img/character_1.webp")
-    rooting.appendChild(p)
-    rooting.appendChild(img)
+    imgSrc = "./source/img/character_1.webp";
+    text = "¡Sigue adelante!";
   }
-  p.appendChild(textP)
-  document.querySelector("#rows").appendChild(rooting)
-  characterEffect()
+
+  const textP = document.createTextNode(text);
+  const img = document.createElement("img");
+  img.setAttribute("src", imgSrc);
+  if (number == 4) {
+    rooting.appendChild(img);
+    rooting.appendChild(p);
+  } else {
+    rooting.appendChild(p);
+    rooting.appendChild(img);
+  }
+  p.appendChild(textP);
+
+  document.querySelector("#rows").appendChild(rooting);
+  characterEffect();
 }
+
 
 function addCharacter(num) {
   const numbersOks = checkOk(num)
-  if(attempts > 1){
-    if(numbersOks == digitLimit && checkIndex(num)<= digitLimit - 2)
+  if (attempts > 1) {
+    if (numbersOks == digitLimit && checkIndex(num) <= digitLimit - 2)
       templateCharacter(numbersOks)
-    else if(numbersOks == digitLimit - 1)
+    else if (numbersOks == digitLimit - 1)
       templateCharacter(numbersOks)
-    else if(numbersOks == 0)
+    else if (numbersOks == 0)
       templateCharacter(numbersOks)
   }
 }
@@ -44,15 +52,18 @@ function addCharacter(num) {
 function characterEffect() {
   numberGuess.classList.add("d-none")
   numberGuess.disabled = true
-  document.querySelector("#rooting").classList.remove("opacity")
-  document.querySelector("#rooting").classList.add("appearDisappear")
-  characterSound.play()
+  
+  const rooting = document.querySelector("#rooting");
+  rooting.classList.remove("opacity");
+  rooting.classList.add("appearDisappear");
+  characterSound.play();
+
   setTimeout(() => {
-    document.querySelector("#rooting").classList.remove("appearDisappear")
-    document.querySelector("#rooting").remove()
-    numberGuess.disabled = false
-    numberGuess.classList.remove("d-none")
-    numberGuess.focus()
-    goToNewRow()
+    rooting.classList.remove("appearDisappear");
+    rooting.remove();
+    numberGuess.disabled = false;
+    numberGuess.classList.remove("d-none");
+    numberGuess.focus();
+    goToNewRow();
   }, 5000);
 }

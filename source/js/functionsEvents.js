@@ -1,24 +1,26 @@
-function radioDivClick() {
-  if (btnradio1.checked) {
-    reset()
-    attemptsLeft = 5;
-    attempsTemplate();
-  } else if (btnradio2.checked) {
-    reset()
-    attemptsLeft = 10;
-    attempsTemplate();
-  } else if (btnradio3.checked) {
-    reset()
-    attemptsLeft = 99;
-    attempsTemplate();
-  }
-  function attempsTemplate() {
-    attempts = attemptsLeft;
-    progressBar.value = attempts;
-    progressBar.max = attempts;
-    document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`;
+const radioAttemptsMap = {
+  btnradio1: 5,
+  btnradio2: 10,
+  btnradio3: 99,
+};
+
+function handleRadioButtonChange() {
+  const selectedRadioBtn = document.querySelector('input[name="attempts"]:checked');
+  
+  if (selectedRadioBtn) {
+    const attemptsLeft = radioAttemptsMap[selectedRadioBtn.id];
+    reset();
+    updateAttempts(attemptsLeft);
   }
 }
+
+function updateAttempts(attemptsLeft) {
+  attempts = attemptsLeft;
+  progressBar.value = attempts;
+  progressBar.max = attempts;
+  document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`;
+}
+
 
 function reset() {
   random = getRandomInt(0, 9999)
