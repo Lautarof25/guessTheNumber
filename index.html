@@ -93,14 +93,14 @@
       </div>
 
       <div class="pb-2">
-        <div class="row bg-warning text-center lead bold">
+        <div class="row bg-warning text-center lead bold rounded">
           <div class="col-6 border">Numero</div>
           <div class="col-3 border d-none d-sm-block">Correctos</div>
           <div class="col-3 border d-block d-sm-none">Ok</div>
           <div class="col-3 border d-none d-sm-block">En Posicion</div>
           <div class="col-3 border d-block d-sm-none">En Pos</div>
         </div>
-        <div id="rows" class="lead">
+        <div id="rows" class="lead shadow">
           
         </div>
       </div>
@@ -123,7 +123,7 @@
   <!-- Modal victory/lose -->
   <div class="modal" id="modalResult">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content shadow">
         <div class="modal-header">
           <h5 class="modal-title" id="titleModal"></h5>
           <button type="button" class="btn-close" onclick="goToTop()" data-bs-dismiss="modal"
@@ -142,8 +142,8 @@
   <!-- Modal info -->
   <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rulesLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content shadow">
+        <div class="modal-header bg-warning">
           <h1 class="modal-title fs-5" id="rulesLabel">ℹ️ Información</h1>
           <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
             aria-label="Close"></button>
@@ -163,8 +163,8 @@
   <!-- Modal stats -->
   <div class="modal fade" id="stats" tabindex="-1" aria-labelledby="statsLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content shadow">
+        <div class="modal-header bg-warning">
           <h1 class="modal-title fs-5" id="statsLabel">📊 Estadísticas</h1>
           <button type="button" class="btn-close" onclick="goToInput()" data-bs-dismiss="modal"
             aria-label="Close"></button>

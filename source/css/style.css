@@ -2,7 +2,7 @@
 
 :root {
   --orange: #fb441c;
-  --gray: 
+  --gray: lightgray;
 }
 
 .font-Title {
@@ -60,6 +60,8 @@ img {
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 }
+
+
 
 #rows .row:nth-child(even){
   background-color: rgba(var(--bs-secondary-bg-rgb),var(--bs-bg-opacity))!important;

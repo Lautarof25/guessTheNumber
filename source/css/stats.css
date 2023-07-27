@@ -1,9 +1,19 @@
-#myStats div, svg{
-    width: 100%!important; 
-    margin: 0 auto; 
+#myStats > div > div:nth-child(1),
+#myStats > div > div:nth-child(1) > div > svg > rect,
+#myStats > div > div:nth-child(1) > div,
+#myStats > div > div:nth-child(1) > div > svg{
+    width: 100%!important;
 }
 
-rect {
-    width: 100%!important;
-    margin: 0 auto;
+#myStats>div>div:nth-child(1)>div>svg>g:nth-child(6)>path,
+#myStats>div>div:nth-child(1)>div>svg>g:nth-child(4)>g:nth-child(2)>circle{
+    fill: var(--orange);   
+}
+#myStats > div > div:nth-child(1) > div > svg > g:nth-child(6) > text{
+    text-anchor: end !important;
+}
+
+#myStats>div>div:nth-child(1)>div>svg>g:nth-child(5)>path,
+#myStats>div>div:nth-child(1)>div>svg>g:nth-child(4)>g:nth-child(3)>circle{
+    fill: var(--gray);
 }
