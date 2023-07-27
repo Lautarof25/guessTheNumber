@@ -1,7 +1,7 @@
 function templateCharacter(number) {
   const rooting = document.createElement("div");
   rooting.setAttribute("id", "rooting");
-  rooting.setAttribute("class", "d-flex index-1 position-fixed bottom-0 start-50 translate-middle-x justify-content-center align-items-center opacity");
+  rooting.setAttribute("class", "d-flex index-1 position-absolute top-50 start-50 translate-middle-x justify-content-center align-items-center opacity");
 
   const p = document.createElement("p");
   p.setAttribute('class', `bubble speech text-end bg-white rounded p-2 shadow`);

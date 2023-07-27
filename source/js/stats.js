@@ -3,8 +3,6 @@ function loadPieChart() {
     setTimeout(() => {
       google.charts.load('current', { packages: ['corechart'] });
       google.charts.setOnLoadCallback(drawChart);
-      winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
-      loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))
       function drawChart() {
         const data = google.visualization.arrayToDataTable([
           ['Partidos', 'Total'],

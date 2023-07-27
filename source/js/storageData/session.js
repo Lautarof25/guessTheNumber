@@ -1,16 +1,19 @@
-let winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
-let loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))
-let totalCounts = localStorage.getItem("total") === "" ? 0 : Number(localStorage.getItem("total"))
+const getValueFromLocalStorage = (key) => {
+    const value = localStorage.getItem(key);
+    return value === null || isNaN(Number(value)) ? 0 : Number(value);
+};  
 
-if (localStorage.getItem("win")) {
-    spanWin.textContent += Number(localStorage.getItem("win"))
-}
-if (localStorage.getItem("lose")) {
-    spanLose.textContent += Number(localStorage.getItem("lose"))
-}
-if (localStorage.getItem("total")) {
-    spanTotal.textContent += Number(localStorage.getItem("total"))
-}
+const updateElementText = (element, value) => {
+    element.textContent = value.toString();
+};
+
+let winCounts = getValueFromLocalStorage("win");
+let loseCounts = getValueFromLocalStorage("lose");
+let totalCounts = getValueFromLocalStorage("total");
+
+updateElementText(spanWin, winCounts);
+updateElementText(spanLose, loseCounts);
+updateElementText(spanTotal, totalCounts);
 
 const observer = new MutationObserver(() => {
     localStorage.setItem("win", winCounts)
