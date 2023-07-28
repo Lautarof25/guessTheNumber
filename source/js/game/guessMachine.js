@@ -3,7 +3,7 @@ numberGuess.focus()
 let lastAttempt = true
 
 function spanTextAttemps(attempts){
-  return attempts == 1 
+  return attempts === 1 
   ? ` queda ${attempts} intento` 
   : ` quedan ${attempts} intentos`
 }
@@ -18,8 +18,8 @@ function guessMachine(e) {
   let num = getInputValue(e);
   if (enterKey && onlyDigits(num)) {
     if (arrayNumbers.includes(num))
-      popUpMessage(1)
-    else if(inputLength == digitLimit &&  attempts > 0){
+      popUpMessage("repeat")
+    else if(inputLength === digitLimit &&  attempts > 0){
       addTemplateRow(attempts, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
       arrayNumbers.push(num)
@@ -34,8 +34,8 @@ function guessMachine(e) {
       if(window.innerWidth <= 560)
         goToNewRow()
     }
-    if(attempts == 1 && lastAttempt && num != randomDigit){
-      popUpMessage(0)
+    if(attempts === 1 && lastAttempt && num != randomDigit){
+      popUpMessage("last attempt")
       lastAttempt = false
     }
   }

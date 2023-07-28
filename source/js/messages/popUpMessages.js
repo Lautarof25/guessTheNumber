@@ -1,6 +1,6 @@
-function popUpMessage(num) {
+function popUpMessage(messagePopUp) {
   // Muestra mensaje de numero repetido
-  const messageText = num === 1 ? "Ya ingresó esa combinación" : "¡Último intento!";
+  const messageText = messagePopUp === "repeat" ? "Ya ingresó esa combinación" : "¡Último intento!";
   const messageContainer = document.createElement("div");
   messageContainer.classList.add("opacity", "index-1", "position-fixed", "start-50", "top-50", "translate-middle", "p-2");
 
@@ -23,6 +23,9 @@ function popUpMessage(num) {
     numberGuess.disabled = false;
     numberGuess.value = "";
     numberGuess.classList.remove("d-none");
-    numberGuess.focus();
+    numberGuess.focus();  
+    setTimeout(() => {
+      goToNewRow();
+    }, 500);
   }, 3000);
 }

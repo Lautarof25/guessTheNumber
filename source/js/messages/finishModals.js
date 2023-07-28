@@ -13,8 +13,7 @@ function checkWinner(num){
         totalCounts++
         spanWin.textContent = winCounts
         spanTotal.textContent = totalCounts
-        if(winCounts == 1) winnerText.classList.remove("d-none")
-        else winnerText.classList.add("d-none")
+        checkRadioAttemptsMessage()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
         modal.show()
@@ -26,4 +25,8 @@ function checkWinner(num){
         spanLose.textContent = loseCounts
     }
     window.scrollTo(0, 0);
+    function checkRadioAttemptsMessage() {
+        if (winCounts == 1) winnerText.classList.remove("d-none");
+        else winnerText.classList.add("d-none");
+    }
 }

@@ -1,14 +1,14 @@
 function displayFinalMessage(num) {
   if (randomDigit == num) {
-    resultDiv.classList.remove("d-none")
-    res.textContent = "🎉 Acertaste, el numero es " + randomDigit + "🎉"
-    res.classList.add("bg-warning")
-    numberGuess.disabled = true
+    showMessage("🎉 Acertaste, el numero es " + randomDigit + "🎉", "bg-warning");
+  } else if (attempts === 0 && num != randomDigit) {
+    showMessage("❌🎲 Perdiste, el numero es " + randomDigit + "🎲❌", "bg-dark");
   }
-  else if (attempts == 0 && num != randomDigit) {
-    resultDiv.classList.remove("d-none")
-    res.textContent = "❌🎲 Perdiste, el numero es " + randomDigit + "🎲❌"
-    res.classList.add("bg-dark")
-    numberGuess.disabled = true
-  }
+}
+
+function showMessage(message, bgColorClass) {
+  resultDiv.classList.remove("d-none");
+  res.textContent = message;
+  res.classList.add(bgColorClass);
+  numberGuess.disabled = true;
 }
