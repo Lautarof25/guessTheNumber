@@ -71,16 +71,30 @@
         <progress class="text-center lead" id="progressBar" min="0" value="10" max="10"></progress>
       </div>
 
-      <div class="btn-group d-none" id="radioDiv" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="attempts" id="btnradio1" autocomplete="off">
-        <label class="btn btn-outline-warning" for="btnradio1">5 intentos</label>
-
-        <input type="radio" class="btn-check" name="attempts" id="btnradio2" autocomplete="off" checked>
-        <label class="btn btn-outline-warning" for="btnradio2">10 intentos</label>
-
-        <input type="radio" class="btn-check" name="attempts" id="btnradio3" autocomplete="off">
-        <label class="btn btn-outline-warning" for="btnradio3">99 intentos</label>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p class="d-none" id="radioDiv">
+          <button id="buttonCollapse" class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRadio" aria-expanded="false" aria-controls="collapseRadio">
+            Intentos
+          </button>
+        </p>
+        <div>
+          <div class="collapse collapse-horizontal" id="collapseRadio">
+            <div class="card card-body">
+              <div class="btn-group" id="inputGroup" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="attempts" id="btnradio1" autocomplete="off">
+                <label class="btn btn-outline-warning" for="btnradio1">5 intentos</label>
+        
+                <input type="radio" class="btn-check" name="attempts" id="btnradio2" autocomplete="off" checked>
+                <label class="btn btn-outline-warning" for="btnradio2">10 intentos</label>
+        
+                <input type="radio" class="btn-check" name="attempts" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-warning" for="btnradio3">99 intentos</label>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      
 
       <div class="d-flex flex-column align-items-center pb-2 position-sticky sticky-top">
         <label for="numberGuess" class="form-label text-center lead">Ingrese <strong>4</strong> dígitos</label>

@@ -75,8 +75,9 @@ img {
   color: white!important;
 }
 .btn:hover{
-  filter: brightness(.8);
-  -webkit-filter: brightness(.8);
+  outline: #222 solid;
+  filter: brightness(0.9);
+  -webkit-filter: brightness(0.9);
 }
 
 .btn-outline-warning{

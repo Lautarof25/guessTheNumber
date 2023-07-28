@@ -21,7 +21,6 @@ function updateAttempts(attemptsLeft) {
   document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`;
 }
 
-
 function reset() {
   random = getRandomInt(0, 9999)
   randomDigit = addDigitsToRandom(random)
@@ -76,5 +75,13 @@ function skipSection() {
   openingSound.play()
   setTimeout(() => {
     numberGuess.focus()
+  }, 500);
+}
+
+function handleButtonCollapse(){
+  setTimeout(() => {
+      if(buttonCollapse.classList.contains("collapsed")){
+          goToInput()
+      }    
   }, 500);
 }

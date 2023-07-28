@@ -24,8 +24,5 @@ function popUpMessage(messagePopUp) {
     numberGuess.value = "";
     numberGuess.classList.remove("d-none");
     numberGuess.focus();  
-    setTimeout(() => {
-      goToNewRow();
-    }, 500);
   }, 3000);
 }
