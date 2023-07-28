@@ -32,7 +32,7 @@ function templateCharacter(number) {
   }
   p.appendChild(textP);
 
-  document.querySelector("#rows").appendChild(rooting);
+  document.querySelector("#characterDiv").appendChild(rooting);
   characterEffect();
 }
 
@@ -64,6 +64,8 @@ function characterEffect() {
     numberGuess.disabled = false;
     numberGuess.classList.remove("d-none");
     numberGuess.focus();
-    goToNewRow();
+    setTimeout(() => {
+      goToNewRow();
+    }, 500);
   }, 5000);
 }
