@@ -1,7 +1,7 @@
 
 # Adivina el número
 
-Un sencillo juego para usar la lógica. Deberás adivinar un número de 4 dígitos. Hay 10.000 combinaciones posibles y 10 intentos.
+Un sencillo juego para usar la lógica. Deberás adivinar un número de 4 dígitos. Hay 10.000 combinaciones posibles y 10 intentos. Los personajes fueron creados con herramientas IA.
 
 ## Mockup
 ![mockup](https://github.com/Lautarof25/guessTheNumber/assets/81919816/499b5952-38d4-4d76-b614-bfd8f8e9de2c)
