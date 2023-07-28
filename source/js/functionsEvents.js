@@ -8,7 +8,7 @@ function handleRadioButtonChange() {
   const selectedRadioBtn = document.querySelector('input[name="attempts"]:checked');
   
   if (selectedRadioBtn) {
-    const attemptsLeft = radioAttemptsMap[selectedRadioBtn.id];
+    attemptsLeft = radioAttemptsMap[selectedRadioBtn.id];
     reset();
     updateAttempts(attemptsLeft);
   }

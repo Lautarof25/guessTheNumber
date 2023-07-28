@@ -107,3 +107,8 @@ input:focus {
 .bold {
   font-weight: 500;
 }
+
+small {
+  font-size: .75rem!important;
+  color: var(--orange);
+}
