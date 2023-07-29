@@ -39,6 +39,16 @@ Javascript, HTML, CSS, Bootstrap
 
 - Add more integrations
 
+- OOP paradigm
+
+## Next features
+
+- Users
+
+- Rankings
+
+- Gifts cards
+
 
 ## Authors
 
