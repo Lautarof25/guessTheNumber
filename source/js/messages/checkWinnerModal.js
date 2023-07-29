@@ -11,9 +11,10 @@ function checkWinner(num){
         radioDiv.classList.remove("d-none");
         winCounts++
         totalCounts++
+        scoreCounts = checkScore(attempts+1)
         spanWin.textContent = winCounts
         spanTotal.textContent = totalCounts
-        spanScore.textContent = checkScore()
+        spanScore.textContent = scoreCounts
         checkRadioAttemptsMessage()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"

@@ -5,10 +5,10 @@ const scoreCategory = {
 }
 
 function checkCategory() {
-    return document.querySelector('input[name="attempts"]:checked').id
+    return document.querySelector('input[name="attempts"]:checked')
 }
 
 function checkScore(attempts) {
-    scoreCounts = attempts * scoreCategory[checkCategory()]
+    scoreCounts = scoreCounts + attempts * scoreCategory[checkCategory().id]
     return scoreCounts
 }
