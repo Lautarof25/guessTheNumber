@@ -6,23 +6,31 @@ for (let item of scoresRanking) {
 }
 
 for (let i = 0; i < namesRanking.length; i++) {
-    arrayNames.push(namesRanking[i].textContent) //
+    arrayNames.push(namesRanking[i].textContent)
 }
 
-let arrayRows = arrayNames.map((element, index) => [element, arrayScores[index]])
+let arrayRows = arrayNames.map((item, index) => [item, arrayScores[index]])
 
-function checkRanking(){
+function checkRanking(scoreCounts) {
     for (let i = 0; i < arrayRows.length; i++) {
-        if (arrayRows[i][1] < scoreCounts){
-            arrayRows[i][1] = scoreCounts
-            scoresRanking[i].textContent = Number(scoreCounts)
-            namesRanking[i].textContent = enterName(i)
+        if (arrayRows[i][1] < scoreCounts) {
+            const promptName = enterName()
+            arrayRows.splice(i, 0, [promptName, scoreCounts])
+            arrayRows.pop()
             break;
         }
     }
 }
 
-function enterName(index){
-    arrayRows[index][0] = prompt("enter your name")
-    return arrayRows[index][0]
+function enterName() {
+    let name = prompt("Enter your name")
+    return name
 }
+
+function updateRanking() {
+    for (let i = 0; i < 5; i++) {
+        namesRanking[i].textContent = arrayRows[i][0]
+        scoresRanking[i].textContent = arrayRows[i][1].toFixed(2)
+    }
+}
+updateRanking()

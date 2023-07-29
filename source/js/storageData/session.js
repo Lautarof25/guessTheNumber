@@ -1,6 +1,6 @@
 const getValueFromLocalStorage = (key) => {
     const value = localStorage.getItem(key);
-    return value === null || isNaN(Number(value)) ? 0 : Number(value);
+    return value === null || isNaN(Number(value)) ? 0 : Number(value).toFixed(2);
 };  
 
 const updateElementText = (element, value) => {
