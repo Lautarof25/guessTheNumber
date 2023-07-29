@@ -38,6 +38,7 @@ const statsTable = document.querySelector("#statsTable") // This will replace th
 
 const scoresRanking = document.querySelectorAll(".scoreRow")
 const namesRanking = document.querySelectorAll(".nameRow")
+const rankingTable = document.querySelectorAll("#rankingTable")
 
 winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
 loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))

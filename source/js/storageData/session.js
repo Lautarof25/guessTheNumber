@@ -10,7 +10,7 @@ const updateElementText = (element, value) => {
 let winCounts = getValueFromLocalStorage("win");
 let loseCounts = getValueFromLocalStorage("lose");
 let totalCounts = getValueFromLocalStorage("total");
-let scoreCounts = getValueFromLocalStorage("score");
+let scoreCounts = getValueFromLocalStorage("score")
 
 updateElementText(spanWin, winCounts);
 updateElementText(spanLose, loseCounts);
@@ -22,9 +22,11 @@ const observer = new MutationObserver(() => {
     localStorage.setItem("lose", loseCounts)
     localStorage.setItem("total", totalCounts)
     localStorage.setItem("score", scoreCounts)
+    localStorage.setItem("arrayRows", arrayRows)
 });
 
 observer.observe(spanWin, { subtree: true, childList: true });
 observer.observe(spanLose, { subtree: true, childList: true });
 observer.observe(spanTotal, { subtree: true, childList: true });
 observer.observe(spanScore, { subtree: true, childList: true });
+observer.observe(rankingTable, { subtree: true, childList: true });

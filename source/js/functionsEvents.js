@@ -73,9 +73,6 @@ function skipSection() {
 
   window.scrollTo(0, 0);
   openingSound.play()
-  setTimeout(() => {
-    numberGuess.focus()
-  }, 500);
 }
 
 function handleButtonCollapse(){
