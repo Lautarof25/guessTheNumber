@@ -36,7 +36,8 @@ const spanTotal = document.querySelector("#spanTotal")
 const spanScore = document.querySelector("#spanScore")
 const statsTable = document.querySelector("#statsTable") // This will replace the existing spans
 
-const scoreRanking = document.querySelectorAll(".scoreRow")
+const scoresRanking = document.querySelectorAll(".scoreRow")
+const namesRanking = document.querySelectorAll(".nameRow")
 
 winCounts = localStorage.getItem("win") === "" ? 0 : Number(localStorage.getItem("win"))
 loseCounts = localStorage.getItem("lose") === "" ? 0 : Number(localStorage.getItem("lose"))
