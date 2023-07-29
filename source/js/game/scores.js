@@ -1,6 +1,14 @@
-let score = 0
 const scoreCategory = {
-    fiveAttempts: 5,
-    tenAttempts: 1,
-    ninetyNineAttempts: 0.01    
+    btnradio1: 5,
+    btnradio2: 1,
+    btnradio3: 0.01    
+}
+
+function checkCategory() {
+    return document.querySelector('input[name="attempts"]:checked').id
+}
+
+function checkScore(attempts) {
+    scoreCounts = attempts * scoreCategory[checkCategory()]
+    return scoreCounts
 }

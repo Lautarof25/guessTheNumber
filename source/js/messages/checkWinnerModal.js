@@ -13,8 +13,7 @@ function checkWinner(num){
         totalCounts++
         spanWin.textContent = winCounts
         spanTotal.textContent = totalCounts
-        // Asignar puntaje en base al botón seleccionado
-        // spanScore.textContent = scoreCategory attempts
+        spanScore.textContent = checkScore()
         checkRadioAttemptsMessage()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
