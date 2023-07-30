@@ -30,7 +30,6 @@ function enterName() {
 function updateRanking() {
     for (let i = 0; i < 5; i++) {
         namesRanking[i].textContent = arrayRows[i][0]
-        scoresRanking[i].textContent = arrayRows[i][1].toFixed(2)
+        scoresRanking[i].textContent = arrayRows[i][1]
     }
 }
-updateRanking()

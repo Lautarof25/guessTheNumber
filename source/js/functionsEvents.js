@@ -1,7 +1,7 @@
 const radioAttemptsMap = {
   btnradio1: 5,
   btnradio2: 10,
-  btnradio3: 99,
+  btnradio3: 20,
 };
 
 function handleRadioButtonChange() {

@@ -1,7 +1,7 @@
 const scoreCategory = {
     btnradio1: 5,
     btnradio2: 1,
-    btnradio3: 0.01    
+    btnradio3: 0.5    
 }
 
 function checkCategory() {
@@ -9,6 +9,6 @@ function checkCategory() {
 }
 
 function checkScore(attempts) {
-    scoreCounts = scoreCounts + attempts * scoreCategory[checkCategory().id]
+    scoreCounts = (scoreCounts + attempts * scoreCategory[checkCategory().id])
     return scoreCounts
 }

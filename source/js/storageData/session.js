@@ -1,6 +1,6 @@
 const getValueFromLocalStorage = (key) => {
-    const value = localStorage.getItem(key);
-    return value === null || isNaN(Number(value)) ? 0 : Number(value).toFixed(2);
+    const value = sessionStorage.getItem(key);
+    return value === null || isNaN(Number(value)) ? 0 : Number(value);
 };  
 
 const updateElementText = (element, value) => {
@@ -18,10 +18,10 @@ updateElementText(spanTotal, totalCounts);
 updateElementText(spanScore, scoreCounts);
 
 const observer = new MutationObserver(() => {
-    localStorage.setItem("win", winCounts)
-    localStorage.setItem("lose", loseCounts)
-    localStorage.setItem("total", totalCounts)
-    localStorage.setItem("score", scoreCounts)
+    sessionStorage.setItem("win", winCounts)
+    sessionStorage.setItem("lose", loseCounts)
+    sessionStorage.setItem("total", totalCounts)
+    sessionStorage.setItem("score", scoreCounts)
     localStorage.setItem("arrayRows", arrayRows)
 });
 
