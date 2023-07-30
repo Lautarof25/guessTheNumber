@@ -9,6 +9,8 @@ rankingButton.addEventListener("click", playPopUpSound)
 buttonCollapse.addEventListener("click", playPopUpSound)
 buttonCollapse.addEventListener("click", handleButtonCollapse)
 inputGroup.addEventListener("change",handleRadioButtonChange)
+buttonSaveUser.addEventListener("click", buttonSave)
+
 
 btnCloseResult.addEventListener("click",goToTop)
 btnCloseResult2.addEventListener("click",goToTop)

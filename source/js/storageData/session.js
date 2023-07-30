@@ -22,7 +22,7 @@ const observer = new MutationObserver(() => {
     sessionStorage.setItem("lose", loseCounts)
     sessionStorage.setItem("total", totalCounts)
     sessionStorage.setItem("score", scoreCounts)
-    localStorage.setItem("arrayRows", arrayRows)
+    localStorage.setItem("arrayRows", JSON.stringify(arrayRows))
 });
 
 observer.observe(spanWin, { subtree: true, childList: true });

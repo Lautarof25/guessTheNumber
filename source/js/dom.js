@@ -16,7 +16,9 @@ const resultDiv = document.querySelector("#resultDiv")
 const characterDiv = document.querySelector("#characterDiv")
 const res = document.querySelector("#result")
 const modalResult = document.querySelector('#modalResult')
-const modalUser = document.querySelector('#modalUser');
+const modalUser = document.querySelector('#modalUser')
+const inputUserName = document.querySelector('#inputUserName')
+const buttonSaveUser = document.querySelector('#buttonSaveUser')
 
 const buttonCollapse = document.querySelector('#buttonCollapse')
 const btnradio1 = document.querySelector("#btnradio1")
@@ -44,5 +46,7 @@ const rankingTable = document.querySelectorAll("#rankingTable")
 winCounts = sessionStorage.getItem("win") === "" ? 0 : Number(sessionStorage.getItem("win"))
 loseCounts = sessionStorage.getItem("lose") === "" ? 0 : Number(sessionStorage.getItem("lose"))
 scoreCounts = sessionStorage.getItem("score") === "" ? 0 : Number(sessionStorage.getItem("score"))
-arrayRows = localStorage.getItem("arrayRows")
+let arrayScores = []
+let arrayNames = []
+arrayRows = localStorage.getItem("arrayRows") === null ? arrayNames.map((item, index) => [item, arrayScores[index]]) : JSON.parse(localStorage.getItem("arrayRows"))
 if(winCounts >= 1) radioDiv.classList.remove("d-none")
