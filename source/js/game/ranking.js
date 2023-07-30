@@ -1,29 +1,54 @@
-for (let item of scoresRanking) {
-    arrayScores.push(Number(item.textContent))
+let arrayNamesDefault = ["Mark","Felipe","Lautaro","Gal","Laura"]
+let arrayScoresDefault = [100,50,25,10,5]
+
+function addContentToRankingTable(){
+    if(localStorageEmpty()){
+        for (let i = 0; i < 5; i++) {
+            namesRanking[i].textContent = arrayNamesDefault[i]
+            scoresRanking[i].textContent = arrayScoresDefault[i]
+        }
+    }else {
+        updateRanking(arrayRows)
+    }
 }
 
-for (let i = 0; i < namesRanking.length; i++) {
-    arrayNames.push(namesRanking[i].textContent)
+function loadDefaults(){
+    addContentToRankingTable()
+    return arrayNamesDefault.map((item, index) => [item, arrayScoresDefault[index]])
 }
 
-let arrayRows = localStorage.getItem("arrayRows") === null ? arrayNames.map((item, index) => [item, arrayScores[index]]) : JSON.parse(localStorage.getItem("arrayRows"))
+function localStorageEmpty(){
+    return localStorage.getItem("arrayRows") === null
+}
 
-let userName = ""
+let arrayRows = localStorageEmpty() ? loadDefaults() : JSON.parse(localStorage.getItem("arrayRows"))
 
-function checkRanking() {
+updateRanking(arrayRows)
+
+let newIndex = 0
+
+
+function checkNewScoreRanking() {
+    // Return true if the user gets a better score in the default ranking 
     for (let i = 0; i < arrayRows.length; i++) {
         if (arrayRows[i][1] < scoreCounts) {
-            userName = buttonSave()
-            return i;
+            newIndex = i
+            return true;
         }
     }
 }
 
+
+
 function updateArrayRows() {
-    const indexRanking = checkRanking()
-    if(indexRanking !== ""){
-        arrayRows.splice(indexRanking, 0, [userName, scoreCounts])
+    const indexRanking = checkNewScoreRanking()
+    if(indexRanking && userSession){
+        if(userSession){
+            userName = prompt("Ingrese su nombre")
+        }
+        arrayRows.splice(newIndex, 0, [userName, scoreCounts])
         arrayRows.pop()
+        updateRanking(arrayRows)
     }
 }
 

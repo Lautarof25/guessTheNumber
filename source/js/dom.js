@@ -46,7 +46,5 @@ const rankingTable = document.querySelectorAll("#rankingTable")
 winCounts = sessionStorage.getItem("win") === "" ? 0 : Number(sessionStorage.getItem("win"))
 loseCounts = sessionStorage.getItem("lose") === "" ? 0 : Number(sessionStorage.getItem("lose"))
 scoreCounts = sessionStorage.getItem("score") === "" ? 0 : Number(sessionStorage.getItem("score"))
-let arrayScores = []
-let arrayNames = []
-arrayRows = localStorage.getItem("arrayRows") === null ? arrayNames.map((item, index) => [item, arrayScores[index]]) : JSON.parse(localStorage.getItem("arrayRows"))
+
 if(winCounts >= 1) radioDiv.classList.remove("d-none")

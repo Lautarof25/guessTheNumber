@@ -15,8 +15,7 @@ function checkWinner(num){
         spanWin.textContent = winCounts
         spanTotal.textContent = totalCounts
         spanScore.textContent = scoreCounts
-        checkRanking()
-        updateRanking(arrayRows)   
+        updateArrayRows()
         checkRadioAttemptsMessage()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"

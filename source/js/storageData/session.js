@@ -7,10 +7,16 @@ const updateElementText = (element, value) => {
     element.textContent = value.toString();
 };
 
+let userSession = true
+let userName = sessionStorage.getItem("userName") === null ? "" : userSession = false
+
 let winCounts = getValueFromLocalStorage("win");
 let loseCounts = getValueFromLocalStorage("lose");
 let totalCounts = getValueFromLocalStorage("total");
 let scoreCounts = getValueFromLocalStorage("score")
+
+sessionStorage.setItem("userSessionSave",userSession);
+sessionStorage.setItem("userName",userName);
 
 updateElementText(spanWin, winCounts);
 updateElementText(spanLose, loseCounts);
