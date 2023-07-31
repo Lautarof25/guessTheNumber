@@ -39,12 +39,14 @@ function checkNewScoreRanking() {
 }
 
 
-
 function updateArrayRows() {
     const indexRanking = checkNewScoreRanking()
-    if(indexRanking && userSession){
+    if(indexRanking){
         if(userSession){
             userName = prompt("Ingrese su nombre")
+            userSession = false
+            sessionStorage.setItem("userSession",userSession);
+            sessionStorage.setItem("userName",userName);
         }
         arrayRows.splice(newIndex, 0, [userName, scoreCounts])
         arrayRows.pop()
