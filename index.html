@@ -113,12 +113,12 @@
       </div>
 
       <div class="pb-2 container-sm">
-        <div class="row bg-warning position-relative text-center lead bold rounded">
-          <div class="col-6 border">Número</div>
-          <div class="col-3 border d-none d-sm-block">Correctos</div>
-          <div class="col-3 border d-block d-sm-none">Ok</div>
-          <div class="col-3 border d-none d-sm-block">En Posición</div>
-          <div class="col-3 border d-block d-sm-none">En Pos</div>
+        <div class="row bg-warning position-relative align-items-center text-center lead bold rounded-top rounded-right">
+          <div class="col-6 ">Número</div>
+          <div class="col-3 border d-none d-sm-block border-top-0 border-bottom-0">Correctos</div>
+          <div class="col-3 border d-block d-sm-none border-top-0 border-bottom-0">Ok</div>
+          <div class="col-3 d-none d-sm-block">En Posición</div>
+          <div class="col-3 d-block d-sm-none">En Pos</div>
         </div>
         <div id="characterDiv">
 
@@ -172,9 +172,18 @@
         <div class="modal-body text-center">
           <p>📌 Debes adivinar un número de 4 dígitos</p>
           <p>📌 En "correctos/ok" verás cuántos has acertado.</p>
-          <p>📌 En "En posición/en pos" verás cuántos has ubicado.</p>
-          <img class="pb-2 img-fluid" src="./source/img/example.webp" alt="example game">
-          <p>📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
+          <p class="mb-0">📌 En "En posición/en pos" verás cuántos has ubicado.</p>
+          <div class="row bg-warning align-items-center position-relative text-center lead bold rounded-top rounded-right">
+            <div class="col-6">Número</div>
+            <div class="col-3 border border-top-0 border-bottom-0">Ok</div>
+            <div class="col-3">En Pos</div>
+          </div>
+          <div class="lead shadow bold">
+            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border text-danger">1234</div><div class="col-3 border">4</div><div class="col-3 border text-danger">0</div></div>
+            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border">2<span class="text-danger">3</span>4<span class="text-danger">1</span></div><div class="col-3 border">4</div><div class="col-3 border text-danger">2</div></div>
+            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border">2143</div><div class="col-3 border">4</div><div class="col-3 border">4</div></div>
+          </div>
+          <p class="mt-3">📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
@@ -271,12 +280,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex justify-content-center flex-column align-items-center">
+          <p>Su nuevo puntaje es <span id="spanScoreUser"></span></p>
           <label for="inputName">Ingrese su nombre</label>
           <input name="inputName" id="inputUserName" class="form-control w-75" type="text" placeholder="Lautaro">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" id="buttonSaveUser" class="btn btn-warning">Guardar</button>
+          <button type="button" id="buttonSaveUser" data-bs-dismiss="modal" class="btn btn-warning">Guardar</button>
         </div>
       </div>
     </div>

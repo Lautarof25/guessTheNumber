@@ -38,20 +38,27 @@ function checkNewScoreRanking() {
     }
 }
 
+function getIndexNewRanking(){
+    let indexRanking = checkNewScoreRanking()
+    return indexRanking
+}
 
-function updateArrayRows() {
-    const indexRanking = checkNewScoreRanking()
-    if(indexRanking){
-        if(userSession){
-            userName = prompt("Ingrese su nombre")
-            userSession = false
-            sessionStorage.setItem("userSession",userSession);
-            sessionStorage.setItem("userName",userName);
-        }
-        arrayRows.splice(newIndex, 0, [userName, scoreCounts])
-        arrayRows.pop()
-        updateRanking(arrayRows)
-    }
+function userNameFunction(){
+    userName = prompt("Ingrese su nombre")
+}
+
+function saveActualUserStorage(){
+    sessionStorage.setItem("userSession",userSession);
+    sessionStorage.setItem("userName",userName);
+}
+
+function desactivateUserSession(){
+    userSession = false
+}
+
+function updateArrayRowsWithUser(username, index) {
+    arrayRows.splice(index, 0, [username, scoreCounts])
+    arrayRows.pop()
 }
 
 function updateRanking(arrayRows) {

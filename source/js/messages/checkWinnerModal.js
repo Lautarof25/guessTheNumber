@@ -15,10 +15,10 @@ function checkWinner(num){
         spanWin.textContent = winCounts
         spanTotal.textContent = totalCounts
         spanScore.textContent = scoreCounts
+        // Add user Name if gets more points in ranking
         if(checkNewScoreRanking()){
             modalU.show()
         }
-        updateArrayRows()
         checkRadioAttemptsMessage()
     }else if(num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
