@@ -2,7 +2,7 @@
 
 :root {
   --orange: #fb441c;
-  --gray: lightgray;
+  --gray: #d3d3d3;
 }
 
 .font-Title {
@@ -10,7 +10,7 @@
 }
 
 .text-shadow{
-  text-shadow: 1px 1px 2px rgb(180, 180, 180);
+  text-shadow: 1px 1px 2px var(--gray);
 }
 
 .title-shadow {
@@ -40,6 +40,10 @@ input::-webkit-inner-spin-button {
   background: transparent;  /* Optional: just make scrollbar invisible */
   overflow: hidden;
   overflow-x: hidden;
+}
+
+#myStats > div > div:nth-child(1) > div > svg > g:nth-child(6) > text{
+  text-anchor: end;
 }
 
 progress{
@@ -75,9 +79,9 @@ img {
   color: white!important;
 }
 .btn:hover{
-  outline: #222 solid;
-  filter: brightness(0.9);
-  -webkit-filter: brightness(0.9);
+  outline: #222 dashed;
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
 }
 
 .btn-outline-warning{

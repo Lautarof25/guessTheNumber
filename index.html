@@ -62,11 +62,13 @@
         <button id="infoButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
           <i class="bi bi-info-circle"></i>
         </button>
-        <button id="resetButton" type="button" class="btn btn-warning"><i class="bi bi-arrow-clockwise"></i></button>
-        <button id="statsButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stats" onclick="loadPieChart()"><i
-            class="bi bi-graph-up"></i></button>
-        <button id="rankingButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ranking">
+        <button id="statsButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stats"><i class="bi bi-graph-up"></i>
+        </button>
+        <button id="rankingButton" type="button" class="btn btn-warning" data-bs-toggle="modal"
+          data-bs-target="#ranking">
           <i class="bi bi-list-stars"></i>
+        </button>
+        <button id="resetButton" type="button" class="btn btn-danger"><i class="bi bi-arrow-clockwise"></i>
         </button>
       </div>
 
@@ -113,7 +115,8 @@
       </div>
 
       <div class="pb-2 container-sm">
-        <div class="row bg-warning position-relative align-items-center text-center lead bold rounded-top rounded-right">
+        <div
+          class="row bg-warning position-relative align-items-center text-center lead bold rounded-top rounded-right">
           <div class="col-6 ">Número</div>
           <div class="col-3 border d-none d-sm-block border-top-0 border-bottom-0">Correctos</div>
           <div class="col-3 border d-block d-sm-none border-top-0 border-bottom-0">Ok</div>
@@ -173,15 +176,28 @@
           <p>📌 Debes adivinar un número de 4 dígitos</p>
           <p>📌 En "correctos/ok" verás cuántos has acertado.</p>
           <p class="mb-0">📌 En "En posición/en pos" verás cuántos has ubicado.</p>
-          <div class="row bg-warning align-items-center position-relative text-center lead bold rounded-top rounded-right">
+          <div
+            class="row bg-warning align-items-center position-relative text-center lead bold rounded-top rounded-right">
             <div class="col-6">Número</div>
             <div class="col-3 border border-top-0 border-bottom-0">Ok</div>
             <div class="col-3">En Pos</div>
           </div>
           <div class="lead shadow bold">
-            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border text-danger">1234</div><div class="col-3 border">4</div><div class="col-3 border text-danger">0</div></div>
-            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border">2<span class="text-danger">3</span>4<span class="text-danger">1</span></div><div class="col-3 border">4</div><div class="col-3 border text-danger">2</div></div>
-            <div class="row position-relative bg-white rowAnimation text-center"><div  class="col-6 border">2143</div><div class="col-3 border">4</div><div class="col-3 border">4</div></div>
+            <div class="row position-relative bg-white rowAnimation text-center">
+              <div class="col-6 border text-danger">1234</div>
+              <div class="col-3 border">4</div>
+              <div class="col-3 border text-danger">0</div>
+            </div>
+            <div class="row position-relative bg-white rowAnimation text-center">
+              <div class="col-6 border">2<span class="text-danger">3</span>4<span class="text-danger">1</span></div>
+              <div class="col-3 border">4</div>
+              <div class="col-3 border text-danger">2</div>
+            </div>
+            <div class="row position-relative bg-white rowAnimation text-center">
+              <div class="col-6 border">2143</div>
+              <div class="col-3 border">4</div>
+              <div class="col-3 border">4</div>
+            </div>
           </div>
           <p class="mt-3">📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
         </div>
@@ -209,7 +225,7 @@
               <li>5 intentos: 5 puntos (25)</li>
               <li>10 intentos: 1 punto (10)</li>
               <li>20 intentos: 0.5 puntos (10)</li>
-            </ul>  
+            </ul>
           </small>
         </div>
         <div id='myStats' style="max-width:700px"><!-- Plotly chart will be drawn inside this DIV --></div>

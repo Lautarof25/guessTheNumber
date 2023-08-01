@@ -11,7 +11,9 @@ function loadPieChart() {
     
         // Set Options
         const options = {
-          title: 'Partidas'
+          title: 'Partidas',
+          colors: ['#fb441c', '#d3d3d3'],
+          is3D: true
         };
     
         // Draw
