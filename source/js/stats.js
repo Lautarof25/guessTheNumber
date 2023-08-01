@@ -1,6 +1,5 @@
 function loadPieChart() {
   return new Promise(() => {
-    setTimeout(() => {
       google.charts.load('current', { packages: ['corechart'] });
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -19,7 +18,6 @@ function loadPieChart() {
         const chart = new google.visualization.PieChart(document.getElementById('myStats'));
         chart.draw(data, options);
       }
-    }, 2000);
   })
 }
 loadPieChart()
