@@ -9,24 +9,24 @@
   font-family: 'Tektur', cursive;
 }
 
-.text-shadow{
+.text-shadow {
   text-shadow: 1px 1px 2px var(--gray);
 }
 
 .title-shadow {
-  text-shadow: 2px 2px 2px black;  
+  text-shadow: 2px 2px 2px black;
 }
 
-#dynamic-title{
+#dynamic-title {
   height: 50px;
 }
 
-.index-1{
-  z-index: 100!important;
+.index-1 {
+  z-index: 100 !important;
 }
 
 .index-0 {
-  z-index: -100!important;
+  z-index: -100 !important;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -35,18 +35,21 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 ::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
   overflow: hidden;
   overflow-x: hidden;
 }
 
-#myStats > div > div:nth-child(1) > div > svg > g:nth-child(6) > text{
+#myStats>div>div:nth-child(1)>div>svg>g:nth-child(6)>text {
   text-anchor: end;
 }
 
-progress{
+progress {
   accent-color: var(--orange);
   height: 50px;
 }
@@ -66,34 +69,36 @@ img {
 }
 
 .container-sm {
-  max-width: 672px!important;
+  max-width: 672px !important;
 }
 
-#rows .row:nth-child(even){
-  background-color: rgba(var(--bs-secondary-bg-rgb),var(--bs-bg-opacity))!important;
+#rows .row:nth-child(even) {
+  background-color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-warning,
 .btn-warning {
   background-color: var(--orange) !important;
-  color: white!important;
+  color: white !important;
 }
-.btn:hover{
+
+.btn:hover {
   outline: #222 dashed;
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
 }
 
-.btn-outline-warning{
+.btn-outline-warning {
   border: 2px solid var(--orange) !important;
   color: black;
 }
-.btn-outline-warning:hover{
+
+.btn-outline-warning:hover {
   color: white !important;
 }
 
-.btn-check:checked+.btn{
-  background: var(--orange)!important;
+.btn-check:checked+.btn {
+  background: var(--orange) !important;
   color: white;
 }
 
@@ -104,8 +109,8 @@ input:focus {
   box-shadow: 0 0 10px var(--orange) !important;
 }
 
-.h-500{
-  max-height: 450px!important;
+.h-500 {
+  max-height: 450px !important;
 }
 
 .bold {
@@ -113,6 +118,6 @@ input:focus {
 }
 
 small {
-  font-size: .75rem!important;
+  font-size: .75rem !important;
   color: var(--orange);
 }

@@ -17,8 +17,11 @@ function loadPieChart() {
         };
     
         // Draw
+
         const chart = new google.visualization.PieChart(document.getElementById('myStats'));
-        chart.draw(data, options);
+        if(winCounts != 0 || loseCounts != 0) {
+          chart.draw(data, options);
+        }
       }
   })
 }

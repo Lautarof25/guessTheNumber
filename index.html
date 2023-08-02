@@ -58,17 +58,17 @@
         </p>
       </div>
 
-      <div class="d-flex justify-content-center pb-1 gap-3">
-        <button id="infoButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
+      <div class="d-flex justify-content-center pb-1 gap-1 gap-sm-3">
+        <button title="Information/rules" id="infoButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#rules">
           <i class="bi bi-info-circle"></i>
         </button>
-        <button id="statsButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stats"><i class="bi bi-graph-up"></i>
+        <button title="Game stats" id="statsButton" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#stats"><i class="bi bi-graph-up"></i>
         </button>
-        <button id="rankingButton" type="button" class="btn btn-warning" data-bs-toggle="modal"
+        <button title="Score ranking" id="rankingButton" type="button" class="btn btn-warning" data-bs-toggle="modal"
           data-bs-target="#ranking">
           <i class="bi bi-list-stars"></i>
         </button>
-        <button id="resetButton" type="button" class="btn btn-danger"><i class="bi bi-arrow-clockwise"></i>
+        <button title="Reset the game" id="resetButton" type="button" class="btn btn-dark"><i class="bi bi-arrow-clockwise"></i>
         </button>
       </div>
 
@@ -117,7 +117,8 @@
       <div class="pb-2 container-sm">
         <div
           class="row bg-warning position-relative align-items-center text-center lead bold rounded-top rounded-right">
-          <div class="col-6 ">Número</div>
+          <div class="col-6 d-none d-sm-block">Número</div>
+          <div class="col-6 d-block d-sm-none">Num</div>
           <div class="col-3 border d-none d-sm-block border-top-0 border-bottom-0">Correctos</div>
           <div class="col-3 border d-block d-sm-none border-top-0 border-bottom-0">Ok</div>
           <div class="col-3 d-none d-sm-block">En Posición</div>
