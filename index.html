@@ -76,7 +76,7 @@
         <progress class="text-center lead" id="progressBar" min="0" value="10" max="10"></progress>
       </div>
 
-      <div class="d-flex flex-column justify-content-center align-items-center">
+      <div id="attemptsDiv" class="d-flex flex-column justify-content-center align-items-center">
         <p class="d-none" id="radioDiv">
           <button id="buttonCollapse" class="btn btn-warning" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseRadio" aria-expanded="false" aria-controls="collapseRadio">
@@ -157,7 +157,32 @@
         </div>
         <div class="modal-body">
           <p class="fs-5">El número es: <span id="spanModal"></span></p>
-          <p id="winnerText" class="fs-5 d-none"><strong>Ahora tienes más opciones para adivinar un número</strong></p>
+          <div id="winnerText" class="fs-5 d-none"><strong>Ahora tienes más opciones para adivinar un número</strong>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <p>
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseRadio" aria-expanded="false" aria-controls="collapseRadio" disabled>
+                  Intentos
+                </button>
+              </p>
+              <div>
+                <div class="collapse-horizontal">
+                  <div class="card card-body">
+                    <div class="btn-group"  role="group" aria-label="Basic radio toggle button group">
+                      <input type="radio" class="btn-check"  autocomplete="off" disabled>
+                      <label class="btn btn-outline-warning">5 intentos</label>
+      
+                      <input type="radio" class="btn-check"  autocomplete="off" checked disabled>
+                      <label class="btn btn-outline-warning">10 intentos</label>
+      
+                      <input type="radio" class="btn-check"  autocomplete="off" disabled>
+                      <label class="btn btn-outline-warning">20 intentos</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -178,28 +203,28 @@
           <p>📌 En "correctos/ok" verás cuántos has acertado.</p>
           <p class="mb-0">📌 En "En posición/en pos" verás cuántos has ubicado.</p>
           <div
-            class="row bg-warning align-items-center position-relative text-center lead bold rounded-top rounded-right">
-            <div class="col-6">Número</div>
-            <div class="col-3 border border-top-0 border-bottom-0">Ok</div>
-            <div class="col-3">En Pos</div>
+          class="row bg-warning align-items-center position-relative text-center lead bold rounded-top rounded-right">
+          <div class="col-6">Número</div>
+          <div class="col-3 border border-top-0 border-bottom-0">Ok</div>
+          <div class="col-3">En Pos</div>
+        </div>
+        <div class="lead shadow bold">
+          <div class="row position-relative bg-white rowAnimation text-center">
+            <div class="col-6 border text-danger">1234</div>
+            <div class="col-3 border">4</div>
+            <div class="col-3 border text-danger">0</div>
           </div>
-          <div class="lead shadow bold">
-            <div class="row position-relative bg-white rowAnimation text-center">
-              <div class="col-6 border text-danger">1234</div>
-              <div class="col-3 border">4</div>
-              <div class="col-3 border text-danger">0</div>
-            </div>
-            <div class="row position-relative bg-white rowAnimation text-center">
-              <div class="col-6 border">2<span class="text-danger">3</span>4<span class="text-danger">1</span></div>
-              <div class="col-3 border">4</div>
-              <div class="col-3 border text-danger">2</div>
-            </div>
-            <div class="row position-relative bg-white rowAnimation text-center">
-              <div class="col-6 border">2143</div>
-              <div class="col-3 border">4</div>
-              <div class="col-3 border">4</div>
-            </div>
+          <div class="row position-relative bg-white rowAnimation text-center">
+            <div class="col-6 border">2<span class="text-danger">3</span>4<span class="text-danger">1</span></div>
+            <div class="col-3 border">4</div>
+            <div class="col-3 border text-danger">2</div>
           </div>
+          <div class="row position-relative bg-white rowAnimation text-center">
+            <div class="col-6 border">2143</div>
+            <div class="col-3 border">4</div>
+            <div class="col-3 border">4</div>
+          </div>
+        </div>
           <p class="mt-3">📌 Puede haber números repetidos, por ejemplo <strong>0112</strong>.</p>
         </div>
         <div class="modal-footer">
@@ -332,6 +357,7 @@
   <script src="./source/js/messages/checkWinnerModal.js"></script>
   <script src="./source/js/game/scores.js"></script>
   <script src="./source/js/events.js"></script>
+  <script src="./source/js/cloneButtonIntentos.js"></script>
 
 </body>
 

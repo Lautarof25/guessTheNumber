@@ -84,8 +84,8 @@ img {
 
 .btn:hover {
   outline: #222 dashed;
-  filter: brightness(1.1);
-  -webkit-filter: brightness(1.1);
+  filter: brightness(0.9);
+  -webkit-filter: brightness(0.9);
 }
 
 .btn-outline-warning {
