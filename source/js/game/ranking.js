@@ -25,26 +25,39 @@ let arrayRows = localStorageEmpty() ? loadDefaults() : JSON.parse(localStorage.g
 
 updateRanking(arrayRows)
 
-let newIndex = 0
-
-
 function checkNewScoreRanking() {
     // Return true if the user gets a better score in the default ranking 
     for (let i = 0; i < arrayRows.length; i++) {
         if (arrayRows[i][1] < scoreCounts) {
-            newIndex = i
             return true;
         }
     }
 }
-
-function getIndexNewRanking(){
-    let indexRanking = checkNewScoreRanking()
-    return indexRanking
+function getIndexNewRanking() {
+    // Return the index of the new ranking
+    for (let i = 0; i < arrayRows.length; i++) {
+        if (arrayRows[i][1] < scoreCounts) {
+            return i;
+        }
+    }
 }
 
-function userNameFunction(){
-    userName = prompt("Ingrese su nombre")
+function openModalNewUser(){
+    modalU.show()
+}
+
+function returnInputNewUser(){
+    return inputUserName.value
+}
+
+buttonSaveUser.addEventListener("click",saveNewData)
+
+function saveNewData(){
+    let newUsername = returnInputNewUser()
+    let newIndex = getIndexNewRanking()
+    updateArrayRowsWithUser(newUsername, newIndex)
+    desactivateUserSession()
+    saveActualUserStorage()
 }
 
 function saveActualUserStorage(){
@@ -57,8 +70,19 @@ function desactivateUserSession(){
 }
 
 function updateArrayRowsWithUser(username, index) {
-    arrayRows.splice(index, 0, [username, scoreCounts])
-    arrayRows.pop()
+    if(!arrayRows.includes(username)){
+        arrayRows.splice(index, 0, [username, scoreCounts])
+        arrayRows.pop()
+    }else {
+        const currentIndex = index-1
+        const currentName = arrayRows[index][0]
+        const currentPoints = arrayRows[index][1]
+        arrayRows.splice(index, 0, [username, scoreCounts])
+        arrayRows[currentIndex][0] = currentName
+        arrayRows[currentIndex][1] = currentPoints
+        arrayRows.pop()
+    }
+    updateRanking(arrayRows)
 }
 
 function updateRanking(arrayRows) {
