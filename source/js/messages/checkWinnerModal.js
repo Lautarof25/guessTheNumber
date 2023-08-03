@@ -16,9 +16,9 @@ function checkWinner(num){
         spanTotal.textContent = totalCounts
         spanScore.textContent = scoreCounts
         // Add user Name if gets more points in ranking
-        if(checkNewScoreRanking() && userSession) {
+        if(checkNewScoreRanking(scoreCounts) && userSession == true) {
             openModalNewUser()
-        }else if(checkNewScoreRanking()){
+        }else if(checkNewScoreRanking(scoreCounts)){
             saveNewData()
         }
         checkRadioAttemptsMessage()

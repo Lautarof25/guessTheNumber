@@ -25,22 +25,16 @@ let arrayRows = localStorageEmpty() ? loadDefaults() : JSON.parse(localStorage.g
 
 updateRanking(arrayRows)
 
-function checkNewScoreRanking() {
-    // Return true if the user gets a better score in the default ranking 
-    for (let i = 0; i < arrayRows.length; i++) {
-        if (arrayRows[i][1] < scoreCounts) {
-            return true;
-        }
-    }
-}
-function getIndexNewRanking() {
-    // Return the index of the new ranking
-    for (let i = 0; i < arrayRows.length; i++) {
-        if (arrayRows[i][1] < scoreCounts) {
-            return i;
-        }
-    }
-}
+function checkNewScoreRanking(scoreCounts) {
+    return arrayRows.some((row) => row[1] < scoreCounts);
+  }
+function getIndexNewRanking(scoreCounts) {
+    return arrayRows.findIndex((row) => row[1] < scoreCounts);
+  }
+
+function getIndexOldRanking(userName) {
+    return arrayRows.findIndex((row) => row[0].includes(userName));
+  }
 
 function openModalNewUser(){
     modalU.show()
@@ -51,18 +45,19 @@ function returnInputNewUser(){
 }
 
 buttonSaveUser.addEventListener("click",saveNewData)
+buttonCancel.addEventListener("click",saveNewData)
 
 function saveNewData(){
     let newUsername = returnInputNewUser()
-    let newIndex = getIndexNewRanking()
+    let newIndex = getIndexNewRanking(scoreCounts)
     updateArrayRowsWithUser(newUsername, newIndex)
     desactivateUserSession()
-    saveActualUserStorage()
+    saveActualUserStorage(newUsername)
 }
 
-function saveActualUserStorage(){
+function saveActualUserStorage(newUsername){
     sessionStorage.setItem("userSession",userSession);
-    sessionStorage.setItem("userName",userName);
+    sessionStorage.setItem("userName",newUsername);
 }
 
 function desactivateUserSession(){
@@ -70,17 +65,12 @@ function desactivateUserSession(){
 }
 
 function updateArrayRowsWithUser(username, index) {
-    if(!arrayRows.includes(username)){
+    if(userSession){
         arrayRows.splice(index, 0, [username, scoreCounts])
         arrayRows.pop()
     }else {
-        const currentIndex = index-1
-        const currentName = arrayRows[index][0]
-        const currentPoints = arrayRows[index][1]
-        arrayRows.splice(index, 0, [username, scoreCounts])
-        arrayRows[currentIndex][0] = currentName
-        arrayRows[currentIndex][1] = currentPoints
-        arrayRows.pop()
+        arrayRows.splice(getIndexOldRanking(userName),1)
+        arrayRows.splice(getIndexNewRanking(scoreCounts),0,[userName,scoreCounts])
     }
     updateRanking(arrayRows)
 }
