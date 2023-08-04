@@ -45,16 +45,16 @@ function returnInputNewUser(){
 }
 
 function saveNewData(){
-    let newUsername = returnInputNewUser()
+    userName = returnInputNewUser()
     let newIndex = getIndexNewRanking(scoreCounts)
-    updateArrayRowsWithUser(newUsername, newIndex)
+    updateArrayRowsWithUser(userName, newIndex)
     desactivateUserSession()
-    saveActualUserStorage(newUsername)
+    saveActualUserStorage()
 }
 
-function saveActualUserStorage(newUsername){
+function saveActualUserStorage(){
     sessionStorage.setItem("userSession",userSession);
-    sessionStorage.setItem("userName",newUsername);
+    sessionStorage.setItem("userName",userName);
 }
 
 function desactivateUserSession(){

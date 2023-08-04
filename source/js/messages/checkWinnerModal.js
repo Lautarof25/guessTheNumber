@@ -16,11 +16,7 @@ function checkWinner(num){
         spanTotal.textContent = totalCounts
         spanScore.textContent = scoreCounts
         // Add user Name if gets more points in ranking
-        if(checkNewScoreRanking(scoreCounts) && userSession == true) {
-            openModalNewUser()
-        }else if(checkNewScoreRanking(scoreCounts)){
-            saveNewData()
-        }
+        checkAndUpdateRanking();
         checkRadioAttemptsMessage()
         resetButton.classList.remove("bg-dark","border")
         resetButton.classList.add("bg-success","border-none")
@@ -37,8 +33,17 @@ function checkWinner(num){
         resetButton.classList.add("bg-success","border-none")
     }
     window.scrollTo(0, 0);
+    function checkAndUpdateRanking() {
+        if (checkNewScoreRanking(scoreCounts) && userSession == true) {
+            openModalNewUser();
+        } else if (checkNewScoreRanking(scoreCounts)) {
+            saveNewData();
+        }
+    }
+
     function checkRadioAttemptsMessage() {
         if (winCounts == 1) winnerText.classList.remove("d-none");
         else winnerText.classList.add("d-none");
     }
+    spanScoreUser.scoreCounts
 }

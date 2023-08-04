@@ -25,6 +25,7 @@ const btnradio1 = document.querySelector("#btnradio1")
 const btnradio2 = document.querySelector("#btnradio2")
 const btnradio3 = document.querySelector("#btnradio3")
 const winnerText = document.querySelector("#winnerText")
+const spanScoreUser = document.querySelector("#spanScoreUser")
 
 const btnCloseResult = document.querySelector("#modalResult .btn-close")
 const btnCloseResult2 = document.querySelector("#modalResult .btn-secondary")
@@ -42,6 +43,8 @@ const statsTable = document.querySelector("#statsTable") // This will replace th
 const scoresRanking = document.querySelectorAll(".scoreRow")
 const namesRanking = document.querySelectorAll(".nameRow")
 const rankingTable = document.querySelectorAll("#rankingTable")
+
+// When the page is reloaded
 
 winCounts = sessionStorage.getItem("win") === "" ? 0 : Number(sessionStorage.getItem("win"))
 loseCounts = sessionStorage.getItem("lose") === "" ? 0 : Number(sessionStorage.getItem("lose"))

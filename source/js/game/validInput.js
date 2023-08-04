@@ -14,5 +14,3 @@ numberGuess.addEventListener("keydown", function (e) {
   }
 });
 numberGuess.addEventListener('paste', e => e.preventDefault());
-
-// Agregar un clear cuando aparezcan simbolos en mobile version
