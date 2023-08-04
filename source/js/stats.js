@@ -4,14 +4,14 @@ function loadPieChart() {
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         const data = google.visualization.arrayToDataTable([
-          ['Partidos', 'Total'],
-          ['Ganados', winCounts],
-          ['Perdidos', loseCounts]
+          ['Total games', 'Total'],
+          ['Won', winCounts],
+          ['Lost', loseCounts]
         ]);
     
         // Set Options
         const options = {
-          title: 'Partidas',
+          title: 'Total games',
           colors: ['#fb441c', '#d3d3d3'],
           is3D: true
         };

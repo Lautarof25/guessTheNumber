@@ -11,6 +11,9 @@ buttonCollapse.addEventListener("click", playPopUpSound)
 buttonCollapse.addEventListener("click", handleButtonCollapse)
 inputGroup.addEventListener("change",handleRadioButtonChange)
 
+buttonSaveUser.addEventListener("click",saveNewData)
+buttonCancel.addEventListener("click",saveNewData)
+
 btnCloseResult.addEventListener("click",goToTop)
 btnCloseResult2.addEventListener("click",goToTop)
 btnCloseInfo.addEventListener("click",goToInput)

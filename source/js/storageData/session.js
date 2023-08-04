@@ -10,7 +10,7 @@ const updateElementText = (element, value) => {
 let dateTime = new Date().getTime()
 
 let userSession =  sessionStorage.getItem("userSession") === null ? true : sessionStorage.getItem("userSession")
-let userName = sessionStorage.getItem("userName") === null ? sessionStorage.setItem("userName",`Usuario${dateTime}`) : sessionStorage.getItem("userName")
+let userName = sessionStorage.getItem("userName") === null ? sessionStorage.setItem("userName",`User${dateTime}`) : sessionStorage.getItem("userName")
 
 let winCounts = getValueFromLocalStorage("win");
 let loseCounts = getValueFromLocalStorage("lose");

@@ -44,9 +44,6 @@ function returnInputNewUser(){
     return inputUserName.value
 }
 
-buttonSaveUser.addEventListener("click",saveNewData)
-buttonCancel.addEventListener("click",saveNewData)
-
 function saveNewData(){
     let newUsername = returnInputNewUser()
     let newIndex = getIndexNewRanking(scoreCounts)

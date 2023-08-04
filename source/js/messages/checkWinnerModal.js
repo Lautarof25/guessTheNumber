@@ -5,7 +5,7 @@ const modal = new bootstrap.Modal(modalResult);
 function checkWinner(num){
     document.getElementById("spanModal").textContent = randomDigit
     if(num == randomDigit){
-        document.getElementById("titleModal").textContent = "🎉 🎈 ¡Ganaste!🎈 🎉"
+        document.getElementById("titleModal").textContent = "🎉 🎈 You won!🎈 🎉"
         modal.show()
         winGame.play()
         radioDiv.classList.remove("d-none");
@@ -22,8 +22,10 @@ function checkWinner(num){
             saveNewData()
         }
         checkRadioAttemptsMessage()
+        resetButton.classList.remove("bg-dark","border")
+        resetButton.classList.add("bg-success","border-none")
     }else if(num != randomDigit && attempts == 0) {
-        document.getElementById("titleModal").textContent = "❌ 🎲¡Perdiste!🎲 ❌"
+        document.getElementById("titleModal").textContent = "❌ 🎲¡Game over!🎲 ❌"
         modal.show()
         gameOver.play()
         winnerText.classList.add("d-none");
@@ -31,6 +33,8 @@ function checkWinner(num){
         totalCounts++
         spanTotal.textContent = totalCounts
         spanLose.textContent = loseCounts
+        resetButton.classList.remove("bg-dark","border")
+        resetButton.classList.add("bg-success","border-none")
     }
     window.scrollTo(0, 0);
     function checkRadioAttemptsMessage() {

@@ -1,8 +1,8 @@
 function displayFinalMessage(num) {
   if (randomDigit == num) {
-    showMessage("🎉 Acertaste, el numero es " + randomDigit + "🎉", "bg-warning");
+    showMessage("🎉 You won, the number is " + randomDigit + "🎉", "bg-warning");
   } else if (attempts === 0 && num != randomDigit) {
-    showMessage("❌🎲 Perdiste, el numero es " + randomDigit + "🎲❌", "bg-dark");
+    showMessage("❌🎲 Game over, the number is " + randomDigit + "🎲❌", "bg-dark");
   }
 }
 

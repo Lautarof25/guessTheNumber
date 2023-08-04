@@ -1,3 +1,3 @@
 let attemptsLeft = 10
 let attempts = attemptsLeft
-document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`
+document.querySelector("#spanAttempts").textContent = ` have ${attemptsLeft} attempts`

@@ -4,8 +4,8 @@ let lastAttempt = true
 
 function spanTextAttemps(attempts){
   return attempts === 1 
-  ? ` queda ${attempts} intento` 
-  : ` quedan ${attempts} intentos`
+  ? ` have ${attempts} attempt` 
+  : ` have ${attempts} attempts`
 }
 
 function getInputValue(e) {

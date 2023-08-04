@@ -18,14 +18,14 @@ function updateAttempts(attemptsLeft) {
   attempts = attemptsLeft;
   progressBar.value = attempts;
   progressBar.max = attempts;
-  document.querySelector("#spanAttempts").textContent = ` quedan ${attemptsLeft} intentos`;
+  document.querySelector("#spanAttempts").textContent = ` have ${attemptsLeft} attempts`;
 }
 
 function reset() {
   random = getRandomInt(0, 9999)
   randomDigit = addDigitsToRandom(random)
   attempts = attemptsLeft
-  spanAttempts.textContent = ` quedan ${attemptsLeft} intentos`
+  spanAttempts.textContent = ` have ${attemptsLeft} attempts`
   cleanRows()
   arrayNumbers = []
   progressBar.value = attempts
@@ -38,6 +38,8 @@ function reset() {
   openingSound.play()
   fillNumbers()
   lastAttempt = true
+  resetButton.classList.remove("bg-success","border-none")
+  resetButton.classList.add("bg-dark","border")
 }
 
 function cleanRows() {

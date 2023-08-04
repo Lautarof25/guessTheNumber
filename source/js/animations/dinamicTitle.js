@@ -4,7 +4,7 @@
 let titleElement = document.getElementById('dynamic-title');
 
 // Array of words to display in the title
-let words = ["Ad1vin4 el núm3r0"];
+let words = ["Gu3ss Th3 Numb3r"];
 
 // Index to keep track of the current word
 let wordIndex = 0;

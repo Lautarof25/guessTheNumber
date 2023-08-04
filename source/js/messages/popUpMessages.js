@@ -1,6 +1,6 @@
 function popUpMessage(messagePopUp) {
   // Muestra mensaje de numero repetido
-  const messageText = messagePopUp === "repeat" ? "Ya ingresó esa combinación" : "¡Último intento!";
+  const messageText = messagePopUp === "repeat" ? "You already entered that combination" : "¡Last chance!";
   const messageContainer = document.createElement("div");
   messageContainer.classList.add("opacity", "index-1", "position-fixed", "start-50", "top-50", "translate-middle", "p-2");
 
