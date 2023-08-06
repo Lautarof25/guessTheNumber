@@ -84,3 +84,12 @@ function handleButtonCollapse(){
       }    
   }, 500);
 }
+
+function activateButtonSave() {
+  let inputLength = inputUserName.value.length
+  if(inputLength > 2){
+      buttonSaveUser.disabled = false
+  }else{
+      buttonSaveUser.disabled = true
+  }
+}
