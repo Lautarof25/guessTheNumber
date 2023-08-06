@@ -12,7 +12,6 @@ buttonCollapse.addEventListener("click", handleButtonCollapse)
 inputGroup.addEventListener("change",handleRadioButtonChange)
 
 buttonSaveUser.addEventListener("click",saveNewData)
-buttonCancel.addEventListener("click",saveDefaultData)
 
 btnCloseResult.addEventListener("click",goToTop)
 btnCloseResult2.addEventListener("click",goToTop)

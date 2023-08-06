@@ -44,26 +44,19 @@ function returnInputNewUser(){
     return inputUserName.value
 }
 
+let userNameDefault = sessionStorage.getItem("userName")
 
 function saveNewData(){
-    let userNameDefault = sessionStorage.getItem("userName")
     userName = returnInputNewUser()
     let newIndex = getIndexNewRanking(scoreCounts)
-    if(userName !== ""){
+    if(userName === ""){
+        updateArrayRowsWithUser(userNameDefault, newIndex)
+        saveActualUserStorage(userNameDefault)
+    }else {
         desactivateUserSession()
         updateArrayRowsWithUser(userName, newIndex)
         saveActualUserStorage(userName)
-    }else{
-        updateArrayRowsWithUser(userNameDefault, newIndex)
-        saveActualUserStorage(userNameDefault)
     }
-}
-
-function saveDefaultData(){
-    let userNameDefault = sessionStorage.getItem("userName")
-    let newIndex = getIndexNewRanking(scoreCounts)
-    updateArrayRowsWithUser(userNameDefault, newIndex)
-    saveActualUserStorage(userNameDefault)
 }
 
 function saveActualUserStorage(user){
@@ -76,7 +69,9 @@ function desactivateUserSession(){
 }
 
 function updateArrayRowsWithUser(username, index) {
+    // Update array rows with username and index
     if(userSession){
+        arrayRows.splice(getIndexOldRanking(userNameDefault),1)
         arrayRows.splice(index, 0, [username, scoreCounts])
         arrayRows.pop()
     }else {

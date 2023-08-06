@@ -45,5 +45,5 @@ function checkWinner(num){
         if (winCounts == 1) winnerText.classList.remove("d-none");
         else winnerText.classList.add("d-none");
     }
-    spanScoreUser.scoreCounts
+    spanScoreUser.textContent = scoreCounts
 }
