@@ -1,0 +1,5 @@
+const playButton = document.querySelector("#playButton")
+const resetButton = document.querySelector("#resetButton")
+const infoButton = document.querySelector("#infoButton")
+const statsButton = document.querySelector("#statsButton")
+const rankingButton = document.querySelector("#rankingButton")

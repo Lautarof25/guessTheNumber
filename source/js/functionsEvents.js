@@ -33,8 +33,8 @@ function reset() {
   numberGuess.disabled = false
   numberGuess.focus()
   resultDiv.classList.add("d-none")
-  res.classList.remove("bg-warning")
-  res.classList.remove("bg-dark")
+  result.classList.remove("bg-warning")
+  result.classList.remove("bg-dark")
   openingSound.play()
   fillNumbers()
   lastAttempt = true
