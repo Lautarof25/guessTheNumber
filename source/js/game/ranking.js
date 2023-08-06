@@ -44,17 +44,31 @@ function returnInputNewUser(){
     return inputUserName.value
 }
 
+
 function saveNewData(){
+    let userNameDefault = sessionStorage.getItem("userName")
     userName = returnInputNewUser()
     let newIndex = getIndexNewRanking(scoreCounts)
-    updateArrayRowsWithUser(userName, newIndex)
-    desactivateUserSession()
-    saveActualUserStorage()
+    if(userName !== ""){
+        desactivateUserSession()
+        updateArrayRowsWithUser(userName, newIndex)
+        saveActualUserStorage(userName)
+    }else{
+        updateArrayRowsWithUser(userNameDefault, newIndex)
+        saveActualUserStorage(userNameDefault)
+    }
 }
 
-function saveActualUserStorage(){
+function saveDefaultData(){
+    let userNameDefault = sessionStorage.getItem("userName")
+    let newIndex = getIndexNewRanking(scoreCounts)
+    updateArrayRowsWithUser(userNameDefault, newIndex)
+    saveActualUserStorage(userNameDefault)
+}
+
+function saveActualUserStorage(user){
     sessionStorage.setItem("userSession",userSession);
-    sessionStorage.setItem("userName",userName);
+    sessionStorage.setItem("userName",user);
 }
 
 function desactivateUserSession(){
