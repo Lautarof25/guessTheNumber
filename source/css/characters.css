@@ -1,7 +1,7 @@
 .character_main {
-    width: 450px;
+    max-width: 400px;
 }
 
 #rooting img {
-    width: 100%!important;
+    max-width: 250px!important;
 }

@@ -34,10 +34,10 @@
     <section id="infoSection" class=" flex-column justify-content-center align-items-center">
       <h1 id="dynamic-title" class="text-center text-warning title-shadow display-3 mb-5 text-uppercase font-Title">
       </h1>
-      <div class="row text-end d-flex align-items-center justify-content-center">
-        <h2 class="text-center display-6 fw-bolder">¡Welcome to "Guess the number"!</h2>
-        <img class="col-md-6 h-500 character_main pb-2" src="./source/img/number_character.webp" alt="numberGuess character">
-        <div class="col-md-6 d-flex flex-column justify-content-around">
+      <div class="row text-end d-flex align-items-center justify-content-center mh-100">
+        <h2 class="text-center col-12 display-6 fw-bolder">¡Welcome to "Guess the number"!</h2>
+        <img class="col-md-6 character_main pb-2" src="./source/img/number_character.webp" alt="numberGuess character">
+        <div class="col-md-6 d-flex flex-column justify-content-between">
           <p class="text-shadow lead">You must guess a 4 digit number.
           </p>
           <p class="text-shadow lead">In "Ok" you will see how many numbers you have hit</p>
@@ -45,7 +45,7 @@
           </p>
           <p class="text-shadow lead">There may be repeated numbers, for instance <strong>0112</strong>.</p>
           <p class="text-shadow lead">You have <strong>10</strong> attempts left to guess the number <br>¡Good luck!</p>
-          <button id="playButton" class="btn btn-warning col-12 mb-5 text-uppercase fw-bolder">PLAY</button>
+          <button id="playButton" class="btn btn-warning col-12 mb-md-0 mb-5 text-uppercase fw-bolder">PLAY</button>
         </div>
       </div>
     </section>
@@ -121,13 +121,15 @@
           <div class="col-3 border d-block d-sm-none border-top-0 border-bottom-0">Ok</div>
           <div class="col-3 d-none d-sm-block">In position</div>
           <div class="col-3 d-block d-sm-none">Pos</div>
-        </div>
-        <div id="characterDiv" class="z-index-fixed">
 
         </div>
+
         <div id="rows" class="lead shadow">
 
         </div>
+      </div>
+      <div id="characterDiv" class="z-index-fixed">
+
       </div>
 
     </section>

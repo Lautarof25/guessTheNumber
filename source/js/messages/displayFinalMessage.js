@@ -8,7 +8,7 @@ function displayFinalMessage(num) {
 
 function showMessage(message, bgColorClass) {
   resultDiv.classList.remove("d-none");
-  res.textContent = message;
-  res.classList.add(bgColorClass);
+  result.textContent = message;
+  result.classList.add(bgColorClass);
   numberGuess.disabled = true;
 }
