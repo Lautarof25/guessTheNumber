@@ -3,6 +3,8 @@ const rows = document.querySelector("#rows")
 const progressBar = document.querySelector("#progressBar")
 const infoSection = document.querySelector("#infoSection")
 const gameSection = document.querySelector("#gameSection")
+const footer = document.querySelector("#footer")
+const rowsContainer = document.querySelector("#rowsContainer")
 
 const resultDiv = document.querySelector("#resultDiv")
 const characterDiv = document.querySelector("#characterDiv")

@@ -1,14 +1,14 @@
 function templateCharacter(number) {
   const rooting = document.createElement("div");
   rooting.setAttribute("id", "rooting");
-  rooting.setAttribute("class", "d-flex z-index-fixed position-absolute top-100 start-50 translate-middle-x justify-content-center align-items-center opacity");
+  rooting.setAttribute("class", "row d-flex z-index-fixed position-absolute top-100 start-50 translate-middle-x justify-content-center align-items-center opacity w-100");
 
   const p = document.createElement("p");
-  p.setAttribute('class', `bubble speech text-end bg-white rounded p-2 shadow`);
-
+  p.setAttribute('class', `col-4 bubble speech text-center bg-white rounded p-2 shadow`);
+  
   let text;
   let imgSrc;
-
+  
   if (number == 4) {
     imgSrc = "./source/img/character_2.webp";
     text = "¡Just need to order the numbers!";
@@ -19,9 +19,10 @@ function templateCharacter(number) {
     imgSrc = "./source/img/character_1.webp";
     text = "Keep trying!";
   }
-
+  
   const textP = document.createTextNode(text);
   const img = document.createElement("img");
+  img.setAttribute('class', `col-8`);
   img.setAttribute("src", imgSrc);
   if (number == 4) {
     rooting.appendChild(img);
@@ -50,6 +51,8 @@ function addCharacter(num) {
 }
 
 function characterEffect() {
+  footer.classList.add("d-none")
+  rowsContainer.classList.remove("mb-5")
   numberGuess.classList.add("d-none")
   numberGuess.disabled = true
   
@@ -57,6 +60,7 @@ function characterEffect() {
   rooting.classList.remove("opacity");
   rooting.classList.add("appearDisappear");
   characterSound.play();
+  window.scrollTo(0, 1500);
 
   setTimeout(() => {
     rooting.classList.remove("appearDisappear");
@@ -64,5 +68,7 @@ function characterEffect() {
     numberGuess.disabled = false;
     numberGuess.classList.remove("d-none");
     numberGuess.focus();
+    footer.classList.remove("d-none")
+    rowsContainer.classList.add("mb-5")
   }, 5000);
 }
