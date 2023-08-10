@@ -23,10 +23,9 @@ function guessMachine(e) {
       addTemplateRow(attempts, num, checkOk(num), checkIndex(num))
       addNumberSound.play()
       arrayNumbers.push(num)
-      attempts--
-      spanAttempts.textContent = spanTextAttemps(attempts)
-      progressBar.value = attempts
-      numberGuess.value = ""
+      decreaseAttempts()
+      updateSpanAndBarAttemps()
+      cleanInput()
       displayFinalMessage(num)
       checkWinner(num)
       addCharacter(num)
@@ -39,4 +38,17 @@ function guessMachine(e) {
       lastAttempt = false
     }
   }
+}
+
+function updateSpanAndBarAttemps(){
+  spanAttempts.textContent = spanTextAttemps(attempts)
+  progressBar.value = attempts
+}
+
+function decreaseAttempts(){
+  attempts--
+}
+
+function cleanInput(){
+  numberGuess.value = ""
 }

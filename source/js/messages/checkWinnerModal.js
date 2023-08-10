@@ -2,23 +2,22 @@
 const modal = new bootstrap.Modal(modalResult);
 
 // Show the modal
-function checkWinner(num){
+function checkWinner(num) {
     document.getElementById("spanModal").textContent = randomDigit
-    if(num == randomDigit){
-        document.getElementById("titleModal").textContent = "🎉 🎈 You won!🎈 🎉"
+    if (num == randomDigit) {
+        document.getElementById("titleModal").textContent = "🎉 🎈¡You won!🎈 🎉"
         showModalAndPlaySound("winner")
-        radioDiv.classList.remove("d-none");
+        showRadioDiv()
         updateWinCounts();
-        scoreCounts = checkScore(attempts+1)
-        spanScoreUser.textContent = scoreCounts
+        updateScoreCount();
         updateSpanWin();
         checkAndUpdateRanking();
         checkRadioAttemptsMessage()
         changeStyleResetButton()
-    }else if(num != randomDigit && attempts == 0) {
+    } else if (num != randomDigit && attempts == 0) {
         document.getElementById("titleModal").textContent = "❌ 🎲¡Game over!🎲 ❌"
         showModalAndPlaySound();
-        winnerText.classList.add("d-none");
+        hideWinnertext();
         updateLoseCount();
         updateSpanLose();
         changeStyleResetButton()
@@ -28,21 +27,35 @@ function checkWinner(num){
 
 function showModalAndPlaySound(mode) {
     modal.show();
-    if(mode == "winner"){
+    if (mode == "winner") {
         winGame.play()
-    }else{
+    } else {
         gameOver.play();
     }
 }
 
-function changeStyleResetButton() {
-    resetButton.classList.remove("bg-dark", "border");
-    resetButton.classList.add("bg-success", "border-none");
+function showRadioDiv() {
+    radioDiv.classList.remove("d-none");
+}
+
+function hideWinnertext() {
+    winnerText.classList.add("d-none");
 }
 
 function updateWinCounts() {
     winCounts++;
     totalCounts++;
+}
+
+function updateScoreCount() {
+    scoreCounts = checkScore(attempts + 1);
+    spanScoreUser.textContent = scoreCounts;
+}
+
+function updateSpanWin() {
+    spanWin.textContent = winCounts;
+    spanTotal.textContent = totalCounts;
+    spanScore.textContent = scoreCounts;
 }
 
 function updateLoseCount() {
@@ -55,13 +68,12 @@ function updateSpanLose() {
     spanLose.textContent = loseCounts;
 }
 
-function updateSpanWin() {
-    spanWin.textContent = winCounts;
-    spanTotal.textContent = totalCounts;
-    spanScore.textContent = scoreCounts;
+function changeStyleResetButton() {
+    resetButton.classList.remove("bg-dark", "border");
+    resetButton.classList.add("bg-success", "border-none");
 }
 
-function goToTop(){
+function goToTop() {
     window.scrollTo(0, 0);
 }
 

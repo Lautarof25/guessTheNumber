@@ -18,7 +18,7 @@ function checkOk(num) {
 function checkIndex(num) {
   // retorna la cantidad de numeros en posición correcta
   let count = 0
-  let numToString = num.toString()
+  const numToString = num.toString()
   const randomToString = randomDigit
   for (i = 0; i < digitLimit; i++) {
     if (numToString[i] === randomToString[i]) {

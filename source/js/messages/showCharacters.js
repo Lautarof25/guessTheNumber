@@ -13,11 +13,11 @@ function templateCharacter(number) {
     imgSrc = "./source/img/character_2.webp";
     text = "¡Just need to order the numbers!";
   } else if (number == 3) {
-    text = "Very good, you are very close to getting it!";
+    text = "Very good, You are close to achieving it!";
     imgSrc = "./source/img/character_1.webp";
   } else {
     imgSrc = "./source/img/character_1.webp";
-    text = "Keep trying!";
+    text = "¡Keep trying!";
   }
   
   const textP = document.createTextNode(text);
