@@ -8,16 +8,19 @@ A simple game to use logic. You will have to guess a 4-digit number. There are 1
 
 ## Screenshots
 
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-8.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
-![Alt text](image-4.png)
-![Alt text](image-5.png)
-![Alt text](image-6.png)
-![Alt text](image-7.png)
-![Alt text](image-9.png)
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/8942f2fe-07b2-458c-b055-917d1fe89b64)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/af7d32da-3e73-474d-9ba1-62f8f67adb40)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/34793b09-8c5a-4f1c-b80a-30c042dc7632)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/3f929ff3-74ff-45d6-9086-defc5d2c0759)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/d1ca8d88-61d5-4bd6-a78c-a0fe0e24e23f)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/09c90a9a-f6bf-4ba9-9307-1b9e74a9ff4c)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/3553b129-6f37-40a5-8b8d-ea716835627d)
 
 
 ## Demo
