@@ -8,16 +8,17 @@ A simple game to use logic. You will have to guess a 4-digit number. There are 1
 
 ## Screenshots
 
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-8.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
-![Alt text](image-4.png)
-![Alt text](image-5.png)
-![Alt text](image-6.png)
-![Alt text](image-7.png)
-![Alt text](image-9.png)
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/f5df3256-c1e2-42a9-8fab-8c45dbf08617)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/81689e60-c9cc-4bf1-9237-94d5102bc85f)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/ce77a8c3-57b1-4466-9816-ed6bce3f31bb)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/dd7ce215-79e5-45a1-8b56-04964ca3f1d9)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/de9c30c9-010b-4ce6-801b-294ec3811308)
+
+![image](https://github.com/Lautarof25/guessTheNumber/assets/81919816/fdf393d7-cac0-4cf6-acf1-1172922b2039)
 
 
 ## Demo
