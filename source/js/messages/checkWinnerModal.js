@@ -27,11 +27,7 @@ function checkWinner(num) {
 
 function showModalAndPlaySound(mode) {
     modal.show();
-    if (mode == "winner") {
-        winGame.play()
-    } else {
-        gameOver.play();
-    }
+    mode === "winner" ? winGame.play() : gameOver.play()
 }
 
 function showRadioDiv() {

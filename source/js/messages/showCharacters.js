@@ -37,16 +37,26 @@ function templateCharacter(number) {
   characterEffect();
 }
 
+// messages characters activated
+let active3NumbersMessage = true
+let active4NumbersMessage = true
+let active0NumbersMessage = true
 
 function addCharacter(num) {
   const numbersOks = checkOk(num)
   if (attempts > 1) {
-    if (numbersOks == digitLimit && checkIndex(num) <= digitLimit - 2)
+    if (numbersOks == digitLimit && checkIndex(num) <= digitLimit - 2 && active4NumbersMessage){
       templateCharacter(numbersOks)
-    else if (numbersOks == digitLimit - 1)
+      active4NumbersMessage = false
+    }
+    else if (numbersOks == digitLimit - 1 && active3NumbersMessage){
       templateCharacter(numbersOks)
-    else if (numbersOks == 0)
+      active3NumbersMessage = false
+    }
+    else if (numbersOks == 0 && active0NumbersMessage){
       templateCharacter(numbersOks)
+      active0NumbersMessage = false
+    }
   }
 }
 

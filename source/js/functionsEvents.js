@@ -40,6 +40,9 @@ function reset() {
   lastAttempt = true
   resetButton.classList.remove("bg-success","border-none")
   resetButton.classList.add("bg-dark","border")
+  active3NumbersMessage = true
+  active4NumbersMessage = true
+  active0NumbersMessage = true
 }
 
 function cleanRows() {
