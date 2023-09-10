@@ -1,5 +1,5 @@
 
-# Adivina el número
+# Guess the number
 
 A simple game to use logic. You will have to guess a 4-digit number. There are 10,000 possible combinations and 10 attempts. The characters were created with AI tools.
 
@@ -46,7 +46,6 @@ Javascript, HTML, CSS, Bootstrap
 
 - Add more integrations
 
-- OOP paradigm
 
 ## Next features
 
