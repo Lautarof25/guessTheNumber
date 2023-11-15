@@ -110,7 +110,11 @@ input:focus {
 }
 
 .h-500 {
-  max-height: 450px !important;
+  max-height: 500px !important;
+}
+
+.w-500 {
+  max-width: 500px !important;
 }
 
 .bold {
